@@ -1,0 +1,303 @@
+BODY {
+	FONT-SIZE: 12px
+}
+.body {
+	FONT-SIZE: 12px
+}
+TABLE {
+	FONT-SIZE: 11px
+}
+TD {
+	FONT-SIZE: 11px
+}
+H2 {
+	FONT-SIZE: 13px
+}
+H1 {
+	FONT-SIZE: 13px
+}
+H3 {
+	FONT-SIZE: 12px
+}
+.monthHeaderH3 {
+	FONT-SIZE: 12px
+}
+.schedulerTopDateCell {
+	FONT-SIZE: 12px
+}
+H4 {
+	FONT-SIZE: 12px
+}
+H4.dataLabel {
+	FONT-SIZE: 12px
+}
+H5 {
+	FONT-SIZE: 12px
+}
+H5.listViewSubHeadS1 {
+	FONT-SIZE: 12px
+}
+.button {
+	FONT-SIZE: 12px
+}
+.buttonOn {
+	FONT-SIZE: 12px
+}
+.button:hover {
+	FONT-SIZE: 12px
+}
+.button:unknown {
+	FONT-SIZE: 12px
+}
+.buttonOn:unknown {
+	FONT-SIZE: 12px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+SELECT {
+	FONT-SIZE: 12px
+}
+TEXTAREA {
+	FONT-SIZE: 12px
+}
+.tabRow {
+	HEIGHT: 20px
+}
+.currentTab {
+	FONT-SIZE: 11px
+}
+.otherTab {
+	FONT-SIZE: 11px
+}
+.subMenu {
+	FONT: 11px Arial, Verdana, Helvetica, sans-serif
+}
+UL.subMenu LI A {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 6px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+TABLE.leftColumnModuleHead TH {
+	
+}
+.headerBg {
+	FONT-SIZE: 12px
+}
+.welcome {
+	FONT-SIZE: 12px
+}
+.searchField {
+	FONT-SIZE: 11px
+}
+#subtabs {
+	
+}
+UL.subTabs {
+	FONT: 11px Arial, Verdana, Helvetica, sans-serif
+}
+.subTabMore {
+	FONT-SIZE: 11px
+}
+.leftColumnModuleS3 {
+	FONT-SIZE: 11px
+}
+TD.leftColumnModuleS3 .button {
+	FONT-SIZE: 11px
+}
+TD.leftColumnModuleS3 .dataLabel {
+	FONT-SIZE: 11px
+}
+A.leftColumnModuleS3Link:link {
+	FONT-SIZE: 11px
+}
+A.leftColumnModuleS3Link:visited {
+	FONT-SIZE: 11px
+}
+TABLE.listView TH {
+	FONT-SIZE: 11px
+}
+.listViewThS1 {
+	FONT-SIZE: 11px
+}
+TABLE.listview TH A:link {
+	
+}
+TABLE.listview TH A:visited {
+	
+}
+TABLE.listview TH A:hover {
+	
+}
+A.listViewTdLinkS1:link {
+	FONT-SIZE: 12px
+}
+A.listViewTdLinkS1:visited {
+	FONT-SIZE: 12px
+}
+.evenListRowS1 {
+	FONT-SIZE: 12px; PADDING-BOTTOM: 4px; PADDING-TOP: 2px
+}
+.oddListRowS1 {
+	FONT-SIZE: 12px; PADDING-BOTTOM: 4px; PADDING-TOP: 2px
+}
+.tabDetailView .listViewPaginationTdS1 {
+	FONT-SIZE: 12px
+}
+#listViewPaginationButtons A.listViewPaginationLinkS1:link {
+	FONT-SIZE: 12px
+}
+#listViewPaginationButtons A.listViewPaginationLinkS1:visited {
+	FONT-SIZE: 12px
+}
+A.listViewCheckLink:link {
+	FONT-SIZE: 11px
+}
+A.listViewCheckLink:visited {
+	FONT-SIZE: 11px
+}
+A.utilsLink:link {
+	FONT-SIZE: 11px
+}
+A.utilsLink:visited {
+	FONT-SIZE: 11px
+}
+A.chartToolsLink:link {
+	FONT-SIZE: 11px
+}
+A.chartToolsLink:visited {
+	FONT-SIZE: 11px
+}
+.tabForm {
+	FONT-SIZE: 12px
+}
+.subpanelTabForm {
+	FONT-SIZE: 12px
+}
+.subpanelTabForm H3 {
+	FONT-SIZE: 11px
+}
+H5.dataLabel {
+	FONT-SIZE: 12px
+}
+.dataLabel {
+	FONT-SIZE: 12px
+}
+.dataField {
+	FONT-SIZE: 12px
+}
+A.tabFormAdvLink:link {
+	FONT-SIZE: 11px
+}
+A.tabFormAdvLink:visited {
+	FONT-SIZE: 11px
+}
+.tabDetailViewDL {
+	FONT-SIZE: 12px
+}
+H4.tabDetailViewDL {
+	FONT-SIZE: 12px
+}
+.tabDetailViewDF {
+	FONT-SIZE: 12px
+}
+.tabDetailViewDL2 {
+	FONT-SIZE: 12px
+}
+.tabDetailViewDF2 {
+	FONT-SIZE: 11px
+}
+A.tabDetailViewDL2Link:link {
+	FONT-SIZE: 11px
+}
+A.tabDetailViewDL2Link:visited {
+	FONT-SIZE: 11px
+}
+.monthBox {
+	FONT-SIZE: 12px
+}
+A.monthCalBodyWeekLink:link {
+	FONT-SIZE: 11px
+}
+A.monthCalBodyWeekLink:visited {
+	FONT-SIZE: 11px
+}
+A.monthCalBodyWeekDayDateLink:link {
+	FONT-SIZE: 12px
+}
+A.monthCalBodyWeekDayDateLink:visited {
+	FONT-SIZE: 12px
+}
+A.monthCalBodyDayItemLink:link {
+	FONT-SIZE: 10px
+}
+A.monthCalBodyDayItemLink:visited {
+	FONT-SIZE: 10px
+}
+A.monthCalBodyDayItemLink:hover {
+	FONT-SIZE: 10px
+}
+.dailyCalBodyItems {
+	FONT-SIZE: 12px
+}
+A.yearCalBodyMonthLink:link {
+	FONT-SIZE: 12px
+}
+A.yearCalBodyMonthLink:visited {
+	FONT-SIZE: 12px
+}
+.calSharedUser {
+	FONT-SIZE: 11px
+}
+.rssItemDate {
+	FONT-SIZE: 11px
+}
+.dateFormat {
+	FONT-SIZE: 11px
+}
+.chartFootnote {
+	FONT-SIZE: 11px
+}
+.tm {
+	FONT-SIZE: 8px
+}
+.schedulerDiv {
+	FONT-SIZE: 12px
+}
+.schedulerTopRow {
+	HEIGHT: 22px
+}
+.schedulerTopDeleteHeaderCell {
+	HEIGHT: 22px
+}
+.schedulerDeleteHeaderCell {
+	HEIGHT: 22px
+}
+.schedulerTopHeaderCell {
+	HEIGHT: 22px
+}
+.schedulerAttendeeHeaderCell {
+	HEIGHT: 22px
+}
+.schedulerAttendeeHeaderCell {
+	HEIGHT: 22px
+}
+.schedulerAttendeeCell {
+	WIDTH: 125px
+}
+.myArea {
+	FONT: 12px Arial, Verdana, Helvetica, sans-serif
+}
+UL.myArea {
+	FONT: 12px Arial, Verdana, Helvetica, sans-serif; HEIGHT: 15px
+}
+UL.tablist {
+	FONT: 12px Arial, Verdana, Helvetica, sans-serif
+}
+UL.subpanelTablist {
+	FONT: 12px Arial, Verdana, Helvetica, sans-serif
+}
+.sqsMatchedSmartInputItem {
+	FONT-SIZE: 11px
+}
+.olCapFontClass A {
+	FONT-SIZE: 9px
+}

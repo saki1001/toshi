@@ -1,0 +1,782 @@
+BODY {
+	COLOR: #444444; BACKGROUND-COLOR: #ffffff
+}
+.body {
+	COLOR: #444444; BACKGROUND-COLOR: #ffffff
+}
+TABLE {
+	COLOR: #444444
+}
+TD {
+	COLOR: #444444
+}
+H1 {
+	COLOR: #990033
+}
+H2 {
+	COLOR: #990033
+}
+H3 {
+	COLOR: #990033
+}
+H4 {
+	COLOR: #444
+}
+H5 {
+	COLOR: #444
+}
+H5.listViewSubHeadS1 {
+	COLOR: #444
+}
+A.yearCalBodyMonthLink:link {
+	COLOR: #444
+}
+A.yearCalBodyMonthLink:visited {
+	COLOR: #444
+}
+.h3Row {
+	BORDER-LEFT-COLOR: #999999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999999; COLOR: #444444; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999999
+}
+.monthHeader {
+	BORDER-LEFT-COLOR: #999999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999999; COLOR: #444444; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999999
+}
+A:link {
+	COLOR: #444444
+}
+A:visited {
+	COLOR: #444444
+}
+A.body:link {
+	COLOR: #444444
+}
+A.body:visited {
+	COLOR: #444444
+}
+A:hover {
+	COLOR: #990033
+}
+A.body:hover {
+	COLOR: #990033
+}
+.button {
+	BORDER-LEFT-COLOR: #999999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999999; COLOR: #444; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #eee; BORDER-RIGHT-COLOR: #999999
+}
+.buttonOn {
+	BORDER-LEFT-COLOR: #990033; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #990033; COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #eee; BORDER-RIGHT-COLOR: #990033
+}
+.button:hover {
+	BORDER-LEFT-COLOR: #990033; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #990033; COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #eee; BORDER-RIGHT-COLOR: #990033
+}
+.button:unknown {
+	BORDER-LEFT-COLOR: #990033; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #990033; COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #eee; BORDER-RIGHT-COLOR: #990033
+}
+.buttonOn:unknown {
+	BORDER-LEFT-COLOR: #990033; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #990033; COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #eee; BORDER-RIGHT-COLOR: #990033
+}
+INPUT {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #fafafa; BORDER-RIGHT-COLOR: #999999
+}
+SELECT {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #fafafa; BORDER-RIGHT-COLOR: #999999
+}
+INPUT:unknown {
+	BORDER-LEFT-COLOR: #990033; BORDER-BOTTOM-COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #990033
+}
+TEXTAREA:unknown {
+	BORDER-LEFT-COLOR: #990033; BORDER-BOTTOM-COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #990033
+}
+SELECT:unknown {
+	BORDER-LEFT-COLOR: #990033; BORDER-BOTTOM-COLOR: #990033; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #990033
+}
+TEXTAREA {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #fafafa; BORDER-RIGHT-COLOR: #999999
+}
+.checkbox {
+	
+}
+.radio {
+	
+}
+.teamNoticeBox {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; COLOR: #444444; BORDER-TOP-COLOR: #999999; BORDER-RIGHT-COLOR: #999999
+}
+.tabRow {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/tabRowBg.gif); BORDER-BOTTOM-COLOR: #999; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+.currentTabLeft {
+	BORDER-LEFT-COLOR: #fff; BACKGROUND-IMAGE: url(../images/currentTab.gif); BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BORDER-RIGHT-COLOR: #fff
+}
+.currentTabRight {
+	BORDER-LEFT-COLOR: #fff; BACKGROUND-IMAGE: url(../images/currentTab.gif); BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BORDER-RIGHT-COLOR: #fff
+}
+.currentTab {
+	BORDER-LEFT-COLOR: #fff; BACKGROUND-IMAGE: url(../images/currentTab.gif); BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND-REPEAT: no-repeat; BORDER-RIGHT-COLOR: #fff
+}
+A.currentTabLink:link {
+	COLOR: #990033
+}
+A.currentTabLink:visited {
+	COLOR: #990033
+}
+A.currentTabLink:hover {
+	COLOR: #990033
+}
+.otherTabLeft {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/otherTab.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #333333; BORDER-TOP-COLOR: #999; BACKGROUND-REPEAT: no-repeat; BORDER-RIGHT-COLOR: #999
+}
+.otherTabRight {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/otherTab.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #333333; BORDER-TOP-COLOR: #999; BACKGROUND-REPEAT: no-repeat; BORDER-RIGHT-COLOR: #999
+}
+.otherTab {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/otherTab.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #333333; BORDER-TOP-COLOR: #999; BACKGROUND-REPEAT: no-repeat; BORDER-RIGHT-COLOR: #999
+}
+A.otherTabLink:link {
+	COLOR: #444444
+}
+A.otherTabLink:visited {
+	COLOR: #444444
+}
+A.otherTabLink:hover {
+	COLOR: #990033
+}
+.subpanelTabSpace  {
+	DISPLAY: none
+}
+A.currentSubpanelTabLink:link {
+	COLOR: #990033
+}
+A.currentSubpanelTabLink:visited {
+	COLOR: #990033
+}
+A.currentSubpanelTabLink:hover {
+	COLOR: #990033
+}
+A.otherSubpanelTabLink:link {
+	COLOR: #444444
+}
+A.otherSubpanelTabLink:visited {
+	COLOR: #444444
+}
+A.otherSubpanelTabLink:hover {
+	COLOR: #990033
+}
+.moreHandle {
+	BACKGROUND: url(../images/more.gif) no-repeat left bottom
+}
+.subMenu {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+.subMenu {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+UL.subMenu LI {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+.leftColumnModuleS3 {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+UL.subMenu LI A:hover {
+	COLOR: #990033; BACKGROUND-COLOR: #f6f6f6
+}
+UL.subMenu LI SPAN:hover {
+	COLOR: #990033; BACKGROUND-COLOR: #f6f6f6
+}
+.leftColumn {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+TABLE.leftColumnModuleHead TH {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #444; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999
+}
+TABLE.listView TH {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #444; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999
+}
+.listViewThS1 {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #444; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999
+}
+.schedulerTopRow {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #444; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999
+}
+.monthHeader {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #444; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #999
+}
+.moduleTitle {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+.headerBg {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGrayHeader.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #000000; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+.welcome {
+	BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #ddd
+}
+.myArea {
+	BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #ddd
+}
+#subtabs {
+	BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #999
+}
+UL.subTabs {
+	BORDER-BOTTOM-COLOR: #ddd
+}
+UL.subTabs LI {
+	
+}
+UL.subTabs LI A {
+	BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-TOP-COLOR: #fff; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+UL.subTabs LI A:link {
+	COLOR: #444444
+}
+UL.subTabs LI A:visited {
+	COLOR: #444444
+}
+UL.subTabs LI A:hover {
+	BORDER-LEFT-COLOR: #ccc; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #ccc; COLOR: #990033; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+.activeSubTab {
+	BACKGROUND: url(../images/bgGray.gif) #eee; BORDER-BOTTOM-COLOR: #ddd; BORDER-RIGHT-COLOR: #999
+}
+UL.tablist LI A.activeSubTab:hover {
+	BORDER-BOTTOM-COLOR: #ddd; COLOR: #990033
+}
+UL.subpanelTablist LI A.activeSubTab:hover {
+	BORDER-BOTTOM-COLOR: #ddd; COLOR: #990033
+}
+.searchField {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #eeeeee; BORDER-RIGHT-COLOR: #999999
+}
+.search {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE: url(../images/searchBg.gif); COLOR: #444444; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #fafafa
+}
+.searchButton {
+	BACKGROUND-COLOR: #fafafa
+}
+.searchButton:unknown {
+	BACKGROUND-COLOR: #fafafa
+}
+.date {
+	BORDER-BOTTOM-COLOR: #bbbbbb; COLOR: #444444; BACKGROUND-COLOR: #dddddd
+}
+.lastView {
+	BORDER-BOTTOM-COLOR: #999; COLOR: #444; BORDER-TOP-COLOR: #eee; BACKGROUND-COLOR: #eee
+}
+A.lastViewLink:link {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+A.lastViewLink:visited {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+.lastViewLink {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; COLOR: #444444; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+A.lastViewLink:hover {
+	COLOR: #990033; BACKGROUND-COLOR: #fff
+}
+.leftColumnModuleName {
+	
+}
+.leftColumnModuleS3 INPUT {
+	
+}
+.leftColumnModuleS3 SELECT {
+	
+}
+TD.leftColumnModuleS3 .button {
+	
+}
+TD.leftColumnModuleS3 .dataLabel {
+	
+}
+TD.leftColumnModuleS3 .dataField {
+	
+}
+.leftColumnModuleS3 #jscal_trigger {
+	
+}
+A.leftColumnModuleS3Link:link {
+	COLOR: #666666
+}
+A.leftColumnModuleS3Link:visited {
+	COLOR: #666666
+}
+A.leftColumnModuleS3Link:hover {
+	COLOR: #444444
+}
+.listView {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BORDER-RIGHT-COLOR: #999999
+}
+.listViewSubHeadS1 {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.listview TH A:link {
+	COLOR: #444
+}
+TABLE.listview TH A:visited {
+	COLOR: #444
+}
+A.listViewThLinkS1:link {
+	COLOR: #444
+}
+A.listViewThLinkS1:visited {
+	COLOR: #444
+}
+TABLE.listview TH A:hover {
+	COLOR: #990033
+}
+A.listViewThLinkS1:hover {
+	COLOR: #990033
+}
+A.listViewTdLinkS1:link {
+	COLOR: #990033
+}
+A.listViewTdLinkS1:visited {
+	COLOR: #990033
+}
+A.listViewTdLinkS1:hover {
+	COLOR: #000000
+}
+A.listViewTdToolsS1:link {
+	
+}
+A.listViewTdToolsS1:visited {
+	
+}
+A.listViewTdToolsS1:hover {
+	
+}
+.evenListRowS1 {
+	COLOR: #000000
+}
+.oddListRowS1 {
+	COLOR: #000000
+}
+.listViewHRS1 {
+	BACKGROUND-COLOR: #ddd
+}
+.pageNumbers {
+	COLOR: #444444
+}
+.listViewPaginationTdS1 {
+	BORDER-LEFT-COLOR: #999; BORDER-BOTTOM-COLOR: #999; COLOR: #999999; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #eeeeee; BORDER-RIGHT-COLOR: #999
+}
+.tabDetailView .listViewPaginationTdS1 .tabDetailViewDL {
+	BORDER-LEFT-COLOR: #999; BORDER-BOTTOM-COLOR: #999; COLOR: #999999; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #eeeeee; BORDER-RIGHT-COLOR: #999
+}
+A.listViewPaginationLinkS1:link {
+	COLOR: #444444
+}
+A.listViewPaginationLinkS1:visited {
+	COLOR: #444444
+}
+A.listViewPaginationLinkS1:hover {
+	COLOR: #990033
+}
+A.listViewCheckLink:link {
+	
+}
+A.listViewCheckLink:visited {
+	
+}
+A.listViewCheckLink:hover {
+	
+}
+A.utilsLink:link {
+	COLOR: #990033
+}
+A.utilsLink:visited {
+	COLOR: #990033
+}
+A.NextPrevLink:link {
+	COLOR: #990033
+}
+A.NextPrevLink:visited {
+	COLOR: #990033
+}
+A.utilsLink:hover {
+	
+}
+.chartBox {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-COLOR: #999999
+}
+A.chartToolsLink:link {
+	COLOR: #444444
+}
+A.chartToolsLink:visited {
+	COLOR: #444444
+}
+A.chartToolsLink:hover {
+	COLOR: #990033
+}
+TABLE.chartForm {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #efefef; BORDER-RIGHT-COLOR: #999999
+}
+TABLE.chartForm TD {
+	BACKGROUND-COLOR: #efefef
+}
+.tabForm {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGrayForm.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #000000; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #999
+}
+.subpanelTabForm {
+	BORDER-LEFT-COLOR: #999; BACKGROUND-IMAGE: url(../images/bgGrayForm.gif); BORDER-BOTTOM-COLOR: #999; COLOR: #000000; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #999
+}
+.subpanelTabForm .listView {
+	BORDER-LEFT-COLOR: #999; BORDER-BOTTOM-COLOR: #999; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+H4.dataLabel {
+	COLOR: #444444
+}
+TABLE.tabForm TD {
+	
+}
+H5.dataLabel {
+	COLOR: #444444
+}
+TD.dataLabel {
+	
+}
+.dataLabel {
+	
+}
+.dataField {
+	
+}
+.tabFormAddDel {
+	
+}
+A.tabFormAdvLink:link {
+	COLOR: #444444
+}
+A.tabFormAdvLink:visited {
+	COLOR: #444444
+}
+A.tabFormAdvLink:hover {
+	COLOR: #990033
+}
+.tabDetailView {
+	BORDER-LEFT-COLOR: #666666; BORDER-BOTTOM-COLOR: #666666; BORDER-TOP-COLOR: #666666; BACKGROUND-COLOR: #cccccc; BORDER-RIGHT-COLOR: #666666
+}
+.tabDetailView .listViewPaginationTdS1 .listViewPaginationLinkS1 {
+	
+}
+.tabDetailView .listViewPaginationTdS1 .listViewPaginationLinkS1:hover {
+	COLOR: #000000
+}
+.tabDetailView .listViewPaginationTdS1 .tabDetailViewDFLink:hover {
+	COLOR: #000000
+}
+.tabDetailView .listViewPaginationTdS1 .tabDetailViewDFLink {
+	COLOR: #444444
+}
+.tabDetailViewDL {
+	BORDER-LEFT-COLOR: #ddd; BORDER-BOTTOM-COLOR: #ddd; COLOR: #000000; BORDER-TOP-COLOR: #ddd; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #ddd
+}
+.dailyCalBodyTime {
+	BORDER-LEFT-COLOR: #ddd; BORDER-BOTTOM-COLOR: #ddd; COLOR: #000000; BORDER-TOP-COLOR: #ddd; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #ddd
+}
+.monthCalBodyWeek {
+	BORDER-LEFT-COLOR: #ddd; BORDER-BOTTOM-COLOR: #ddd; COLOR: #000000; BORDER-TOP-COLOR: #ddd; BACKGROUND-COLOR: #f6f6f6; BORDER-RIGHT-COLOR: #ddd
+}
+H4.tabDetailViewDL {
+	COLOR: #444444
+}
+.tabDetailViewDF {
+	BORDER-LEFT-COLOR: #ddd; BORDER-BOTTOM-COLOR: #ddd; COLOR: #444444; BORDER-TOP-COLOR: #ddd; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ddd
+}
+A.tabDetailViewDFLink:link {
+	COLOR: #000000
+}
+A.tabDetailViewDFLink:visited {
+	COLOR: #000000
+}
+A.tabDetailViewDFLink:hover {
+	COLOR: #990033
+}
+.tabDetailView2 {
+	BORDER-LEFT-COLOR: #999999; BORDER-BOTTOM-COLOR: #999999; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #cccccc; BORDER-RIGHT-COLOR: #999999
+}
+.tabDetailViewDL2 {
+	COLOR: #000000; BORDER-TOP-COLOR: #ffffff; BACKGROUND-COLOR: #fafafa
+}
+.tabDetailViewDF2 {
+	BORDER-LEFT-COLOR: #dfdfdf; COLOR: #444444; BACKGROUND-COLOR: #eeeeee
+}
+A.tabDetailViewDL2Link:link {
+	COLOR: #444444
+}
+A.tabDetailViewDL2Link:visited {
+	COLOR: #444444
+}
+A.tabDetailViewDL2Link:hover {
+	COLOR: #990033
+}
+.monthBox {
+	
+}
+.monthCalBody {
+	BACKGROUND-COLOR: #ddd
+}
+.monthFooterPrev {
+	BORDER-BOTTOM-COLOR: #999; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #eee
+}
+.monthFooterNext {
+	BORDER-BOTTOM-COLOR: #999; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #eee
+}
+A.monthCalBodyWeekLink:link {
+	COLOR: #444444
+}
+A.monthCalBodyWeekLink:visited {
+	COLOR: #444444
+}
+A.monthCalBodyWeekDayDateLink:link {
+	COLOR: #444444
+}
+A.monthCalBodyWeekDayDateLink:visited {
+	COLOR: #444444
+}
+A.NextPrevLink:hover {
+	COLOR: #990033
+}
+A.monthCalBodyWeekLink:hover {
+	COLOR: #990033
+}
+A.monthCalBodyWeekDayDateLink:hover {
+	COLOR: #990033
+}
+A.monthCalBodyWeekEndDateLink:hover {
+	COLOR: #990033
+}
+.monthCalBodyTodayWeekDay A.monthCalBodyWeekDayDateLink:link {
+	COLOR: #990033
+}
+.monthCalBodyTodayWeekDay A.monthCalBodyWeekDayDateLink:visited {
+	COLOR: #990033
+}
+.monthCalBodyTodayWeekEnd A.monthCalBodyWeekDayDateLink:link {
+	COLOR: #990033
+}
+.monthCalBodyTodayWeekEnd A.monthCalBodyWeekDayDateLink:visited {
+	COLOR: #990033
+}
+.monthCalBodyTHWeek {
+	COLOR: #444444; BACKGROUND-COLOR: #f6f6f6
+}
+.monthCalBodyTHDay {
+	COLOR: #444444; BACKGROUND-COLOR: #eee
+}
+.monthCalBodyTodayWeekDay {
+	BORDER-LEFT-COLOR: #990033; BORDER-BOTTOM-COLOR: #990033; COLOR: #444444; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-COLOR: #990033
+}
+.monthCalBodyTodayWeekEnd {
+	BORDER-LEFT-COLOR: #990033; BORDER-BOTTOM-COLOR: #990033; COLOR: #444444; BORDER-TOP-COLOR: #990033; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-COLOR: #990033
+}
+.monthCalBodyWeekDay {
+	COLOR: #444444; BACKGROUND-COLOR: #fff
+}
+.monthCalBodyWeekEnd {
+	COLOR: #444444; BACKGROUND-COLOR: #f6f6f6
+}
+A.monthCalBodyDayItemLink:link {
+	
+}
+A.monthCalBodyDayItemLink:visited {
+	
+}
+A.monthCalBodyDayItemLink:hover {
+	
+}
+.monthCalBodyDayItem {
+	BORDER-BOTTOM-COLOR: #ddd; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #ffffff
+}
+.monthCalBodyDayIconTd {
+	
+}
+.monthCalBodyDayItemTd {
+	
+}
+.monthViewDayHeight {
+	
+}
+.yearViewDayHeight {
+	
+}
+.dailyCalBodyItems {
+	COLOR: #444444; BACKGROUND-COLOR: #fff
+}
+A.weekCalBodyDayLink:link {
+	COLOR: #000000
+}
+A.weekCalBodyDayLink:visited {
+	COLOR: #000000
+}
+A.weekCalBodyDayLink:hover {
+	
+}
+.yearCalBody {
+	BACKGROUND-COLOR: #999999
+}
+.yearCalBodyMonth {
+	BACKGROUND-COLOR: #ddd
+}
+.yearCalBodyMonth TH {
+	
+}
+.yearCalBodyMonth #daily_cal_table {
+	BORDER-TOP: #eeeeee
+}
+.yearCalBodyMonth #daily_cal_table .monthCalBodyTHDay {
+	BORDER-LEFT-COLOR: #ccc; BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BORDER-RIGHT-COLOR: #ccc
+}
+A.yearCalBodyMonthLink:hover {
+	COLOR: #990033
+}
+H5.calSharedUser {
+	COLOR: #444444; BORDER-TOP-COLOR: #999999; BACKGROUND-COLOR: #eee
+}
+.copyRight {
+	
+}
+A.copyRightLink:link {
+	
+}
+A.copyRightLink:visited {
+	
+}
+A.copyRightLink:hover {
+	
+}
+.tm {
+	
+}
+.footer {
+	BORDER-BOTTOM-COLOR: #ccc; COLOR: #999999; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #f6f6f6
+}
+.underFooter {
+	BORDER-BOTTOM-COLOR: #ccc; COLOR: #999999; BORDER-TOP-COLOR: #999; BACKGROUND-COLOR: #f6f6f6
+}
+A.footerLink:link {
+	
+}
+A.footerLink:visited {
+	
+}
+A.footerLink:hover {
+	COLOR: #990033
+}
+.footerHR {
+	COLOR: #666666
+}
+.aboveFooter {
+	BACKGROUND-COLOR: #ffffff
+}
+UL.tablist {
+	BORDER-BOTTOM-COLOR: #999999
+}
+UL.tablist LI {
+	
+}
+UL.tablist LI A:hover {
+	BORDER-LEFT-COLOR: #999; BACKGROUND: #fafafa; BORDER-BOTTOM-COLOR: #999; COLOR: #990033; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+UL.tablist LI A {
+	BORDER-LEFT-COLOR: #ccc; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+UL.tablist LI A:link {
+	COLOR: #444444
+}
+UL.tablist LI A:visited {
+	COLOR: #444444
+}
+UL.tablist LI A:hover {
+	BORDER-LEFT-COLOR: #999; BACKGROUND: #fafafa; BORDER-BOTTOM-COLOR: #999; COLOR: #990033; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+UL.tablist LI A.current {
+	BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #ddd; BORDER-RIGHT-COLOR: #999
+}
+UL.tablist LI A.current:hover {
+	BORDER-BOTTOM-COLOR: #ddd; COLOR: #990033
+}
+UL.subpanelTablist {
+	BORDER-BOTTOM-COLOR: #999999
+}
+UL.subpanelTablist LI {
+	
+}
+UL.subpanelTablist LI A:hover {
+	BORDER-LEFT-COLOR: #999; BACKGROUND: #fafafa; BORDER-BOTTOM-COLOR: #999; COLOR: #990033; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+UL.subpanelTablist LI A {
+	BORDER-LEFT-COLOR: #ccc; BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #ccc; BORDER-TOP-COLOR: #ccc; BACKGROUND-COLOR: #fff; BORDER-RIGHT-COLOR: #ccc
+}
+UL.subpanelTablist LI A:link {
+	COLOR: #444444
+}
+UL.subpanelTablist LI A:visited {
+	COLOR: #444444
+}
+UL.subpanelTablist LI A:hover {
+	BORDER-LEFT-COLOR: #999; BACKGROUND: #fafafa; BORDER-BOTTOM-COLOR: #999; COLOR: #990033; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999
+}
+UL.subpanelTablist LI A.current {
+	BACKGROUND-IMAGE: url(../images/bgGray.gif); BORDER-BOTTOM-COLOR: #ddd; COLOR: #990033; BORDER-RIGHT-COLOR: #999
+}
+UL.subpanelTablist LI A.current:hover {
+	BORDER-BOTTOM-COLOR: #ddd; COLOR: #990033
+}
+.sqsFloater {
+	
+}
+.sqsFloater TD {
+	BORDER-RIGHT: #999999 1px inset; BORDER-TOP: #999999 1px inset; BORDER-LEFT: #999999 1px inset; COLOR: black; BORDER-BOTTOM: #999999 1px inset; BACKGROUND-COLOR: #fdfdfd
+}
+.sqsMatchedSmartInputItem {
+	
+}
+.sqsSelectedSmartInputItem {
+	BACKGROUND-COLOR: #deefff
+}
+#sqsSmartInputResults {
+	
+}
+.sqsNoMatch {
+	
+}
+.olFontClass {
+	
+}
+.olFontClass A {
+	
+}
+.olCapFontClass {
+	COLOR: #222222; BACKGROUND-COLOR: #dfdfdf
+}
+.olCapFontClass A {
+	COLOR: #dfdfdf
+}
+.olFgClass TD {
+	BACKGROUND-COLOR: #f9f9f9
+}
+.olCgClass TD {
+	BORDER-BOTTOM-COLOR: #aaaaaa; BORDER-TOP-COLOR: #f1f1f1; BACKGROUND-COLOR: #dfdfdf
+}
+.olCgClass {
+	
+}
+.olBgClass {
+	BACKGROUND-COLOR: #999999
+}
+.olCloseFontClass {
+	BACKGROUND-COLOR: #dfdfdf
+}
+
+
+.inner_font
+{
+color:#990033;
+font-size:15px;
+font-family:Arial;
+font-weight:bold;
+}
+.inner_fontr{
+font:Arial, Helvetica, sans-serif;
+color:#990033;
+font-weight:normal;
+}

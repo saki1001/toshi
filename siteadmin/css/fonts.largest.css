@@ -1,0 +1,312 @@
+BODY {
+	FONT-SIZE: 14px
+}
+.body {
+	FONT-SIZE: 14px
+}
+TABLE {
+	FONT-SIZE: 13px
+}
+TD {
+	FONT-SIZE: 13px
+}
+H2 {
+	FONT-SIZE: 15px
+}
+H1 {
+	FONT-SIZE: 15px
+}
+H3 {
+	FONT-SIZE: 15px
+}
+.monthHeaderH3 {
+	FONT-SIZE: 15px
+}
+.schedulerTopDateCell {
+	FONT-SIZE: 15px
+}
+H4 {
+	FONT-SIZE: 14px
+}
+H4.dataLabel {
+	FONT-SIZE: 14px
+}
+H5 {
+	FONT-SIZE: 14px
+}
+H5.listViewSubHeadS1 {
+	FONT-SIZE: 14px
+}
+.button {
+	FONT-SIZE: 14px
+}
+.buttonOn {
+	FONT-SIZE: 14px
+}
+.button:hover {
+	FONT-SIZE: 14px
+}
+.button:unknown {
+	FONT-SIZE: 14px
+}
+.buttonOn:unknown {
+	FONT-SIZE: 14px
+}
+INPUT {
+	FONT-SIZE: 14px
+}
+SELECT {
+	FONT-SIZE: 14px
+}
+TEXTAREA {
+	FONT-SIZE: 14px
+}
+.tabRow {
+	HEIGHT: 30px
+}
+.currentTab {
+	FONT-SIZE: 13px; HEIGHT: 30px
+}
+.otherTab {
+	FONT-SIZE: 13px; HEIGHT: 30px
+}
+.subMenu {
+	FONT: 14px Arial, Verdana, Helvetica, sans-serif
+}
+UL.subMenu LI A {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 6px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+TABLE.leftColumnModuleHead TH {
+	
+}
+.headerBg {
+	FONT-SIZE: 14px
+}
+.welcome {
+	FONT-SIZE: 14px; HEIGHT: 23px
+}
+.searchField {
+	FONT-SIZE: 13px
+}
+#subtabs {
+	FONT-SIZE: 14px; HEIGHT: 21px
+}
+UL.subTabs {
+	FONT: 13px Arial, Verdana, Helvetica, sans-serif
+}
+.subTabMore {
+	FONT-SIZE: 13px
+}
+.leftColumnModuleS3 {
+	FONT-SIZE: 13px
+}
+TD.leftColumnModuleS3 .button {
+	FONT-SIZE: 13px
+}
+TD.leftColumnModuleS3 .dataLabel {
+	FONT-SIZE: 13px
+}
+A.leftColumnModuleS3Link:link {
+	FONT-SIZE: 13px
+}
+A.leftColumnModuleS3Link:visited {
+	FONT-SIZE: 13px
+}
+TABLE.listView TH {
+	FONT-SIZE: 13px
+}
+.listViewThS1 {
+	FONT-SIZE: 13px
+}
+TABLE.listview TH A:link {
+	
+}
+TABLE.listview TH A:visited {
+	
+}
+TABLE.listview TH A:hover {
+	
+}
+A.listViewTdLinkS1:link {
+	FONT-SIZE: 14px
+}
+A.listViewTdLinkS1:visited {
+	FONT-SIZE: 14px
+}
+.evenListRowS1 {
+	FONT-SIZE: 14px; PADDING-BOTTOM: 6px; PADDING-TOP: 4px
+}
+.oddListRowS1 {
+	FONT-SIZE: 14px; PADDING-BOTTOM: 6px; PADDING-TOP: 4px
+}
+A.listViewPaginationLinkS1:link {
+	FONT-SIZE: 14px
+}
+A.listViewPaginationLinkS1:visited {
+	FONT-SIZE: 14px
+}
+A.listViewCheckLink:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+A.listViewCheckLink:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; TEXT-DECORATION: none
+}
+A.listViewCheckLink:hover {
+	FONT-SIZE: 13px
+}
+A.utilsLink:link {
+	FONT-SIZE: 13px
+}
+A.utilsLink:visited {
+	FONT-SIZE: 13px
+}
+A.chartToolsLink:link {
+	FONT-SIZE: 13px
+}
+A.chartToolsLink:visited {
+	FONT-SIZE: 13px
+}
+.tabForm {
+	FONT-SIZE: 14px
+}
+.subpanelTabForm {
+	FONT-SIZE: 14px
+}
+.subpanelTabForm H3 {
+	FONT-SIZE: 13px
+}
+H5.dataLabel {
+	FONT-SIZE: 14px
+}
+.dataLabel {
+	FONT-SIZE: 14px
+}
+.dataField {
+	FONT-SIZE: 14px
+}
+A.tabFormAdvLink:link {
+	FONT-SIZE: 13px
+}
+A.tabFormAdvLink:visited {
+	FONT-SIZE: 13px
+}
+.tabDetailView .listViewPaginationTdS1 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 8px; PADDING-BOTTOM: 5px; PADDING-TOP: 4px
+}
+.tabDetailViewDL {
+	FONT-SIZE: 14px
+}
+H4.tabDetailViewDL {
+	FONT-SIZE: 14px
+}
+.tabDetailViewDF {
+	FONT-SIZE: 14px
+}
+.tabDetailViewDL2 {
+	FONT-SIZE: 14px
+}
+.tabDetailViewDF2 {
+	FONT-SIZE: 13px
+}
+A.tabDetailViewDL2Link:link {
+	FONT-SIZE: 13px
+}
+A.tabDetailViewDL2Link:visited {
+	FONT-SIZE: 13px
+}
+.monthBox {
+	FONT-SIZE: 14px
+}
+A.monthCalBodyWeekLink:link {
+	FONT-SIZE: 13px
+}
+A.monthCalBodyWeekLink:visited {
+	FONT-SIZE: 13px
+}
+A.monthCalBodyWeekDayDateLink:link {
+	FONT-SIZE: 14px
+}
+A.monthCalBodyWeekDayDateLink:visited {
+	FONT-SIZE: 14px
+}
+A.monthCalBodyWeekDayDateLink:hover {
+	
+}
+A.monthCalBodyWeekEndDateLink:hover {
+	
+}
+A.monthCalBodyDayItemLink:link {
+	FONT-SIZE: 12px
+}
+A.monthCalBodyDayItemLink:visited {
+	FONT-SIZE: 12px
+}
+A.monthCalBodyDayItemLink:hover {
+	FONT-SIZE: 12px
+}
+.dailyCalBodyItems {
+	FONT-SIZE: 14px
+}
+A.yearCalBodyMonthLink:link {
+	FONT-SIZE: 14px
+}
+A.yearCalBodyMonthLink:visited {
+	FONT-SIZE: 14px
+}
+.calSharedUser {
+	FONT-SIZE: 13px
+}
+.rssItemDate {
+	FONT-SIZE: 13px
+}
+.dateFormat {
+	FONT-SIZE: 13px
+}
+.chartFootnote {
+	FONT-SIZE: 13px
+}
+.tm {
+	FONT-SIZE: 10px
+}
+.schedulerDiv {
+	FONT-SIZE: 14px
+}
+.schedulerTopRow {
+	HEIGHT: 30px
+}
+.schedulerTopDeleteHeaderCell {
+	HEIGHT: 30px
+}
+.schedulerDeleteHeaderCell {
+	HEIGHT: 30px
+}
+.schedulerTopHeaderCell {
+	HEIGHT: 30px
+}
+.schedulerAttendeeHeaderCell {
+	HEIGHT: 30px
+}
+.schedulerAttendeeHeaderCell {
+	HEIGHT: 30px
+}
+.schedulerAttendeeCell {
+	WIDTH: 160px
+}
+.myArea {
+	FONT: 14px Arial, Verdana, Helvetica, sans-serif
+}
+UL.myArea {
+	FONT: 14px Arial, Verdana, Helvetica, sans-serif; HEIGHT: 20px
+}
+UL.tablist {
+	FONT: 14px Arial, Verdana, Helvetica, sans-serif
+}
+UL.subpanelTablist {
+	FONT: 14px Arial, Verdana, Helvetica, sans-serif
+}
+.sqsMatchedSmartInputItem {
+	FONT-SIZE: 13px
+}
+.olCapFontClass A {
+	FONT-SIZE: 11px
+}

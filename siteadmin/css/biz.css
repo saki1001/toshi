@@ -1,0 +1,183 @@
+body {
+	margin: 0px;
+}
+.topbg {
+	background-image: url(../images/login/top-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+.menubg {
+	background-image: url(../images/login/menu-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+.midbg {
+	background-image: url(../images/login/mid-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+.greybold {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #444444;
+	text-decoration: none;
+}
+
+.greybdr {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.greyrightbdr {
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	font-family: arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #444444;
+	text-decoration: none;
+}
+.menubg2 {
+
+	background-image: url(../images/login/innmenubg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+.button {
+	font-family: arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #444444;
+	text-decoration: none;
+	background-image: url(../images/login/buttonclass.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #999999;
+}
+.bottombdr {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+
+a.linklef {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #999999;
+	text-decoration: none;
+}
+a.linklef:hover {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #CC0000;
+	text-decoration: underline;
+	background-image: url(../images/login/leftbg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+.menuover {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #9A0034;
+	text-decoration: underline;
+	background-color:#F6F6F6;
+	height: 29px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #cccccc;
+	border-right-color: #cccccc;
+	border-bottom-color: #cccccc;
+	border-left-color: #cccccc;
+	cursor: pointer;
+}
+.menuon {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #444444;
+	text-decoration: none;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	height: 29px;
+}
+.menuon_sel {
+	font-family: tahoma;
+	font-size: 11px;
+	
+	color: #000000;
+	
+	background-image: url(../images/login/leftbg_sel.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 29px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #cccccc;
+	border-right-color: #cccccc;
+	border-bottom-color: #cccccc;
+	border-left-color: #cccccc;
+	cursor:pointer;
+}

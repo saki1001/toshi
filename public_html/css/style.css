@@ -1,0 +1,121 @@
+header:after,
+header nav:after,
+header nav ul:after,
+#content:after,
+footer:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+body {
+    background: url('../images/leather-bg.jpg') #111111 top left;
+    color: #FCFCFC;
+    font-family: 'Arial', sans-serif;
+    font-size: 62.5%;
+    line-height: 1;
+}
+
+a,
+a:visited {
+    color:#999999;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #FFFBE3;
+}
+
+.button,
+a.button {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 1.8em;
+    padding: 7px 9px;
+}
+
+.button.red,
+a.button.red {
+    color: #F2F2F2;
+    background-color: #D6767D;
+}
+
+.button.red:hover,
+.button.red:hover {
+    background-color: #BB232A;
+}
+
+.button.yellow,
+a.button.yellow {
+    color: #222222;
+    background-color: #FFF4A5;
+}
+
+.button.yellow:hover,
+a.button.yellow:hover {
+    background-color: #FFFBE3;
+}
+
+header,
+#content,
+footer {
+    width:950px;
+    margin:0 auto;
+}
+
+header {
+    padding: 30px 0 15px 0;
+}
+
+header .branding {
+    width:200px;
+    float: left;
+}
+
+header nav {
+    text-align:right;
+    float: right;
+}
+
+header nav ul li {
+    margin-left: 20px;
+    float: left;
+}
+
+header nav#top_nav {
+    margin: 10px 0 20px;
+}
+
+header nav#top_nav a {
+    font-size: 1.1em;
+}
+
+header nav#menu {
+    clear: right;
+}
+
+header nav#menu li.active a,
+header nav#menu a:hover {
+    background: url(../images/menu-underline.png) no-repeat center bottom;
+/*    color: #FFFBE3;*/
+    padding-bottom: 7px;
+}
+
+
+header nav#menu a {
+    font-family: 'Bangers', sans-serif;
+    font-size: 2.5em;
+    font-weight: normal;
+    color: #FFF4A5;
+}
+
+#content {
+    margin-bottom:30px;
+}
+
+

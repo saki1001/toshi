@@ -1,0 +1,101 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.noborder{
+	border:0px;
+}
+.BotLine{
+	border-bottom:1 solid #000000;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.BotLine{
+	border-bottom:1 solid #CCCCCC;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.TopLine{
+	border-bottom:0 solid #000000;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.TopLinks{
+	color:white;
+}
+a.TopLinks:hover{
+	color:yellow;
+}
+input
+{
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: lighter;
+	
+	text-decoration: none;
+}
+.SiteHeads {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #9A0034;
+	text-decoration: none;
+}
+.SubHead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	color: #666666;
+	text-decoration: none;
+}
+.f-c {
+	
+}
+.RedFonts {
+	color: #FF0000;
+}
+
+.SmallLinks {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+	border:1 solid #000000;
+}
+a.SmallLinks:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: underline;
+	border:1 solid #000000;
+}
+.blackbrds
+{
+border:1pt solid #000000;
+}

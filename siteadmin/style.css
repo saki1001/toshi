@@ -1,0 +1,43 @@
+.body {
+	COLOR: #333333;
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	background-color: #FFFFFF;
+}
+
+A.small:active { COLOR: #cc0000;TEXT-DECORATION: underline; ; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+A.small:link { COLOR: #990000; TEXT-DECORATION: underline; ; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+A.small:visited { COLOR: #990000; TEXT-DECORATION: underline; ; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+A.small:hover { COLOR: #cc0000; TEXT-DECORATION: underline; ; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+
+a.buts { font-family: Verdana; font-size: x-small; font-weight: bold; color: #000000;TEXT-DECORATION: none; }
+.footer { COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 9px; }
+a.buts:hover { font-family: Verdana; font-size: x-small; font-weight: bold; color: #800000;TEXT-DECORATION: none;}
+.footer A:active { COLOR: #cc0000; TEXT-DECORATION: none; }
+.footer A:link { COLOR: #333333; TEXT-DECORATION: none; }
+.footer A:visited { COLOR: #333333; TEXT-DECORATION: none; }
+.footer A:hover { COLOR: #cc0000; TEXT-DECORATION: underline; }
+.sidebar A:active { COLOR: #ffff00; FONT-SIZE: 9px; TEXT-DECORATION: underline; }
+.sidebar A:link { COLOR: #ffffff; FONT-SIZE: 9px; TEXT-DECORATION: underline; }
+.sidebar A:visited { COLOR: #ffffff; FONT-SIZE: 9px; TEXT-DECORATION: underline; }
+.sidebar A:hover { COLOR: #ffff00; FONT-SIZE: 9px; TEXT-DECORATION: underline; }
+.pageheader { COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 24px; }
+.buts_bg { background-color: #EEEEEE;border-color:black; border-style: solid; border-width: 1pt; border-top: 0; border-left: 0; }
+INPUT { font-family: Verdana; font-size: 9px; color: #000000; background-color: #F7F7F7; ; border: 1pt #A7A7A7 solid}
+.noborder { border: 0; background-color: transparent; }
+.tab_border { ;
+	border: 1pt #CCCCCC solid;
+	background-color: #eeeeee;
+}.red {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #FF0000}
+.header {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; color: #333333; background-color: #FFFFFF; border: solid; border-color: #000000 #FFFFFF #521C73; border-width: 1px 1pt 2pt}
+SELECT { font-family: Verdana; font-size: 9px; color: #000000; background-color: #F7F7F7; ; border: 1pt #A7A7A7 solid }
+a { font-family: Verdana; font-size: 10px; color: #000000; ; border: 1pt #A7A7A7 solid }
+.header1 { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; color: #333333; background-color: #FFFFFF; border: solid; border-color: #000000 #FFFFFF; border-width: 1px 1pt 1pt}
+.head {  background-image: url(images/admin_07.jpg); background-repeat: no-repeat}
+.darkbg {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; background-color: #521C73}
+.difftext {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #6F3689}.border {  border: #663366; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.blackborder {  border: #000000; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+inpurt {
+	background-color: #000033;
+}
+
