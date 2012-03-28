@@ -1,14 +1,12 @@
 <?php
-	$DBSERVER = "localhost"; //server host name here
+	$DBSERVER = "mysql.sakisato.com"; //server host name here
 	$DATABASENAME = "rpaxis16_toshi";//database name here
-	$USERNAME = "root";//database user name here
-	$PASSWORD = "root";	// //database password here 
+	$USERNAME = "ssato_client";//database user name here
+	$PASSWORD = "freelanceweb1001";	// //database password here 
 	$SITE_NAME="Toshi's Living Room";
 	$SITE_TITLE="Toshi's Living Room";
-	// $SITE_URL = "http://www.rpaxis.net/toshi";
-	$SITE_URL = "toshi_playhouse.local";
-	// $SECURE_URL = "http://www.rpaxis.net/toshi";
-	$SECURE_URL = "toshi_playhouse.local/";
+	$SITE_URL = "http://toshi.sakisato.com";
+	$SECURE_URL = "http://toshi.sakisato.com";
 	// $TOP_COMPARE_URL = "toshi/";
 	$TOP_COMPARE_URL = "";
 	$ADMIN_MAIL="info@toshisplayhouse.org";
