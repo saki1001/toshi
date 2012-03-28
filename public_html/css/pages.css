@@ -2,8 +2,9 @@
 #content #slideshow #slide_nav:after
 #content #slideshow .slide:after,
 #content #slideshow .slide .slide_title:after,
-#content #events .event:after,
-#content #events .event a:after,
+#content #event_listing:after,
+#content #event_listing .event:after,
+#content #event_listing .event a:after,
 #content #restaurant .wrapper:after {
     content: ".";
     display: block;
@@ -11,6 +12,21 @@
     visibility: hidden;
     line-height: 0;
     height: 0;
+}
+
+/*GLOBAL STYLES*/
+#content .page_title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 3.2em;
+    font-weight: normal;
+    color: #FFFBE3;
+    margin-bottom: 10px;
+}
+
+#content .info_title {
+    font-size: 1.5em;
+    color: #555555;
+    margin: 14px 0 13px;
 }
 
 /*HOMEPAGE*/
@@ -69,63 +85,82 @@
     border: solid 1px #222222;
 }
 
+/*FOR HOME AND EVENTS*/
 /*events---------------*/
-#content #events {
+
+#content #event_listing {
+    float: left;
+}
+
+#home #event_listing {
     width: 580px;
     margin-right: 20px;
     float: left;
 }
 
-#content #events h3 {
+#gallery #event_listing,
+#events #event_listing {
+    width: 650px;
+    margin-left: 50px;
+    float: left;
+}
+
+#home #event_listing h3 {
     font-size: 1.3em;
     color: #555555;
-    margin-bottom: 8px;
+    margin: 0 8px 0 0;
 }
 
-#content #events .event {
+#content #event_listing .event {
     margin-bottom: 15px;
+    display: block;
 }
 
-#content #events .event a {
-    width: 100%;
+#content #event_listing .event a {
+    width:100%;
+    height: 84px;
     display: block;
     font-weight: normal;
 }
 
-#content #events .event a:hover {
+#content #event_listing .event a:hover {
     background-color: #333333;
 }
 
-/*#content #events .event a:hover > img {
-    border: solid 2px #CCCCCC;
-}*/
-
-#content #events .event img,
-#content #events .event .info {
+#content #event_listing .event img,
+#content #event_listing .event .info {
     float: left;
 }
 
-#content #events .event img {
+#content #event_listing .event img {
     border: solid 2px #FFFBE3;
 }
 
-#content #events .event .info {
+#content #event_listing .event .info {
     margin-left: 15px;
     position: relative;
 }
 
-#content #events .event .info h2 {
+#content #event_listing .event .info h2 {
     font-family: 'Bangers', sans-serif;
     font-size: 2.4em;
     font-weight: normal;
     margin: 7px 0 5px;
     color: #FFFBE3;
-    width: 441px;
     height: 22px;
     overflow: hidden;
 }
 
-#content #events .event .info .price {
+#home #event_listing .event .info h2 {
+    width: 441px;
+}
+
+#gallery #event_listing .event .info h2,
+#events #event_listing .event .info h2 {
+    width: 511px;
+}
+
+#content #event_listing .event .info .price {
     position: absolute;
     top: 0;
     right: 0;
@@ -137,22 +172,38 @@
     padding: 5px 7px;
 }
 
-#content #events .event .info .date {
+#content #event_listing .event .info .date {
     font-size: 1.2em;
     color: #555555;
     margin-bottom: 5px;
-    width: 441px;
     height: 12px;
     overflow: hidden;
 }
 
-#content #events .event .info .summary {
+#home #event_listing .event .info .date {
+    width: 441px;
+}
+
+#gallery #event_listing .event .info .date,
+#events #event_listing .event .info .date {
+    width: 511px;
+}
+
+#content #event_listing .event .info .summary {
     font-size: 1.2em;
     color: #CCCCCC;
     margin-bottom: 8px;
-    width: 441px;
     height: 25px;
     overflow: hidden;
+}
+
+#home #event_listing .event .info .summary {
+    width: 441px;
+}
+
+#gallery #event_listing .event .info .summary,
+#events #event_listing .event .info .summary {
+    width: 511px;
 }
 
 /*restaurant---------------*/
@@ -182,8 +233,37 @@
     margin-bottom: 25px;
 }
 
-#content #restaurant .wrapper .button {
-    display: block;
-    margin-left: 10px;
-    float: right;
+/*float bug for buttons so added wrapper*/
+#content #restaurant .wrapper .button_wrapper {
+    text-align: right;
 }
+
+#content #restaurant .wrapper .button {
+    display: inline;
+    margin-left: 10px;
+}
+
+/*EVENTS*/
+/*calendar-------------------*/
+
+#gallery #calendar_wrapper,
+#events #calendar_wrapper {
+    float: left;
+}
+
+#gallery #calendar_wrapper #calendar,
+#events #calendar_wrapper #calendar {
+    width: 250px;
+    height: 300px;
+    background-color: #CCCCCC;
+}
+
+#events #event_listing {
+    float: left;
+}
+
+
+
+
+
+
