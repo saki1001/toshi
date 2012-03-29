@@ -164,7 +164,7 @@ function valid()
 						<tr>
                           <td width="12%" height="25" align="right" valign="top"><strong> Image:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top"><input  type="file" name="image" id="image" class="solidinput">&nbsp;<? if($_REQUEST['id']==""){?>&nbsp;&nbsp;<a href="#" onClick="document.getElementById('image').value='';return false;">Delete Image</a><? } ?><br>
-						  <span class="a">Ideal Size: Home Page - Top Slider Banner = Width: 720px;  Height:465px;</span><br>
+						  <span class="a">Ideal Size: Home Page - Top Slider Banner = Width: 928px;  Height:428px;</span><br>
 						  <span class="a">Ideal Size: Home Page - Middle Banner = Width: 290px;  Height:205px;</span>
 						  </td>
                         </tr>
