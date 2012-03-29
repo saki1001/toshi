@@ -2,13 +2,18 @@ header:after,
 header nav:after,
 header nav ul:after,
 #content:after,
-footer:after {
+footer:after,
+footer .footer_wrapper:after {
 	content: ".";
 	display: block;
 	clear: both;
 	visibility: hidden;
 	line-height: 0;
 	height: 0;
+}
+
+html {
+    margin: 0;
 }
 
 body {
@@ -63,7 +68,7 @@ a.button.yellow:hover {
 
 header,
 #content,
-footer {
+footer .footer_wrapper {
     width:950px;
     margin:0 auto;
 }
@@ -115,7 +120,29 @@ header nav#menu a {
 }
 
 #content {
-    margin-bottom:30px;
+    padding-bottom: 30px;
 }
 
+footer {
+    width: 100%;
+    background: #111111;
+}
 
+footer .footer_wrapper {
+    padding: 10px 0;
+}
+
+footer ul {
+    float: right;
+}
+
+footer ul li {
+    font-size: 1.3em;
+    color: #666666;
+    margin-left: 15px;
+    display: inline;
+}
+
+footer .contact_info {
+    margin-top: 5px;
+}

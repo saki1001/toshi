@@ -2,10 +2,12 @@
 #content #slideshow #slide_nav:after
 #content #slideshow .slide:after,
 #content #slideshow .slide .slide_title:after,
-#content #event_listing:after,
-#content #event_listing .event:after,
-#content #event_listing .event a:after,
-#content #restaurant .wrapper:after {
+#content .article_list:after,
+#content .article_list article:after,
+#content .article_list article a:after,
+#content #restaurant .wrapper:after,
+#content #register_form form:after,
+#content #register_form form .field:after {
     content: ".";
     display: block;
     clear: both;
@@ -21,13 +23,200 @@
     font-weight: normal;
     color: #FFFBE3;
     margin-bottom: 10px;
+    width:250px;
+    float:left;
 }
 
 #content .info_title {
     font-size: 1.5em;
     color: #555555;
     margin: 14px 0 13px;
+    width:680px;
+    margin-left: 20px;
+    float:left;
 }
+
+/*full-width, no info title*/
+#register .page_title {
+    width: 100%;
+}
+
+/*ARTICLE LISTS*/
+#content .article_list {
+    width: 700px;
+    float: left;
+}
+
+#home .article_list {
+    width: 580px;
+    margin: 0 20px 0 0;
+    float: left;
+}
+
+#home .article_list h3 {
+    font-size: 1.3em;
+    color: #555555;
+    margin: 0 0 8px 0;
+}
+
+#content .article_list article {
+    margin: 0 0 20px 20px;
+    display: block;
+    float: left;
+}
+
+#content .article_list article.full_width.short {
+    margin: 0 0 20px 0;
+}
+
+#content .article_list article a {
+    display: block;
+    font-weight: normal;
+}
+
+#content .article_list article a:hover {
+    background-color: #333333;
+}
+
+#content .article_list article img {
+    border: solid 2px #FFFBE3;
+}
+
+#content .article_list article .info h2,
+#content .article_list article .info .date,
+#content .article_list article .info .summary {
+    overflow: hidden;
+}
+
+#content .article_list article .info h2 {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    color: #FFFBE3;
+}
+
+#content .article_list article .info .date {
+    color: #555555;
+}
+
+#content .article_list article .info .summary {
+    color: #CCCCCC;
+}
+
+
+/* FULL WIDTH ARTICLE*/
+#content .article_list article.full_width {
+
+}
+
+#content .article_list article.full_width a {
+    height: 84px;
+}
+
+#content .article_list article.full_width img,
+#content .article_list article.full_width .info {
+    float: left;
+}
+
+#content .article_list article.full_width .info {
+    margin-left: 15px;
+    position: relative;
+}
+
+#content .article_list article.full_width .info h2,
+#content .article_list article.full_width .info .date,
+#content .article_list article.full_width .info .summary {
+    width: 541px;
+}
+
+#content .article_list article.full_width.short .info h2,
+#content .article_list article.full_width.short .info .date,
+#content .article_list article.full_width.short .info .summary {
+    width: 441px;
+}
+
+#content .article_list article.full_width .info h2 {
+    font-size: 2.4em;
+    margin: 7px 0 5px;
+    height: 22px;
+}
+
+#content .article_list article.full_width .info .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2em;
+    color: #222222;
+    background-color: #FFF4A5;
+    padding: 5px 7px;
+}
+
+#content .article_list article.full_width .info .date {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    height: 12px;
+}
+
+#content .article_list article.full_width .info .summary {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    height: 25px;
+}
+
+/* TWO COLUMN ARTICLE*/
+#content .article_list article.two_column {
+    
+}
+
+#content .article_list article.two_column a {
+    height: 84px;
+}
+
+#content .article_list article.two_column img,
+#content .article_list article.two_column .info {
+    float: left;
+}
+
+#content .article_list article.two_column .info {
+    margin-left: 15px;
+    position: relative;
+}
+
+#content .article_list article.two_column .info h2 {
+    font-size: 2.4em;
+    margin: 7px 0 5px;
+    width: 191px;
+    height: 22px;
+}
+
+#content .article_list article.two_column .info .date {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    width: 191px;
+    height: 12px;
+}
+
+#content .article_list article.two_column .info .summary {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    width: 191px;
+    height: 25px;
+}
+
+
+/*CALENDAR*/
+/*in gallery and events*/
+#calendar_wrapper {
+    float: left;
+}
+
+#calendar_wrapper #calendar {
+    width: 250px;
+    height: 300px;
+    background-color: #CCCCCC;
+}
+
 
 /*HOMEPAGE*/
 /*slideshow---------------*/
@@ -85,127 +274,6 @@
     border: solid 1px #222222;
 }
 
-/*FOR HOME AND EVENTS*/
-/*events---------------*/
-
-#content #event_listing {
-    float: left;
-}
-
-#home #event_listing {
-    width: 580px;
-    margin-right: 20px;
-    float: left;
-}
-
-#gallery #event_listing,
-#events #event_listing {
-    width: 650px;
-    margin-left: 50px;
-    float: left;
-}
-
-#home #event_listing h3 {
-    font-size: 1.3em;
-    color: #555555;
-    margin: 0 8px 0 0;
-}
-
-#content #event_listing .event {
-    margin-bottom: 15px;
-    display: block;
-}
-
-#content #event_listing .event a {
-    width:100%;
-    height: 84px;
-    display: block;
-    font-weight: normal;
-}
-
-#content #event_listing .event a:hover {
-    background-color: #333333;
-}
-
-#content #event_listing .event img,
-#content #event_listing .event .info {
-    float: left;
-}
-
-#content #event_listing .event img {
-    border: solid 2px #FFFBE3;
-}
-
-#content #event_listing .event .info {
-    margin-left: 15px;
-    position: relative;
-}
-
-#content #event_listing .event .info h2 {
-    font-family: 'Bangers', sans-serif;
-    font-size: 2.4em;
-    font-weight: normal;
-    margin: 7px 0 5px;
-    color: #FFFBE3;
-    height: 22px;
-    overflow: hidden;
-}
-
-#home #event_listing .event .info h2 {
-    width: 441px;
-}
-
-#gallery #event_listing .event .info h2,
-#events #event_listing .event .info h2 {
-    width: 511px;
-}
-
-#content #event_listing .event .info .price {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-family: 'Bangers', sans-serif;
-    font-weight: normal;
-    font-size: 2em;
-    color: #222222;
-    background-color: #FFF4A5;
-    padding: 5px 7px;
-}
-
-#content #event_listing .event .info .date {
-    font-size: 1.2em;
-    color: #555555;
-    margin-bottom: 5px;
-    height: 12px;
-    overflow: hidden;
-}
-
-#home #event_listing .event .info .date {
-    width: 441px;
-}
-
-#gallery #event_listing .event .info .date,
-#events #event_listing .event .info .date {
-    width: 511px;
-}
-
-#content #event_listing .event .info .summary {
-    font-size: 1.2em;
-    color: #CCCCCC;
-    margin-bottom: 8px;
-    height: 25px;
-    overflow: hidden;
-}
-
-#home #event_listing .event .info .summary {
-    width: 441px;
-}
-
-#gallery #event_listing .event .info .summary,
-#events #event_listing .event .info .summary {
-    width: 511px;
-}
-
 /*restaurant---------------*/
 #content #restaurant {
     width: 330px;
@@ -243,27 +311,151 @@
     margin-left: 10px;
 }
 
-/*EVENTS*/
-/*calendar-------------------*/
 
-#gallery #calendar_wrapper,
-#events #calendar_wrapper {
-    float: left;
-}
-
-#gallery #calendar_wrapper #calendar,
-#events #calendar_wrapper #calendar {
+/*NEWS*/
+#news #news_nav {
     width: 250px;
-    height: 300px;
-    background-color: #CCCCCC;
-}
-
-#events #event_listing {
     float: left;
 }
 
+#news #news_nav ul li {
+/*    margin-bottom: 5px;*/
+    text-align: right;
+}
+
+#news #news_nav ul li a {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2.8em;
+    height: 38px;
+    width: 200px;
+    padding: 12px 50px 0 0;
+    display:block;
+}
+
+#news #news_nav ul li a.active:hover,
+#news #news_nav ul li a.active {
+    color: #FFFBE3;
+    background: url('../images/news-nav-highlight.png') no-repeat 0 0;
+    cursor: default;
+}
+
+#news #news_nav ul li a:hover {
+    color: #FFFBE3;
+    background: url('../images/news-nav-hover.png') no-repeat 0 0;
+}
 
 
+/*AUDITIONS*/
 
+/*restaurant---------------*/
+#content #register_form {
+    width: 600px;
+    margin-right: 20px;
+    float: left;
+}
 
+#content #register_form h3 {
+    font-size: 1.5em;
+    font-weight:normal;
+    padding: 20px 0 10px;
+    float: left;
+}
 
+#content #register_form .field {
+    padding: 0 20px 20px 0;
+    float: left;
+}
+
+#content #register_form .field,
+#content #register_form .field input[type='text'],
+#content #register_form .field input[type='password'] {
+    width: 280px;
+}
+
+#content #register_form h3,
+#content #register_form .field.full {
+    width: 580px;
+}
+
+#content #register_form .field.half,
+#content #register_form .field.half input[type='text'],
+#content #register_form .field.half input[type='password'] {
+    width: 180px;
+}
+
+#content #register_form label {
+    font-size: 1.2em;
+    color: #888888;
+    margin: 0 15px 8px 0;
+    display: block;
+}
+
+#content #register_form label.gender {
+    font-size: 1.3em;
+    color: #F2F2F2;
+    margin: 0 10px 0 0;
+    float: left;
+}
+
+#content #register_form label.gender.female {
+    margin: 0 10px 0 20px;
+}
+
+#content #register_form select {
+    width: auto;
+}
+
+#content #register_form .field select,
+#content #register_form .field input[type='text'],
+#content #register_form .field input[type='password'] {
+    color: #F2F2F2;
+    font-size: 1.2em;
+    background-color: #444444;
+    border: 1px solid #666666;
+    display: block;
+}
+
+#content #register_form input[type='radio'] {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#content #register_form select.date {
+    margin: 0 3px 0 0;
+    padding: 0;
+    float: left;
+}
+
+#content #register_form input[type='text'],
+#content #register_form input[type='password'] {
+    padding: 3px 0 3px 3px;
+}
+
+#content #sign_in_box {
+    width: 310px;
+    border: solid 10px #FFFBE3;
+    float: left;
+}
+
+#content #sign_in_box .wrapper {
+    color: #222222;
+    padding: 18px;
+    background: #FCFCFC;
+    border: 1px solid #222222;
+    overflow: hidden;
+}
+
+#content #sign_in_box .wrapper h3 {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2.8em;
+    margin-top: 3px;
+    float: left;
+}
+
+#content #sign_in_box .wrapper .button {
+    float: left;
+    margin-left: 15px;
+}
