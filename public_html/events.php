@@ -39,7 +39,7 @@
             // POPULATE EVENTS
             while($eventRow = mysql_fetch_array($eventResult)){
                 $eventId = $eventRow['id'];
-                include($ROOT.$TEMPLATES."article_event.php");
+                include("templates/article_event.php");
                 $i++;
             }
             ?>
