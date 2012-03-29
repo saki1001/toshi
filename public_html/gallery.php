@@ -27,36 +27,22 @@
             </div>
         </section>
         <section class="article_list">
-            <article class="two_column">
-                <a href="#">
-                    <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
-                    <div class="info">
-                        <h2>Event Title</h2>
-                        <p class="date">MM/DD/YYYY 00:00</p>
-                        <p class="summary">Event Summary. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    </div>
-                </a>
-            </article>
-            <article class="two_column">
-                <a href="#">
-                    <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
-                    <div class="info">
-                        <h2>Event Title</h2>
-                        <p class="date">MM/DD/YYYY 00:00</p>
-                        <p class="summary">Event Summary. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    </div>
-                </a>
-            </article>
-            <article class="two_column">
-                <a href="#">
-                    <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
-                    <div class="info">
-                        <h2>Event Title</h2>
-                        <p class="date">MM/DD/YYYY 00:00</p>
-                        <p class="summary">Event Summary. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    </div>
-                </a>
-            </article>
+            <?
+            // EVENT TYPE and CSS CLASSES
+            $eventType = 'PAST';
+            $articleType = "two_column";
+            
+            // GETTING EVENTS (PAST 30)
+            $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate < CURDATE() ORDER BY startdate ASC LIMIT 30";
+            $eventResult = mysql_query($eventQuery) or die(mysql_error());
+            
+            // POPULATE EVENTS
+            while($eventRow = mysql_fetch_array($eventResult)){
+                $eventId = $eventRow['id'];
+                include($ROOT.$TEMPLATES."article_event.php");
+            }
+            
+            ?>
         </section>
     </div>
 <!-- FOOTER -->

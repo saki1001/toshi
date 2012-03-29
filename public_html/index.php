@@ -34,54 +34,39 @@
             <div id="slide_nav">
                 <!-- Links added by cycle plugin -->
             </div>
-            <div class="slide first">
-                <h2 class="slide_title">The Stage</h2>
-                <img src="images/superbowl-928x428.jpg" alt="The Stage">
-            </div>
-            <div class="slide">
-                <h2 class="slide_title">The Hotel</h2>
-                <img src="images/hotel-928x428.jpg" alt="The Hotel">
-            </div>
-            <div class="slide">
-                <h2 class="slide_title">The Bar</h2>
-                <img src="images/bar-928x428.jpg" alt="The Bar">
-            </div>
+            <?
+            // GETTING BANNERS
+            $bannerQuery = "SELECT * FROM banners";
+            $bannerResult = mysql_query($bannerQuery) or die(mysql_error());
+            
+            // POPULATE BANNERS
+            while($bannerRow = mysql_fetch_array($bannerResult)){
+                $bannerTitle = $bannerRow['title'];
+                $bannerImageUrl = $SITE_URL . $BANNERS . $bannerRow['image'];
+                echo "<div class='slide'>";
+                echo "<h2 class='slide_title'>" . $bannerTitle . "</h2>";
+                echo "<img src='" . $bannerImageUrl . "' alt='" . $bannerTitle . "' />";
+                echo "</div>";
+            }
+            ?>
         </section>
         <section class="article_list">
             <h3>Upcoming Events</h3>
-            <article class="full_width short">
-                <a href="#">
-                    <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
-                    <div class="info">
-                        <h2>Event Title</h2>
-                        <span class="price" href="#">Free</span>
-                        <p class="date">MM/DD/YYYY 00:00</p>
-                        <p class="summary">Event Summary. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    </div>
-                </a>
-            </article>
-            <article class="full_width short">
-                <a href="#">
-                    <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
-                    <div class="info">
-                        <h2>Event Title</h2>
-                        <span class="price" href="#">Free</span>
-                        <p class="date">MM/DD/YYYY 00:00</p>
-                        <p class="summary">Event Summary. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    </div>
-                </a>
-            </article>
-            <article class="full_width short">
-                <a href="#">
-                    <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
-                    <div class="info">
-                        <h2>Event Title</h2>
-                        <span class="price" href="#">Free</span>
-                        <p class="date">MM/DD/YYYY 00:00</p>
-                        <p class="summary">Event Summary. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    </div>
-                </a>
-            </article>
+            <?
+            // EVENT TYPE and CSS CLASSES
+            $eventType = 'CURRENT';
+            $articleType = "full_width short";
+            
+            // GETTING EVENTS (NEXT 3)
+            $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate > CURDATE() ORDER BY startdate ASC LIMIT 3";
+            $eventResult = mysql_query($eventQuery) or die(mysql_error());
+            
+            // POPULATE EVENTS
+            while($eventRow = mysql_fetch_array($eventResult)){
+                $eventId = $eventRow['id'];
+                include($ROOT.$TEMPLATES."article_event.php");
+            }
+            ?>
         </section>
         <section id="restaurant">
             <div class="wrapper">
