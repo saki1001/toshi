@@ -47,9 +47,9 @@
                 <img src="images/bar-928x428.jpg" alt="The Bar">
             </div>
         </section>
-        <section id="event_listing">
+        <section class="article_list">
             <h3>Upcoming Events</h3>
-            <article class="event">
+            <article class="full_width short">
                 <a href="#">
                     <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
                     <div class="info">
@@ -60,7 +60,7 @@
                     </div>
                 </a>
             </article>
-            <article class="event">
+            <article class="full_width short">
                 <a href="#">
                     <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
                     <div class="info">
@@ -71,7 +71,7 @@
                     </div>
                 </a>
             </article>
-            <article class="event">
+            <article class="full_width short">
                 <a href="#">
                     <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
                     <div class="info">

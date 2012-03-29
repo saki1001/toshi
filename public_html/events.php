@@ -20,14 +20,14 @@
 
 <!-- CONTENT -->
     <div id="content">
+        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+        <h3 class="info_title">Upcoming Events</h3>
         <section id="calendar_wrapper">
-            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
             <div id="calendar">
             </div>
         </section>
-        <section id="event_listing">
-            <h3 class="info_title">Upcoming Events</h3>
-            <article class="event">
+        <section class="article_list">
+            <article class="full_width">
                 <a href="#">
                     <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
                     <div class="info">
@@ -38,7 +38,7 @@
                     </div>
                 </a>
             </article>
-            <article class="event">
+            <article class="full_width">
                 <a href="#">
                     <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
                     <div class="info">
@@ -49,7 +49,7 @@
                     </div>
                 </a>
             </article>
-            <article class="event">
+            <article class="full_width">
                 <a href="#">
                     <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
                     <div class="info">
@@ -61,6 +61,7 @@
                 </a>
             </article>
         </section>
+        <div class="push"></div>
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>
