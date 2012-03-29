@@ -232,7 +232,7 @@ function getYear($id="",$val1="5",$type="styear",$start="1970")
 function getMonth($id="")
 {	
 		
-	$mon=array("","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+	$mon=array("","01","02","03","04","05","06","07","08","09","10","11","12");
 	
 	$tMonth=$mon;
 	$actMonth=$tMonth;
