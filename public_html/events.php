@@ -33,18 +33,16 @@
             $articleType = "full_width";
             
             // GETTING EVENTS (NEXT 30)
-            $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate > CURDATE() ORDER BY startdate ASC LIMIT 30";
+            $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate >= CURDATE() ORDER BY startdate ASC LIMIT 30";
             $eventResult = mysql_query($eventQuery) or die(mysql_error());
             
             // POPULATE EVENTS
             while($eventRow = mysql_fetch_array($eventResult)){
                 $eventId = $eventRow['id'];
                 include("templates/article_event.php");
-                $i++;
             }
             ?>
         </section>
-        <div class="push"></div>
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>
