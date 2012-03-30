@@ -25,7 +25,7 @@
                     <? if($ACTIVEPAGE=='register'){ ?>class="active"<? }?>><a href="register.php">Auditions</a>
                 <? } else{ if($ACTIVEPAGE=='myaccount'){?>class="active"<? }?>><a href="myaccount.php">Account</a><? }?>
             </li>
-            <li <? if($ACTIVEPAGE=='contact'){?>class="active"<? }?>><a href="contact.php">Contact</a></li>
+            <li <? if($ACTIVEPAGE=='about'){?>class="active"<? }?>><a href="about.php">About</a></li>
         </ul>
     </nav>
 </header>
