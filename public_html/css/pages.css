@@ -6,6 +6,8 @@
 #content .article_list article:after,
 #content .article_list article a:after,
 #content #restaurant .wrapper:after,
+#content #register .instructions h2:after,
+#content #register .instructions p:after,
 #content #register_form form .field:after {
     content: ".";
     display: block;
@@ -15,7 +17,8 @@
     height: 0;
 }
 
-/*GLOBAL STYLES*/
+/*GLOBAL STYLES----------------------------------*/
+/*-----------------------------------------------*/
 #content .section_title {
     font-family: 'Bangers', sans-serif;
     font-size: 3.2em;
@@ -35,12 +38,57 @@
     float:left;
 }
 
-/*full-width, no info title*/
-#register .section_title {
-    width: 100%;
+/*SLIDESHOW--------------------------------------*/
+#content #slideshow {
+    position: relative;
+    background: #FCFCFC;
+    border: solid 10px #FFFBE3;
 }
 
-/*ARTICLE LISTS*/
+#content #slide_nav {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+}
+
+#content #slide_nav a {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    padding: 3px 10px 3px 8px;
+    margin-left: 5px;
+    background: #CCCCCC;
+    border: solid 1px #999999;
+}
+
+#content #slide_nav a:hover,
+#content #slide_nav a.activeSlide {
+    background: #FFFBE3;
+    color: #222222;
+    border: solid 1px #222222;
+}
+
+#content .slide {
+    position: relative;
+    border: 1px solid #222222;
+}
+
+#content .slide .slide_title{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-family: 'Bangers', sans-serif;
+    font-size: 4.5em;
+    font-weight: normal;
+    padding: 3px 10px 3px 8px;
+    margin-left: 5px;
+    background: #FFFBE3;
+    color: #222222;
+    border: solid 1px #222222;
+}
+
+/*ARTICLE LISTS----------------------------------*/
 #content .article_list {
     width: 700px;
     float: left;
@@ -122,7 +170,7 @@
 }
 
 
-/* FULL WIDTH ARTICLE*/
+/* FULL WIDTH ARTICLE-----------------------------*/
 #content .article_list article.full_width {
 
 }
@@ -172,7 +220,7 @@
     height: 25px;
 }
 
-/* TWO COLUMN ARTICLE*/
+/* TWO COLUMN ARTICLE----------------------------*/
 #content .article_list article.two_column {
     
 }
@@ -217,7 +265,7 @@
 }
 
 
-/*CALENDAR*/
+/*CALENDAR-------------------------------------*/
 /*in gallery and events*/
 #calendar_wrapper {
     float: left;
@@ -229,169 +277,8 @@
     background-color: #CCCCCC;
 }
 
-
-/*HOMEPAGE*/
-/*slideshow---------------*/
-#content #slideshow {
-    position: relative;
-    width: 930px;
-    height: 430px;
-    background: #FCFCFC;
-    margin-bottom: 20px;
-    border: solid 10px #FFFBE3;
-}
-
-#content #slide_nav {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    z-index: 50;
-}
-
-#content #slide_nav a {
-    font-family: 'Bangers', sans-serif;
-    font-size: 1.8em;
-    font-weight: normal;
-    padding: 3px 10px 3px 8px;
-    margin-left: 5px;
-    background: #CCCCCC;
-    border: solid 1px #999999;
-}
-
-#content #slide_nav a:hover,
-#content #slide_nav a.activeSlide {
-    background: #FFFBE3;
-    color: #222222;
-    border: solid 1px #222222;
-}
-
-#content .slide {
-    position: relative;
-    width: 928px;
-    height: 428px;
-    border: 1px solid #222222;
-}
-
-#content .slide .slide_title{
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-family: 'Bangers', sans-serif;
-    font-size: 4.5em;
-    font-weight: normal;
-    padding: 3px 10px 3px 8px;
-    margin-left: 5px;
-    background: #FFFBE3;
-    color: #222222;
-    border: solid 1px #222222;
-}
-
-/*restaurant---------------*/
-#content #restaurant {
-    width: 330px;
-    border: solid 10px #FFFBE3;
-    float: left;
-}
-
-#content #restaurant .wrapper {
-    color: #222222;
-    padding: 18px 15px 25px 15px;
-    background: #FCFCFC;
-    border: 1px solid #222222;
-}
-
-#content #restaurant .wrapper h2 {
-    font-family: 'Bangers', sans-serif;
-    font-weight: normal;
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-#content #restaurant .wrapper p {
-    font-size: 1.2em;
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-/*float bug for buttons so added wrapper*/
-#content #restaurant .wrapper .button_wrapper {
-    text-align: right;
-}
-
-#content #restaurant .wrapper .button {
-    display: inline;
-    margin-left: 10px;
-}
-
-
-/*NEWS*/
-#news #news_nav {
-    width: 250px;
-    float: left;
-}
-
-#news #news_nav ul li {
-/*    margin-bottom: 5px;*/
-    text-align: right;
-}
-
-#news #news_nav ul li a {
-    font-family: 'Bangers', sans-serif;
-    font-weight: normal;
-    font-size: 2.8em;
-    height: 38px;
-    width: 200px;
-    padding: 12px 50px 0 0;
-    display:block;
-}
-
-#news #news_nav ul li a.active:hover,
-#news #news_nav ul li a.active {
-    color: #FFFBE3;
-    background: url('../images/news-nav-highlight.png') no-repeat 0 0;
-    cursor: default;
-}
-
-#news #news_nav ul li a:hover {
-    color: #FFFBE3;
-    background: url('../images/news-nav-hover.png') no-repeat 0 0;
-}
-
-
-/*AUDITIONS*/
-
-#content #register_form {
-    width: 600px;
-    margin-right: 20px;
-    float: left;
-}
-
-#content #register_form h3 {
-    font-size: 1.5em;
-    font-weight:normal;
-    padding: 20px 0 10px;
-/*    float: left;*/
-}
-
-#content #register_form .form_long.field {
-    display: none;
-}
-
-#content #register_form.extended .form_long.field {
-    display: block;
-}
-
-#content #register_form .form_section {
-    width: 280px;
-    margin-right: 20px;
-    float: left;
-}
-
-#content #register_form .button {
-    float: right;
-}
-
-/*FIELDS*/
+/*FIELDS-----------------------------------------*/
+/*field------------------------------------------*/
 #content form .field {
     padding-bottom: 20px;
 }
@@ -473,11 +360,127 @@
     padding: 3px 0 3px 3px;
 }
 
-/*sign in box*/
-#content #sign_in_box {
-    width: 310px;
+
+
+/*STYLES FOR SPECIFIC PAGES----------------------*/
+/*-----------------------------------------------*/
+
+
+/*HOMEPAGE---------------------------------------*/
+/*specific slideshow styles----------------------*/
+#home #slideshow {
+    width: 930px;
+    height: 430px;
+    margin-bottom: 20px;
+}
+
+#home .slide {
+    position: relative;
+    width: 928px;
+    height: 428px;
+}
+
+/*restaurant-------------------------------------*/
+#content #restaurant {
+    width: 330px;
     border: solid 10px #FFFBE3;
     float: left;
+}
+
+#content #restaurant .wrapper {
+    color: #222222;
+    padding: 18px 15px 25px 15px;
+    background: #FCFCFC;
+    border: 1px solid #222222;
+}
+
+#content #restaurant .wrapper h2 {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#content #restaurant .wrapper p {
+    font-size: 1.2em;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+/*float bug for buttons so added wrapper*/
+#content #restaurant .wrapper .button_wrapper {
+    text-align: right;
+}
+
+#content #restaurant .wrapper .button {
+    display: inline;
+    margin-left: 10px;
+}
+
+
+/*NEWS-------------------------------------------*/
+/*news navugation by year------------------------*/
+#news #news_nav {
+    width: 250px;
+    float: left;
+}
+
+#news #news_nav ul li {
+/*    margin-bottom: 5px;*/
+    text-align: right;
+}
+
+#news #news_nav ul li a {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2.8em;
+    height: 38px;
+    width: 200px;
+    padding: 12px 50px 0 0;
+    display:block;
+}
+
+#news #news_nav ul li a.active:hover,
+#news #news_nav ul li a.active {
+    color: #FFFBE3;
+    background: url('../images/news-nav-highlight.png') no-repeat 0 0;
+    cursor: default;
+}
+
+#news #news_nav ul li a:hover {
+    color: #FFFBE3;
+    background: url('../images/news-nav-hover.png') no-repeat 0 0;
+}
+
+
+/*AUDITIONS--------------------------------------*/
+#register #content section {
+    margin-bottom: 25px;
+    float: left;
+}
+
+#register section.instructions {
+    width: 570px;
+    margin-right: 50px;
+}
+
+/*full-width, no info title----------------------*/
+#register .instructions .section_title {
+    width: 100%;
+/*    float: left;*/
+}
+
+#register .instructions p {
+    font-size: 1.4em;
+    line-height: 1.2;
+/*    float: left;*/
+}
+
+/*sign in box------------------------------------*/
+#content section#sign_in_box {
+    width: 310px;
+    border: solid 10px #FFFBE3;
+    margin-top: 15px;
 }
 
 #content #sign_in_box .wrapper {
@@ -501,7 +504,39 @@
     margin-left: 15px;
 }
 
-/*ABOUT*/
+/*specific form and field styles-----------------*/
+#content section#register_form {
+    width: 600px;
+    margin-right: 20px;
+}
+
+#content #register_form h3 {
+    font-size: 1.5em;
+    font-weight:normal;
+    padding: 20px 0 10px;
+/*    float: left;*/
+}
+
+#content #register_form .form_long.field {
+    display: none;
+}
+
+#content #register_form.extended .form_long.field {
+    display: block;
+}
+
+#content #register_form .form_section {
+    width: 280px;
+    margin-right: 20px;
+    float: left;
+}
+
+#content #register_form .button {
+    float: right;
+}
+
+/*ABOUT------------------------------------------*/
+/*specific style for heading---------------------*/
 #about #content h2 {
     float: none;
     width: 100%;
@@ -513,40 +548,122 @@
     float: left;
 }
 
-#content .location,
-#content .contact_us {
+#content section.location,
+#content section.contact_us {
     margin-right: 50px;
 }
 
-#content .location .map_wrapper {
+#content section.location .map_wrapper {
     border: solid 10px #FFFBE3;
 }
 
-#content .location .map_wrapper #map_canvas {
+#content section.location .map_wrapper #map_canvas {
     background: #FCFCFC;
     border: 1px solid #222222;
     width: 429px;
     height: 199px;
 }
 
-#content .about_us p {
+#content section.about_us p {
     font-size: 1.4em;
     line-height: 1.1;
     margin-bottom: 10px;
 }
 
-#content .contact_us form {
+#content section.contact_us form {
     width: 286px;
 }
 
-#content .contact_us form .button {
+#content section.contact_us form .button {
     float: right;
     margin-left: 10px;
 }
 
+/*UPCOMING EVENT DETAIL--------------------------*/
+#content section {
+    float: left;
+}
 
+#content section.event_pictures {
+    width: 600px;
+}
 
+#content .event_pictures h2 {
+    width: 100%;
+    float: none;
+}
 
+#events #slideshow {
+    max-width: 580px;
+    max-height: 380px;
+    overflow: hidden;
+    width: auto;
+    float: none;
+}
 
+#events #slideshow .slide {
+    max-width: 578px;
+    max-height: 378px;
+    overflow: hidden;
+    background-color: #444444;
+}
 
+#events #slideshow .slide img {
+    
+}
 
+#events section.event_detail {
+    width: 300px;
+    margin-left: 50px;
+}
+
+#events .event_detail .detail_nav {
+    width: 100%;
+    margin: 5px 0 15px;
+    float: left;
+}
+
+#events .event_detail .detail_nav .button {
+    display: block;
+    margin-left: 20px;
+    float: right;
+}
+
+#events .event_detail .detail_info {
+    clear: both;
+    float: left;
+    margin-bottom: 15px;
+}
+
+#events .event_detail .detail_info h3 {
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+#events .event_detail .detail_info h4 {
+    font-size: 1.3em;
+    font-weight: normal;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+#events .event_detail .detail_info p,
+#events .event_detail .detail_info ul li {
+    font-size: 1.2em;
+    line-height: 1.2;
+}
+
+#events .event_detail .detail_info .button {
+    margin-top: 8px;
+    clear: both;
+    float: left;
+}
+
+#events .event_detail .detail_info.venue {
+    clear: left;
+}
+
+#events .event_detail .detail_info.details {
+    margin-left: 30px;
+    clear: right;
+}
