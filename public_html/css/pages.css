@@ -6,7 +6,6 @@
 #content .article_list article:after,
 #content .article_list article a:after,
 #content #restaurant .wrapper:after,
-#content #register_form form:after,
 #content #register_form form .field:after {
     content: ".";
     display: block;
@@ -17,7 +16,7 @@
 }
 
 /*GLOBAL STYLES*/
-#content .page_title {
+#content .section_title {
     font-family: 'Bangers', sans-serif;
     font-size: 3.2em;
     font-weight: normal;
@@ -37,7 +36,7 @@
 }
 
 /*full-width, no info title*/
-#register .page_title {
+#register .section_title {
     width: 100%;
 }
 
@@ -361,7 +360,6 @@
 
 /*AUDITIONS*/
 
-/*restaurant---------------*/
 #content #register_form {
     width: 600px;
     margin-right: 20px;
@@ -372,80 +370,110 @@
     font-size: 1.5em;
     font-weight:normal;
     padding: 20px 0 10px;
-    float: left;
+/*    float: left;*/
 }
 
-#content #register_form .field {
-    padding: 0 20px 20px 0;
-    float: left;
+#content #register_form .form_long.field {
+    display: none;
 }
 
-#content #register_form .field,
-#content #register_form .field input[type='text'],
-#content #register_form .field input[type='password'] {
+#content #register_form.extended .form_long.field {
+    display: block;
+}
+
+#content #register_form .form_section {
     width: 280px;
+    margin-right: 20px;
+    float: left;
 }
 
-#content #register_form h3,
-#content #register_form .field.full {
+#content #register_form .button {
+    float: right;
+}
+
+/*FIELDS*/
+#content form .field {
+    padding-bottom: 20px;
+}
+
+#content form .field,
+#content form .field input[type='text'],
+#content form .field input[type='password'],
+#content form .field textarea {
+    width: 268px;
+}
+
+#content form .field textarea {
+    height: 80px;
+}
+
+#content form .field.full {
     width: 580px;
 }
 
-#content #register_form .field.half,
-#content #register_form .field.half input[type='text'],
-#content #register_form .field.half input[type='password'] {
+#content form .field.half,
+#content form .field.half input[type='text'],
+#content form .field.half input[type='password'],
+#content form .field.half textarea {
     width: 180px;
 }
 
-#content #register_form label {
+#content form label {
     font-size: 1.2em;
     color: #888888;
     margin: 0 15px 8px 0;
     display: block;
 }
 
-#content #register_form label.gender {
-    font-size: 1.3em;
-    color: #F2F2F2;
-    margin: 0 10px 0 0;
-    float: left;
-}
-
-#content #register_form label.gender.female {
-    margin: 0 10px 0 20px;
-}
-
-#content #register_form select {
+#content form select {
     width: auto;
 }
 
-#content #register_form .field select,
-#content #register_form .field input[type='text'],
-#content #register_form .field input[type='password'] {
+#content form .field select,
+#content form .field input[type='text'],
+#content form .field input[type='password'],
+#content form .field textarea {
     color: #F2F2F2;
     font-size: 1.2em;
+    font-family: 'Arial', sans-serif;
     background-color: #444444;
     border: 1px solid #666666;
     display: block;
 }
 
-#content #register_form input[type='radio'] {
+#content form label.gender {
+    font-size: 1.3em;
+    color: #F2F2F2;
+    margin: 0 10px 0 0;
+    display: inline;
+/*    float: left;*/
+}
+
+#content form label.gender.female {
+    margin: 0 10px 0 20px;
+}
+
+#content form input[type='radio'] {
     margin: 0;
     padding: 0;
-    float: left;
+    display: inline;
+/*    float: left;*/
 }
 
-#content #register_form select.date {
+#content form select.date {
     margin: 0 3px 0 0;
     padding: 0;
-    float: left;
+    display: inline;
+/*    float: left;*/
 }
 
-#content #register_form input[type='text'],
-#content #register_form input[type='password'] {
+#content form input[type='text'],
+#content form input[type='password'],
+#content form textarea {
     padding: 3px 0 3px 3px;
 }
 
+/*sign in box*/
 #content #sign_in_box {
     width: 310px;
     border: solid 10px #FFFBE3;
@@ -472,3 +500,53 @@
     float: left;
     margin-left: 15px;
 }
+
+/*ABOUT*/
+#about #content h2 {
+    float: none;
+    width: 100%;
+}
+
+#about #content section {
+    margin-bottom: 45px;
+    width: 450px;
+    float: left;
+}
+
+#content .location,
+#content .contact_us {
+    margin-right: 50px;
+}
+
+#content .location .map_wrapper {
+    border: solid 10px #FFFBE3;
+}
+
+#content .location .map_wrapper #map_canvas {
+    background: #FCFCFC;
+    border: 1px solid #222222;
+    width: 429px;
+    height: 199px;
+}
+
+#content .about_us p {
+    font-size: 1.4em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+#content .contact_us form {
+    width: 286px;
+}
+
+#content .contact_us form .button {
+    float: right;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
