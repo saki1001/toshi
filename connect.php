@@ -1,4 +1,8 @@
 <?php
+// ERROR REPORTING
+// error_reporting(E_ALL);
+// ini_set('display_errors', '1');
+
 session_start();
 $_SESSION["ELXCartID"] = session_id();
 include ("include/config.inc.php");
@@ -38,5 +42,5 @@ exit();
 }
 
 // mysql_select_db($DATABASENAME,$db);
-$linkpath="http://".$_SERVER['HTTP_HOST']."/".$folder."/index.php";
+// $linkpath="http://".$_SERVER['HTTP_HOST']."/".$folder."/index.php";
 ?>
