@@ -58,7 +58,7 @@
             $articleType = "full_width short";
             
             // GETTING EVENTS (NEXT 3)
-            $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate > CURDATE() ORDER BY startdate ASC LIMIT 3";
+            $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate >= CURDATE() ORDER BY startdate ASC LIMIT 3";
             $eventResult = mysql_query($eventQuery) or die(mysql_error());
             
             // POPULATE EVENTS
