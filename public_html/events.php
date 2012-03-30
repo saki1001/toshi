@@ -20,7 +20,7 @@
 
 <!-- CONTENT -->
     <div id="content">
-        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+        <h2 class="section_title"><? echo $PAGETITLE; ?></h2>
         <h3 class="info_title">Upcoming Events</h3>
         <section id="calendar_wrapper">
             <div id="calendar">
