@@ -66,8 +66,20 @@
             <p>Quisque sapien orci, molestie vel tempor quis, rutrum nec ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum imperdiet convallis ipsum, ac tempus arcu ornare non. Proin id elit tellus. Integer sed ullamcorper nunc. Aenean ut rutrum dolor. In cursus eros nibh. Cras lacinia venenatis risus blandit feugiat.</p>
         </section>
         <section class="contact_us">
+            <h2 class="section_title">Contact Us</h2>
+            <ul>
+                <li><strong>Toshi's Living Room</strong></li>
+                <li>9 W. 26th Street</li>
+                <li>New York, NY 10010</li>
+            </ul>
+            <ul>
+                <li>212.839.8000</li>
+                <li>toshi@toshislivingroom.com</li>
+            </ul>
+        </section>
+        <!-- <section class="contact_us">
+            <h2 class="section_title">Contact Us</h2>
             <form id="contact_form">
-                <h2 class="section_title">Contact Us</h2>
                 <div class="field">
                     <label>Your Name</label>
                     <input type="text" class="input">
@@ -87,7 +99,7 @@
                 <a href="#" class="button red" onClick="document.getElementById('contact_form').submit()">Send</a>
                 <a href="#" class="button red" onClick="document.getElementById('contact_form').reset()">Clear</a>
             </form>
-        </section>
+        </section> -->
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>
