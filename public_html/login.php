@@ -7,40 +7,10 @@
     <?
     $ACTIVEPAGE='login';
     $PAGETITLE='Sign In';
-    
-    if($_POST['HidRegUser']=="1")
-    {
-        $query1="select id,approve from users where email='".trim(addslashes($_POST['email']))."' and password='".trim($_POST['password'])."'";
-        $res=mysql_query($query1);
-        $tot=mysql_affected_rows();
-        if($tot>0)
-        {
-            $Row=mysql_fetch_object($res);
-            if($Row->approve=="Y")
-            {
-                $_SESSION['UsErId']=$Row->id;
-                // header("location:$SITE_URL/myaccount.php");
-                header("location:myaccount.php");
-                exit;
-            }    
-            else
-            {
-                // header("location:$SITE_URL/login.php?msg=Please check your email and confirm your account.");
-                header("location:login.php?msg=Please check your email and confirm your account.");
-                exit;
-            }
-        }
-        else
-        {
-            // header("location:$SITE_URL/login.php?msg=Invalid email or password.&From=".$_GET['From']."");
-            header("location:login.php?msg=Invalid email or password.&From=".$_GET['From']."");
-            exit;
-        }
-    }
     ?>
     
 <!-- HEAD -->
-    <? include("templates/head.php");?>
+     <? include("templates/head.php");?>
     
 </head>
 
@@ -51,27 +21,25 @@
 <!-- CONTENT -->
     <div id="content">
         <h2 class="section_title"><? echo $PAGETITLE; ?></h2>
-        <section class="contact_us">
+        <section class="sign_in">
             <form id="login_form">
-                <? if($_REQUEST['msg']!=''){?>
-                    <div class="field">
-                        <p><? echo $_REQUEST['msg'];?></p>
-                    </div>
-                <? } ?>
+                <div class="field msg">
+                    <p id="msg"></p>
+                </div>
                 <div class="field">
                     <label>Email</label>
-                    <input type="text" class="input" name="email" id="email">
+                    <input type="text" name="email" id="email" />
                 </div>
                 <div class="field">
                     <label>Password</label>
-                    <input type="password" class="input" name="password" id="password">
+                    <input type="password" name="password" id="password" />
                 </div>
                 <div class="field">
-                    <a href="forgotpass.php" style="width:200px;text-align:left;">Forgot Password?</a>
+                    <a href="forgot_password.php">Forgot Password?</a>
                 </div>
                 <div class="field">
-                    <input type="hidden" name="HidRegUser" id="HidRegUser" value="0">
-                    <input type="submit" name="sbmit" class="button red" value="Sign In" onClick="return valid();" >
+                    <!-- <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" /> -->
+                    <a href="#" id="submit" class="button red">Sign In</a>
                 </div>
             </form>
         </section>
@@ -80,31 +48,86 @@
     <? include("templates/footer.php");?>
 <!-- SCRIPT -->
     <script language="javascript" type="text/javascript">
-    function valid()
-    {
-        form=document.RegisterForm;
-        if(form.email.value.split(" ").join("")=="")
-        {
-                alert("Please enter your email address.")
-                form.email.focus();
+        $(document).ready( function() {            
+            
+            var submitForm = function() {
+                var email = $('form #email');
+                var password = $('form #password');
+                var emailVal = email.val();
+                var passwordVal = password.val();
+                
+                // unbind to prevent multiple submits
+                $('#submit').unbind('click', submitForm);
+                
+                if(emailVal === '') {
+                    $('#msg').addClass('active')
+                        .html('Please enter your email address.');
+                    email.focus();
+                    // rebind
+                    $('#submit').bind('click', submitForm);
+                    return false;
+                }
+                if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.val()))) {
+                    $('#msg').addClass('active')
+                        .html('Please enter a proper email address.');
+                    email.focus();
+                    // rebind
+                    $('#submit').bind('click', submitForm);
+                    return false;
+                }
+                if(passwordVal === '') {
+                    $('#msg').addClass('active')
+                        .html("Please enter your password.");
+                    password.focus();
+                    // rebind
+                    $('#submit').bind('click', submitForm);
+                    return false;
+                }
+                
+                $.ajax({
+                    url: 'php/login_submit.php',
+                    type: "POST",
+                    data: {
+                      email: emailVal,
+                      password: passwordVal
+                      },
+                    dataType: 'json',
+                    success: function(data) {
+                        if(data['status'] === 'ERROR_INVALID') {
+                            $('#msg').addClass('active')
+                                .html('Invalid email or password.');
+                            // rebind submit
+                            $('#submit').bind('click', submitForm);
+                            
+                        } else if(data['status'] === 'ERROR_CONFIRM') {
+                            $('#msg').addClass('active')
+                                .html('Please check your email and confirm your account.');
+                            // rebind submit
+                            $('#submit').bind('click', submitForm);
+                                
+                        } else if(data['status'] === 'SUCCESS') {
+                            // send to account page
+                            document.location = 'my_account.php';
+                            
+                        } else {
+                            $('#msg').addClass('active')
+                                .html('Unable to sign in. Please contact us.');
+                            $('#submit').bind('click', submitForm);
+                        }
+                      },
+                      error: function (xhr, ajaxOptions, thrownError) {
+                          alert(xhr.statusText);
+                          alert(xhr.responseText);
+                          alert(xhr.status);
+                          alert(thrownError);
+                      }
+                });
+                
                 return false;
-        }
-        if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value)))
-        {
-                alert("Please enter a proper email address.");
-                form.email.focus();
-                return false;
-        }   
-        if(form.password.value.split(" ").join("")=="")
-        {
-                alert("Please enter your password.")
-                form.password.focus();
-                return false;
-        } 
-        document.RegisterForm.HidRegUser.value='1';
-        document.RegisterForm.submit();
-        return  true;
-    }
+            };
+            
+            $('#submit').bind('click', submitForm);
+        });
     </script>
 </body>
 </html>
