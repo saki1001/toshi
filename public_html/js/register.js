@@ -31,32 +31,23 @@ $(document).ready( function() {
     });
     
     var submitForm = function(data) {
-        
         $.ajax({
-            url: 'php/login_submit.php',
+            url: 'php/register_submit.php',
             type: "POST",
             data: data,
             dataType: 'json',
             success: function(data) {
-                if(data['status'] === 'ERROR_INVALID') {
-                    $('#msg').addClass('active')
-                        .html('Invalid email or password.');
-                    // rebind submit
-                    $('#submit').bind('click', submitForm);
+                if(data['status'] === 'SUCCESS') {
+                    $('#register_form_wrapper').html('<h3>Registration successful!  Please check your email and confirm your account.<h3>');
                     
-                } else if(data['status'] === 'ERROR_CONFIRM') {
-                    $('#msg').addClass('active')
-                        .html('Please check your email and confirm your account.');
+                } else if(data['status'] === 'ERROR_DUPLICATE') {
+                    alert('The email address you provided is already registered.');
                     // rebind submit
                     $('#submit').bind('click', submitForm);
-                        
-                } else if(data['status'] === 'SUCCESS') {
-                    // send to account page
-                    document.location = 'my_account.php';
                     
                 } else {
-                    $('#msg').addClass('active')
-                        .html('Unable to sign in. Please contact us.');
+                    alert('Unable to register. Please contact us.');
+                    // rebind submit
                     $('#submit').bind('click', submitForm);
                 }
               },
@@ -70,84 +61,31 @@ $(document).ready( function() {
         
     };
     
-    // // SEND POST DATA
-    // var http_request = false;
-    // var makePOSTRequest2 = function(url, parameters) {
-    //   http_request = false;
-    //   
-    //   var alertContents2 = function() {
-    //     if (http_request.readyState == 4) 
-    //     {
-    //           var result = http_request.responseText;    
-    //           result=trim(result);
-    //           if (result!='')
-    //           {    
-    //               alert("Please enter correct verification code.");                        
-    //               form.recaptcha_response_field2.focus();    
-    //               return false;
-    //           }
-    //           else if (result=='')
-    //           {            
-    //               form.HidRegUser.value='1';
-    //               form.submit();
-    //               return  true;
-    //           }
-    //     }
-    //   };
-    //   
-    //   var trim = function(stringToTrim) {
-    //       return stringToTrim.replace(/^\s+|\s+$/g,"");
-    //   };
-    //   
-    //   
-    //   if (window.XMLHttpRequest) { // Mozilla, Safari,...
-    //      http_request = new XMLHttpRequest();
-    //      if (http_request.overrideMimeType) {             
-    //         http_request.overrideMimeType('text/html');
-    //      }
-    //   } else if (window.ActiveXObject) { // IE
-    //      try {
-    //         http_request = new ActiveXObject("Msxml2.XMLHTTP");
-    //      } catch (e) {
-    //         try {
-    //            http_request = new ActiveXObject("Microsoft.XMLHTTP");
-    //         } catch (e) {}
-    //      }
-    //   }
-    //   if (!http_request) {
-    //      alert('Cannot create XMLHTTP instance');
-    //      return false;
-    //   }
-    //   http_request.onreadystatechange = alertContents2;
-    //   http_request.open('POST', url, true);
-    //   http_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //   http_request.setRequestHeader("Content-length", parameters.length);
-    //   http_request.setRequestHeader("Connection", "close");
-    //   http_request.send(parameters);
-    //   
-    //   console.log('passed post');
-    // };
-    
     // POST TO AJAXCAPTCHA
     var validateCaptcha = function(str, form_data) {
         
         $.ajax({
             url: 'php/ajaxcaptcha.php',
-            type: "POST",
+            type: 'POST',
             data: {
               captchaVal: str
               },
             dataType: 'json',
             success: function(data) {
-                if(data['status'] === 'INVALID') {
-                      alert('Please enter correct verification code.');
-                      $('#recaptcha_response_field2').focus();
-                } else if(data['status'] === 'SUCCESS') {
+                if(data['status'] === 'SUCCESS') {
                     // continue to submit function
                     submitForm(form_data);
                     // console.log(form_data);
+                } else if(data['status'] === 'INVALID') {
+                    alert('Please enter correct verification code.');
+                    $('#recaptcha_response_field2').focus();
+                    // rebind submit
+                    $('#submit').bind('click', submitForm);
+                    
                 } else {
                     alert('Unable to verify captcha. Please contact us.');
+                    // rebind submit
+                    $('#submit').bind('click', submitForm);
                 }
               },
               error: function (xhr, ajaxOptions, thrownError) {
@@ -164,10 +102,13 @@ $(document).ready( function() {
     // VALIDATE FORM
     var validateForm = function() {
         
+        // unbind submit
+        $('#submit').unbind('click', submitForm);
+        
         // // remove all error classes
-        // $('.error').removeClass('error');
-        // $('.invalid_email').removeClass('invalid_email');
-        // 
+        $('.error').removeClass('error');
+        $('.invalid_email').removeClass('invalid_email');
+        
         var $requiredFields;
         // REQUIRED FIELDS BASED ON FORM TYPE
         if(accountType === 3) {
@@ -177,50 +118,55 @@ $(document).ready( function() {
         } else {
             $requiredFields = $('.form_standard input, .form_standard select');
         }
-        // 
-        // // CHECK FOR EMPTY FIELDS
-        // $requiredFields.each(function() {
-        //     var value = $(this).val();
-        //     
-        //     // check for empty inputs
-        //     if( value === '') {
-        //         $(this).addClass('error');
-        //     }
-        // });
-        // 
-        // // CHECK FOR VALID EMAIL
-        // var emailVal = $('#email').val();
-        // var validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailVal);
-        // 
-        // if (!validEmail && emailVal != '') {
-        //     $('#email').addClass('invalid_email');
-        // }
-        // 
+        
+        // CHECK FOR EMPTY FIELDS
+        $requiredFields.each(function() {
+            var value = $(this).val();
+            
+            // check for empty inputs
+            if( value === '') {
+                $(this).addClass('error');
+            }
+        });
+        
+        // CHECK FOR VALID EMAIL
+        var emailVal = $('#email').val();
+        var validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailVal);
+        
+        if (!validEmail && emailVal != '') {
+            $('#email').addClass('invalid_email');
+        }
+        
         // PUT FORM DATA IN AN ARRAY
+        // serializeArray makes it json ready
         var values = {};
         var getValues = function() {
             // $requiredFields.each(function() {
             //     values[this.name] = $(this).val();
             // });
             values = $requiredFields.serializeArray();
-            console.log(values);
+            // console.log(values);
         };
-        // 
-        // 
-        // // ERROR ALERTS
-        // if($('input, select').hasClass('error')) {
-        //     alert('Please fill in required fields.');
-        // } else if($('#email').hasClass('invalid_email')){
-        //     alert('Please provide a valid email address.');
-        //     $('#email').focus();
-        // } else {
-        //     getValues();
-        // }
         
         
-        getValues();
-        recaptcha_response_field=form.recaptcha_response_field2.value;
-        validateCaptcha(recaptcha_response_field, values);
+        // ERROR ALERTS
+        if($('input, select').hasClass('error')) {
+            alert('Please fill in required fields.');
+            // rebind submit
+            $('#submit').bind('click', submitForm);
+            
+        } else if($('#email').hasClass('invalid_email')){
+            alert('Please provide a valid email address.');
+            $('#email').focus();
+            // rebind submit
+            $('#submit').bind('click', submitForm);
+            
+        } else {
+            // if no errors so far, move on
+            getValues();
+            recaptcha_response_field=form.recaptcha_response_field2.value;
+            validateCaptcha(recaptcha_response_field, values);
+        }
         
         return false;
         
