@@ -8,7 +8,9 @@ if( isset($_POST['captchaVal']))
         //echo 'Thank you. Your message said "'.$_POST['message'].'"';
         header('Content-type: application/json');
         echo '{"status": "SUCCESS"}';
-        unset($_SESSION['security_code']);
+        // Don't unset the code here
+        // Unset after success in register_submit.php
+        // unset($_SESSION['security_code']);
    } else {
         // Insert your code for showing an error message here
         //echo 'Sorry, you have provided an invalid security code';
