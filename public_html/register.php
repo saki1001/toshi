@@ -1,5 +1,4 @@
 <? include("../connect.php"); ?>
-<? include("php/register_submit.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,9 +82,9 @@
                     <div class="form_standard field gender">
                         <label>Gender</label>
                         <label class="male">Male</label>
-                        <input type="radio" name="gender" id="gender1" value="male" checked="checked"/>
+                        <input type="radio" name="gender" id="gender1" value="Male" checked="checked"/>
                         <label class="female">Female</label>
-                        <input type="radio" name="gender" id="gender2" value="female"/>
+                        <input type="radio" name="gender" id="gender2" value="Female"/>
                     </div>
                 </div>
                 <div class="form_section">
