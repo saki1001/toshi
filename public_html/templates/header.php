@@ -12,7 +12,7 @@
             <li <? if($ACTIVEPAGE=='cart'){?>class="active"<? }?> ><a href="viewcart.php">Cart</a></li>
             <li <? if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0){?>
                 <? if($ACTIVEPAGE=='login'){?>class="active"<? }?>><a href="login.php">Sign In</a>
-                <? }else{?>><a href="logout.php">Logout</a><? }?></li>
+                <? }else{?>><a href="php/logout.php">Logout</a><? }?></li>
         </ul>
     </nav>
     <nav id="menu">
