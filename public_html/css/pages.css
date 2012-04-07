@@ -26,7 +26,7 @@
 
 /*GLOBAL STYLES----------------------------------*/
 /*-----------------------------------------------*/
-#content .section_title {
+#content .page_title {
     font-family: 'Bangers', sans-serif;
     font-size: 3.2em;
     font-weight: normal;
@@ -34,9 +34,9 @@
     margin-bottom: 10px;
 }
 
-#events #content .section_title,
-#gallery #content .section_title,
-#news #content .section_title {
+#events #content .page_title,
+#gallery #content .page_title,
+#news #content .page_title {
     width:250px;
     float:left;
 }
@@ -316,8 +316,10 @@
 #content form .field,
 #content form .field input[type='text'],
 #content form .field input[type='password'],
+#content form .field input[type='file'],
 #content form .field textarea {
     width: 268px;
+/*    width: 100%;*/
 }
 
 #content form .field textarea {
@@ -325,14 +327,18 @@
 }
 
 #content form .field.full {
-    width: 580px;
+    width: 100%;
 }
 
-#content form .field.half,
+#content form .field.half {
+    width: 50%;
+}
+
 #content form .field.half input[type='text'],
 #content form .field.half input[type='password'],
+#content form .field.half input[type='file'],
 #content form .field.half textarea {
-    width: 180px;
+    width: 100%;
 }
 
 #content form label {
@@ -349,6 +355,7 @@
 #content form .field select,
 #content form .field input[type='text'],
 #content form .field input[type='password'],
+#content form .field input[type='file'],
 #content form .field textarea {
     color: #F2F2F2;
     font-size: 1.2em;
@@ -413,6 +420,10 @@
 #content form input[type='password'],
 #content form textarea {
     padding: 3px 0 3px 3px;
+}
+
+#content form input[type='submit'] {
+    border: none;
 }
 
 #content form #submit {
@@ -622,6 +633,14 @@
     float: right;
 }
 
+#about .section_title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 3.2em;
+    font-weight: normal;
+    color: #FFFBE3;
+    margin-bottom: 10px;
+}
+
 #content section.location .map_wrapper {
     border: solid 10px #FFFBE3;
 }
@@ -753,3 +772,169 @@
 #login #content h2 {
     float: none;
 }
+
+/*MY ACCOUNT-------------------------------------*/
+#my_account .column {
+    margin-left: 20px;
+    width: 300px;
+    float: left;
+}
+
+#my_account .column.profile_photo {
+    width: 250px;
+    height: 250px;
+    border: solid 10px #FFFBE3;
+    margin: 0;
+}
+
+#my_account .column.profile_title {
+    width: 660px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+#my_account .column.pictures {
+    width: 330px;
+    min-height: 200px;
+    margin-left: 30px;
+    float: right;
+}
+
+#my_account .profile_photo img {
+    max-width: 248px;
+    max-height: 248px;
+    overflow: hidden;
+    color: #222222;
+    background: #FCFCFC;
+    border: 1px solid #222222;
+}
+
+#my_account .column section {
+    width: 100%;
+    margin-bottom: 25px;
+    float: left;
+}
+
+#my_account .section_title {
+    border-bottom: solid 1px #999999;
+    margin-bottom: 15px;
+    width: 100%;
+    float: left;
+}
+
+#my_account .section_title h3 {
+    font-size: 1.6em;
+    font-weight: normal;
+    padding-bottom: 5px;
+    float: left;
+}
+
+#my_account .section_title a {
+    font-size: 1.2em;
+    padding-top: 3px;
+    float:right;
+}
+
+#my_account .section_content {
+    font-size: 1.4em;
+    float: left;
+}
+
+#my_account .section_content li {
+    margin-bottom: 8px;
+}
+
+#my_account .section_content li span {
+    color: #999999;
+    margin-right: 3px;
+}
+
+/*ACCOUNT UPLOAD PAGES---------------------------*/
+#my_account.upload h2 {
+    margin-bottom: 20px;
+}
+
+#my_account.upload #content section.upload_items {
+    width: 530px;
+    float: left;
+}
+
+#my_account.upload #content section.my_items {
+    width: 400px;
+    margin-left: 20px;
+    float: left;
+}
+
+#my_account.upload .upload_items  form{
+    width: 100%;
+    float: left;
+}
+
+
+/*MY ACCOUNT: DISPLAY ITEMS--------------------*/
+#my_account .my_items .section_content {
+    width: 100%;
+}
+
+#my_account .my_items .section_content li {
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #444444;
+    float: left;
+}
+
+#my_account .my_items .section_content li.last {
+    border: none;
+}
+
+#my_account .my_items .item_detail {
+    font-weight: normal;
+    max-width: 300px;
+    height: 15px;
+    overflow: hidden;
+    float: left;
+}
+
+#my_account .my_items.picture_list .item_detail {
+    height: 90px;
+}
+
+#my_account .my_items.picture_list .item_detail img {
+    min-width: 90px;
+    min-height: 90px;
+    overflow: hidden;
+    background-color: #CCCCCC;
+}
+
+#my_account .my_items .item_detail img,
+#my_account .my_items .item_detail span {
+    float: left;
+    margin-right: 10px;
+}
+
+#my_account .my_items .delete_item,
+#my_account .my_items .item_date {
+    float: right;
+}
+
+#my_account .my_items.picture_gallery .section_content a {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #CCCCCC;
+    overflow: hidden;
+    float: left;
+}
+
+#my_account .my_items.picture_gallery .section_content a.last {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
