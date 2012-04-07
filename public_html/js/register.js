@@ -9,10 +9,18 @@ $(document).ready( function() {
         var val = $(this).val();
         
         if(val==='Actors' || val==='tosh-ette' || val==='tosh-hunk' ) {
+            // hide 'other' field
+            if($('#register_form .field.other').hasClass('active')) {
+                $('#register_form .field.other').removeClass('active');
+            }
             // show extended fields
             $('#register_form').addClass('extended');
             accountType = 3;
         } else if(val==='Other') {
+            // hide extended fields
+            if($('#register_form').hasClass('extended')) {
+                $('#register_form').removeClass('extended');
+            }
             // show 'other' field
             $('#register_form .field.other').addClass('active');
             accountType = 2;
@@ -145,7 +153,6 @@ $(document).ready( function() {
             //     values[this.name] = $(this).val();
             // });
             values = $requiredFields.serializeArray();
-            // console.log(values);
         };
         
         
@@ -169,145 +176,6 @@ $(document).ready( function() {
         }
         
         return false;
-        
-        // // CHECKING EMPTY FIELDS
-        // // accounttype
-        // if(form.accounttype.value.split(" ").join("")=="") {
-        //     alert("Please select account type");
-        //     form.accounttype.focus();
-        //     return false;
-        // }
-        // // other
-        // if(form.accounttype.value.split(" ").join("")=="Other" && form.accounttype_other.value.split(" ").join("")=="") {
-        //     alert("Please enter account type");
-        //     form.accounttype_other.focus();
-        //     return false;
-        // }
-        // // email
-        // if(form.email.value.split(" ").join("")=="") {
-        //         alert("Please enter your email address.");
-        //         form.email.focus();
-        //         return false;
-        // }
-        // // VALIDATE EMAIL
-        // if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value))) {
-        //         alert("Please enter a proper email address.");
-        //         form.email.focus();
-        //         return false;
-        // }
-        // // password
-        // if(form.password.value.split(" ").join("")=="") {
-        //         alert("Please enter your password.");
-        //         form.password.focus();
-        //         return false;
-        // }
-        // // date of birth month
-        // if(form.dob_month.value.split(" ").join("")=="") {
-        //     alert("Please select month of birth.");
-        //     form.dob_month.focus();
-        //     return false;
-        // }
-        // // date of birth day
-        // if(form.dob_day.value.split(" ").join("")=="") {
-        //     alert("Please select day of birth.");
-        //     form.dob_day.focus();
-        //     return false;
-        // }
-        // // date of birth year
-        // if(form.dob_year.value.split(" ").join("")=="") {
-        //     alert("Please select year of birth.");
-        //     form.dob_year.focus();
-        //     return false;
-        // }
-        // // firstname
-        // if(form.firstname.value.split(" ").join("")=="") {
-        //     alert("Please enter first name.");
-        //     form.firstname.focus();
-        //     return false;
-        // }
-        // // lastname
-        // if(form.lastname.value.split(" ").join("")=="") {
-        //     alert("Please enter last name.");
-        //     form.lastname.focus();
-        //     return false;
-        // }
-        // // gender
-        // if(form.gender1.checked==false && form.gender2.checked==false) {
-        //     alert("Please select gender.");
-        //     return false;
-        // }
-        // // height
-        // if(form.height.value.split(" ").join("")=="") {
-        //     alert("Please enter height.");
-        //     form.height.focus();
-        //     return false;
-        // }
-        // // weight
-        // if(form.weight.value.split(" ").join("")=="") {
-        //     alert("Please enter weight.");
-        //     form.weight.focus();
-        //     return false;
-        // }
-        // 
-        // // EXTENDED FORM
-        // // CHECK FOR EMPTIES
-        // if($('#register_form').hasClass('extended')) {
-        //     
-        //     var $inputs = $('.form_long input, .form_long select');
-        //     
-        //     // bust
-        //     if(form.bust.value.split(" ").join("")=="") {
-        //         alert("Please enter your bust size.");
-        //         form.bust.focus();
-        //         return false;
-        //     }
-        //     // hips
-        //     if(form.hips.value.split(" ").join("")=="") {
-        //         alert("Please enter your hips size.");
-        //         form.hips.focus();
-        //         return false;
-        //     }
-        //     // shoe size
-        //     if(form.shoesize.value.split(" ").join("")=="") {
-        //         alert("Please enter your shoe size.");
-        //         form.shoesize.focus();
-        //         return false;
-        //     }
-        //     // inseam
-        //     if(form.inseam.value.split(" ").join("")=="") {
-        //         alert("Please enter your inseam.");
-        //         form.inseam.focus();
-        //         return false;
-        //     }
-        //     // neck
-        //     if(form.neck.value.split(" ").join("")=="") {
-        //         alert("Please enter your neck size.");
-        //         form.neck.focus();
-        //         return false;
-        //     }
-        //     // sleeve
-        //     if(form.sleeve.value.split(" ").join("")=="") {
-        //         alert("Please enter your sleeve size.");
-        //         form.sleeve.focus();
-        //         return false;
-        //     } 
-        //     
-        //     
-        // }
-        // 
-        // // RECAPTCHA
-        // if(form.recaptcha_response_field2.value=="") {
-        //     alert("Please enter security code.");
-        //     form.recaptcha_response_field2.focus();
-        //     return false;
-        // }
-        // 
-        // 
-        // 
-        // recaptcha_response_field=form.recaptcha_response_field2.value;
-        // var poststr="recaptcha_response_field2="+recaptcha_response_field;
-        // makePOSTRequest2('php/ajaxcaptcha.php', poststr);
-        // return true;
     };
     
     
