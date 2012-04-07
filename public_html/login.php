@@ -20,7 +20,7 @@
 
 <!-- CONTENT -->
     <div id="content">
-        <h2 class="section_title"><? echo $PAGETITLE; ?></h2>
+        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
         <section class="sign_in">
             <form id="login_form">
                 <div class="field msg">

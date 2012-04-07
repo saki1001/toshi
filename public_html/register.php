@@ -21,13 +21,13 @@
 <!-- CONTENT -->
     <div id="content">
         <section class="instructions">
-            <h2 class="section_title"><? echo $PAGETITLE; ?></h2>
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
             <p>Suspendisse euismod mollis posuere. Aliquam elementum diam eu ligula volutpat porta tincidunt purus commodo. In hac habitasse platea dictumst. Phasellus iaculis dictum urna, eget elementum justo posuere in. Maecenas non lectus dui, convallis interdum metus.</p>
         </section>
         <section id="sign_in_box">
             <div class="wrapper">
                 <h3>Already a Member?</h3>
-                <a class="button red" href="#">Sign In</a>
+                <a class="button red" href="login.php">Sign In</a>
             </div>
         </section>
         <section id="register_form_wrapper">

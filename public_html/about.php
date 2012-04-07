@@ -61,7 +61,7 @@
             </div>
         </section>
         <section class="about_us">
-            <h2 class="section_title"><? echo $PAGETITLE; ?></h2>
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec elit ac neque convallis aliquam. Aliquam risus massa, scelerisque a volutpat sit amet, fermentum ut lacus. Integer ut erat neque, eget dictum lacus. Suspendisse pulvinar pulvinar ante, egestas ultrices diam vulputate et. Nunc euismod quam a sapien euismod sollicitudin. Sed arcu justo, fringilla ut malesuada sed, bibendum eleifend nunc.</p>
             <p>Quisque sapien orci, molestie vel tempor quis, rutrum nec ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum imperdiet convallis ipsum, ac tempus arcu ornare non. Proin id elit tellus. Integer sed ullamcorper nunc. Aenean ut rutrum dolor. In cursus eros nibh. Cras lacinia venenatis risus blandit feugiat.</p>
         </section>

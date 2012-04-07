@@ -36,7 +36,7 @@
         ?>
         
         <section class="event_pictures">
-            <h2 class="section_title"><? echo $PAGETITLE; ?></h2>
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
             <div id="slideshow">
                 <div id="slide_nav">
                     <!-- Links added by cycle plugin -->
