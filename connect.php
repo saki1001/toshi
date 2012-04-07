@@ -4,7 +4,6 @@
 // ini_set('display_errors', '1');
 
 session_start();
-$_SESSION['UsErId'];
 $_SESSION["ELXCartID"] = session_id();
 include ("include/config.inc.php");
 // include ("include/template_inheritance_helper.php");
