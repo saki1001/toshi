@@ -72,8 +72,8 @@
         $from1=$ADMIN_MAIL;    
         $subject1=stripslashes(GetName1("staticpage","name","id",10));
         
-        $activationlink="<a href='$SITE_URL/activateaccount.php?activationkey=".$activationkey."'>here</a>";
-        $activationurl="<a href='$SITE_URL/activateaccount.php?activationkey=".$activationkey."'>$SITE_URL/activateaccount.php?activationkey=".$activationkey."</a>";
+        $activationlink="<a href='" . $SITE_URL . $PHP . "activate_account.php?activationkey=" . $activationkey . "'>here</a>";
+        $activationurl="<a href='" . $SITE_URL . $PHP . "activate_account.php?activationkey=" . $activationkey . "'>" . $SITE_URL . $PHP . "activate_account.php?activationkey=" . $activationkey . "</a>";
         
         $detail=stripslashes(GetName1("staticpage","content","id",10));
         $detail=str_replace("[NAME]",stripslashes($_POST['firstname']),$detail);
