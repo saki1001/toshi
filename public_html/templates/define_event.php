@@ -26,12 +26,11 @@
         
     // PRICE: whether free or buy
     if(!$priceRow['onlineprice'] && !$priceRow['boxofficeprice']) {
-        $eventPriceLink = $eventDetailLink;
+        $eventPriceColor = 'red';
         $eventPriceType = 'Free';
         $eventPrice = 'Free';
     } else {
-        // TODO: add link to cart
-        $eventPriceLink = 'CART';
+        $eventPriceColor = 'yellow';
         $eventPriceType = 'Buy';
         $eventPrice = "$" . $priceRow['onlineprice'];
     }
