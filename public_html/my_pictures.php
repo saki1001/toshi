@@ -81,7 +81,7 @@ include("php/get_sess.php");
                     $AddUserQry="INSERT INTO users_pictures SET picture='$filename1',caption='".addslashes($_POST['caption'])."',addeddate=curdate(),userid='".$_SESSION['UsErId']."'";     
                     $AddUserQryRs=mysql_query($AddUserQry);
             }
-            echo $path;
+            
             header("location:my_pictures.php?msg=Your picture has been updated successfully.");            
             exit;
     }
