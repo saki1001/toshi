@@ -1,7 +1,7 @@
 <? include("define_event.php"); ?>
 
 <article class="<? echo $articleType; ?>">
-    <a href="<? echo $eventPriceLink; ?>" class="price button yellow"><? echo $eventPriceType; ?></a>
+    <a href="<? echo $eventDetailLink; ?>" class="price button <? echo $eventPriceColor; ?>"><? echo $eventPriceType; ?></a>
     <a href="<? echo $eventDetailLink ?>" class="event_detail_link">
         <div class="thumb">
         <? if($eventRow['picture']!='' && $eventRow['picture_display']=='Y'){?>
