@@ -63,7 +63,9 @@ a.button.yellow {
 
 .button.yellow:hover,
 a.button.yellow:hover {
-    background-color: #FFFBE3;
+/*    background-color: #FFFBE3;*/
+    background-color: #FFE964;
+    color: #111111;
 }
 
 header,
@@ -96,6 +98,7 @@ header nav ul li {
 
 header nav#top_nav {
     margin: 10px 0 20px;
+    color: #999999;
 }
 
 header nav#top_nav a {
