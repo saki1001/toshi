@@ -10,7 +10,7 @@
             <? }else{?><li>Welcome <a href="my_account.php" >       <?=ucfirst(stripslashes(GetName1("users","firstname","id",$_SESSION['UsErId'])));?> <?=ucfirst(stripslashes(GetName1("users","lastname","id",$_SESSION['UsErId'])));?>
                 </a></li><? } ?>
             <!-- <li><a href="#">Get Our Newsletter</a></li> -->
-            <li <? if($ACTIVEPAGE=='cart'){?>class="active"<? }?> ><a href="viewcart.php">Cart</a></li>
+            <li <? if($ACTIVEPAGE=='cart'){?>class="active"<? }?> ><a href="cart.php">Cart</a></li>
             <li <? if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0){?>
                 <? if($ACTIVEPAGE=='login'){?>class="active"<? }?>><a href="login.php">Sign In</a>
                 <? }else{?>><a href="php/logout.php">Logout</a><? }?></li>
