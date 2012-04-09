@@ -35,22 +35,8 @@
         include("templates/define_event.php");
         ?>
         
-        <section class="event_pictures">
-            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-            <div id="slideshow">
-                <div id="slide_nav">
-                    <!-- Links added by cycle plugin -->
-                </div>
-                <div class="slide">
-                    <img src="<? echo $eventPhotoMain; ?>" width="578" alt="photo" />
-                </div>
-            </div>
-        </section>
         <section class="event_info">
-            <div class="detail_section nav">
-                <a href="<? echo $backLink; ?>" class="button red">Back</a>
-                <a href="#" class="button red">Share</a>
-            </div>
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
             <div class="detail_section date">
                 <h3 class="date"><? echo $eventDate; ?></h3>
             </div>
@@ -58,15 +44,61 @@
                 <h4>Description</h4>
                 <p><? echo $eventDescription; ?></p>
             </div>
+            <!-- PAST EVENT -->
             <? if(strtotime($eventRow['startdate']) < time()) { ?>
-            <div class="detail_section media_links">
-                <a href="#" class="button yellow">More Photos</a>
-                <a href="#" class="button yellow">More Videos</a>
-            </div>
+                <div class="detail_section media_links">
+                    <a href="#" class="button yellow">More Photos</a>
+                    <a href="#" class="button yellow">More Videos</a>
+                </div>
+            <!-- UPCOMING EVENT -->
             <? } else { ?>
-            <div class="detail_section price">
-                <h4>Price</h4>
-                <p><? echo $eventPrice; ?></p>
+            <div class="detail_section tickets">
+                <h4>Tickets</h4>
+                <? 
+                $getEventTicket ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
+                $eventTicketResult = mysql_query($getEventTicket);
+                $totalEventTicketRows=mysql_affected_rows();
+
+                if($totalEventTicketRows>0) {
+                  $i=1;
+                  while($eventTicketRow = mysql_fetch_assoc($eventTicketResult)) {
+                      $Eventprice ="";
+                      $Eventprice =$eventTicketRow['ticketprice'];
+                      $perorderlimit=$eventTicketRow['perorderlimit'];
+                      $curdate=strtotime(date("Y-m-d"));
+                      
+                      if($perorderlimit<=0) {
+                          $perorderlimit=10;
+                      }
+                ?>
+                  <form name="frmgen<?=$i?>" id="frmgen<?=$i?>" action="php/cart_add.php" method="get">
+                      <ul class="ticket_option">
+                        <li class="name">
+                          <? echo ucfirst(stripslashes($eventTicketRow['pricelevelname']));?>
+                        </li>
+                        <li class="price">
+                          $<?=GetTicketPrice($eventTicketRow['id']);?>
+                        </li>
+                        <li class="qty">
+                          <select name="quantity" id="quantity">
+                          <? for($PO=1;$PO<=$perorderlimit;$PO++){?>
+                              <option value="<? echo $PO;?>"><? echo $PO;?></option>
+                          <? } ?>
+                          </select>
+                        </li>
+                        <li class="submit_form">
+                           <input type="hidden" name="HidPid" id="HidPid" value="<? echo $eventId;?>" />
+                           <input type="hidden" name="HidPriceid" id="HidPriceid" value="<? echo $eventTicketRow['id'];?>" />
+                           <input type="submit" value="Buy"  class="">
+                        </li>
+                    </ul>
+                  </form>
+                <? 
+                  $i++;
+                  }
+                } else { ?>
+                  <p><? echo $eventPrice; ?></p>
+                <? } ?>
             </div>
             <div class="detail_section venue">
                 <h4>Venue Location</h4>
@@ -76,21 +108,34 @@
                     <li><? echo $venueAddressLine2; ?></li>
                     <li><? echo $venuePhone; ?></li>
                 </ul>
-                <a href="#" class="button red">Venue Details</a>
             </div>
             <div class="detail_section details">
                 <h4>Details</h4>
                 <ul>
                     <li><? echo $eventAges; ?></li>
-                    <li><? echo $eventWebsite; ?></li>
+                    <? if(!$eventWebsite || $eventWebsite == 'http://'){
+                        // no website
+                    } else{ ?>
+                        <li><a href="<? echo $eventWebsite; ?>">Visit the Website</a></li>
+                    <? } ?>
                 </ul>
-                <? if(!$priceRow['onlineprice'] && !$priceRow['boxofficeprice']) { ?>
-                    <!-- no button if free -->
-                <? } else { ?>
-                    <a href="<? echo $eventPriceLink; ?>" class="button yellow">Buy Now</a>
-                <? } ?>
             </div>
             <?}?>
+        </section>
+        <section class="event_pictures">
+            <div class="detail_section nav">
+                <a href="<? echo $backLink; ?>" class="button red">Back</a>
+                <a href="#" class="button red">Share with a Friend</a>
+                <a href="#" class="button red">Venue Details</a>
+            </div>
+            <div id="slideshow">
+                <div id="slide_nav">
+                    <!-- Links added by cycle plugin -->
+                </div>
+                <div class="slide">
+                    <img src="<? echo $eventPhotoMain; ?>" width="578" alt="photo" />
+                </div>
+            </div>
         </section>
     </div>
 <!-- FOOTER -->
