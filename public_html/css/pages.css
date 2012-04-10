@@ -1002,8 +1002,7 @@
 
 #cart table,
 #cart #msg,
-#cart .summary,
-#cart .actions {
+#cart .price_summary {
     float: left;
 }
 
