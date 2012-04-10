@@ -26,8 +26,8 @@
 
 <!-- CONTENT -->
     <div id="content">
-        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
         <section class="cart_wrapper">
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
             <form name="frm1" id="frm1" action="php/cart_update.php" method="post"  enctype="multipart/form-data">
             <?
             $SESSION_PRODUCTID = isset($_SESSION['SESSION_PRODUCTID']) ? $_SESSION['SESSION_PRODUCTID'] : 0;
@@ -113,7 +113,7 @@
                         }
                     ?>
                 </div>
-                <ul class="summary">
+                <ul class="price_summary two_col_list">
                     <li class="left">
                         Sub Total
                     </li>
@@ -139,11 +139,6 @@
                         <a href="checkout.php" class="button yellow">Checkout</a>
                     </li>
                 </ul>
-                <!-- <div class="actions">
-                    <a href="events.php" class="button red">Back to Events</a>
-                    <a href="#" class="button red" onClick="document.frm1.submit();">Update Cart</a>
-                    <a href="checkout.php" class="button yellow">Checkout</a>
-                </div> -->
             </form>
             <? } else { ?>
             <?
@@ -155,7 +150,7 @@
             ?>
             <div class="empty">
                 <p>There are currently no events in your cart.</p>
-                <p><a href="events.php">Click Here</a> to see the event listing.</p>
+                <p><a href="events.php">Click Here</a> to browse upcoming events.</p>
             </div>
             <? } ?>
         </section>
