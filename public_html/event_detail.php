@@ -10,8 +10,15 @@
         $eventResult = mysql_query($eventQuery) or die(mysql_error());
         $eventRow = mysql_fetch_array($eventResult);
         
-        $ACTIVEPAGE='events';
-        $SUBPAGE='detail';
+        if(strtotime($eventRow['startdate']) < time()) { 
+            $ACTIVEPAGE='gallery';
+            $eventType = 'PAST';
+        } else {
+            $ACTIVEPAGE='events';
+            $eventType = 'CURRENT';
+        }
+        
+        $SUBPAGE='event_detail';
         $PAGETITLE= ucfirst(stripslashes($eventRow['name']));
         
         
@@ -22,15 +29,13 @@
     
 </head>
 
-<body id="<? echo $ACTIVEPAGE; ?>" class="<? echo $SUBPAGE; ?>">
+<body id="<? echo $SUBPAGE; ?>">
 <!-- HEADER -->
     <? include("templates/header.php");?>
 
 <!-- CONTENT -->
     <div id="content">
         <?
-        // EVENT TYPE and CSS CLASSES
-        $eventType = 'CURRENT';
         
         include("templates/define_event.php");
         ?>
