@@ -35,13 +35,12 @@
 }
 
 #events #content .page_title,
-#gallery #content .page_title,
-#news #content .page_title {
+#gallery #content .page_title {
     width:250px;
     float:left;
 }
 
-#event_detail #content .section_title {
+#detail #content .section_title {
     width:100%;
 }
 
@@ -191,7 +190,7 @@
 
 }
 
-#content .article_list article.full_width a.event_detail_link {
+#content .article_list article.full_width a.detail_link {
     height: 84px;
 }
 
@@ -292,6 +291,17 @@
     height: 300px;
     background-color: #CCCCCC;
 }
+
+/*TABS-------------------------------------------*/
+#content.tabs .tab {
+    display: none;
+}
+
+#content.tabs .tab.active {
+    display: block;
+}
+
+
 
 /*FIELDS-----------------------------------------*/
 /*field------------------------------------------*/
@@ -500,17 +510,17 @@
 
 /*NEWS-------------------------------------------*/
 /*news navugation by year------------------------*/
-#news #news_nav {
+#news #tabs_nav {
     width: 250px;
     float: left;
 }
 
-#news #news_nav ul li {
+#news #tabs_nav ul li {
 /*    margin-bottom: 5px;*/
     text-align: right;
 }
 
-#news #news_nav ul li a {
+#news #tabs_nav ul li a {
     font-family: 'Bangers', sans-serif;
     font-weight: normal;
     font-size: 2.8em;
@@ -520,14 +530,14 @@
     display:block;
 }
 
-#news #news_nav ul li a.active:hover,
-#news #news_nav ul li a.active {
+#news #tabs_nav ul li a.active:hover,
+#news #tabs_nav ul li a.active {
     color: #FFFBE3;
     background: url('../images/news-nav-highlight.png') no-repeat 0 0;
     cursor: default;
 }
 
-#news #news_nav ul li a:hover {
+#news #tabs_nav ul li a:hover {
     color: #FFFBE3;
     background: url('../images/news-nav-hover.png') no-repeat 0 0;
 }
@@ -688,21 +698,42 @@
     margin-left: 10px;
 }
 
-/*UPCOMING EVENT DETAIL--------------------------*/
-#event_detail section {
+/*DETAIL VIEW--------------------------*/
+#detail section {
     float: left;
 }
 
-#event_detail section.event_pictures {
+#detail section.detail_pictures {
     width: 600px;
 }
 
-#event_detail #content .page_title {
+#detail #content .detail_header {
     width: 100%;
-    float: none;
+    margin-bottom: 5px;
+    float: left;
 }
 
-#event_detail #slideshow {
+#detail #content .detail_header .page_title {
+    width: 320px;
+    max-height: 35px;
+    overflow: hidden;
+    margin: 0 30px 0 0;
+    float: left;
+}
+
+#detail .detail_header .nav {
+    width: 600px;
+    margin-top: 17px;
+    float: right;
+}
+
+#detail .detail_header .nav a {
+    font-size: 1.2em;
+    margin-left: 20px;
+    float: right;
+}
+
+#detail #slideshow {
     max-width: 580px;
     max-height: 380px;
     overflow: hidden;
@@ -711,78 +742,95 @@
     float: left;
 }
 
-#event_detail #slideshow .slide {
-    max-width: 578px;
-    max-height: 378px;
+#detail #slideshow .slide {
+    width: 578px;
+    height: 378px;
     overflow: hidden;
     background-color: #444444;
 }
 
-#event_detail #slideshow .slide img {
+#detail #slideshow .slide img {
 }
 
-#event_detail section.event_info {
+#detail .detail_pdf {
+    width: 580px;
+    min-height: 300px;
+    background: #333333;
+    border: solid 10px #FFFBE3;
+}
+
+#detail .detail_pdf #pdf {
+    width: 578px;
+    min-height: 300px;
+    border: solid 1px #222222;
+}
+
+#detail .detail_pdf #pdf object {
+    min-height: 300px;
+}
+
+#detail .detail_pdf #pdf p {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 135px;
+    font-size: 1.2em;
+}
+
+#detail section.detail_info {
     width: 320px;
     margin-right: 30px;
 }
 
-#event_detail .event_info .detail_section {
-    clear: both;
+#detail .detail_info .info_section {
+    width: 100%;
     float: left;
     margin-bottom: 15px;
 }
 
-#event_detail .event_info .detail_section.venue {
-    clear: left;
+#detail .detail_info .info_section.venue {
+    width: 170px;
 }
 
-#event_detail .event_info .detail_section.details {
-    margin-left: 30px;
-    clear: right;
+#detail .detail_info .info_section.details {
+    margin-left: 20px;
+    width: 130px;
 }
 
-#event_detail .event_info h3 {
+#detail .detail_info .info_section.sub_head {
+    color: #666666;
+}
+
+#detail .detail_info h3 {
     font-size: 1.8em;
     font-weight: normal;
 }
 
-#event_detail .nav {
-    width: 100%;
-    margin: 5px 0 10px;
-    float: left;
-}
-
-#event_detail .nav .button {
-    display: block;
-    margin-left: 20px;
-    float: right;
-}
-
-#event_detail .event_info h4 {
+#detail .detail_info h4 {
     font-size: 1.3em;
     font-weight: normal;
     color: #666666;
     margin-bottom: 5px;
 }
 
-#event_detail .event_info p,
-#event_detail .event_info ul li {
+#detail .detail_info p,
+#detail .detail_info ul li {
     font-size: 1.2em;
     line-height: 1.2;
 }
 
-#event_detail .event_info .button {
+#detail .detail_info .button {
     margin-top: 8px;
     clear: both;
     float: left;
 }
 
-#event_detail .event_info .ticket_option {
+#detail .detail_info .ticket_option {
     width: 100%;
     float: left;
 }
 
-#event_detail .event_info .ticket_option li {
+#detail .detail_info .ticket_option li {
     float: left;
     margin-left: 10px;
     max-height: 18px;
@@ -790,25 +838,25 @@
     overflow: hidden;
 }
 
-#event_detail .event_info .ticket_option li.name {
+#detail .detail_info .ticket_option li.name {
     width: 140px;
     margin-left: 0;
 }
 
-#event_detail .event_info .ticket_option li.price,
-#event_detail .event_info .ticket_option li.qty,
-#event_detail .event_info .ticket_option li.submit_form {
+#detail .detail_info .ticket_option li.price,
+#detail .detail_info .ticket_option li.qty,
+#detail .detail_info .ticket_option li.submit_form {
     width: 50px;
     text-align: right;
 }
 
-#event_detail .event_info .ticket_option input[type='submit'] {
+#detail .detail_info .ticket_option input[type='submit'] {
     color: #222222;
     background-color: #FFF4A5;
     font-weight: bold;
 }
 
-#event_detail .event_info .ticket_option input[type='submit']:hover {
+#detail .detail_info .ticket_option input[type='submit']:hover {
     background-color: #FFE964;
     color: #111111;
     cursor: pointer;
