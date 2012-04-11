@@ -2,13 +2,13 @@
 
 <article class="<? echo $articleType; ?>">
     <a href="<? echo $eventDetailLink; ?>" class="price button <? echo $eventPriceColor; ?>"><? echo $eventPriceType; ?></a>
-    <a href="<? echo $eventDetailLink ?>" class="event_detail_link">
+    <a href="<? echo $eventDetailLink ?>" class="detail_link">
         <div class="thumb">
         <? if($eventRow['picture']!='' && $eventRow['picture_display']=='Y'){?>
             <img src="<? echo $eventThumbLink; ?>" height="80" alt="thumbnail" />
         <? }else{ ?>
             <!-- TODO: replace with image of toshi -->
-            <img src="http://www.placehold.it/120x80" width="120" height="80" alt="thumbnail" />
+            <img src="images/default_article_thumb.jpg" width="120" height="80" alt="thumbnail" />
         <? } ?>
         </div>
         <div class="info">
