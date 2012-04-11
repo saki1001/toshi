@@ -18,7 +18,7 @@
             $eventType = 'CURRENT';
         }
         
-        $SUBPAGE='event_detail';
+        $SUBPAGE='detail';
         $PAGETITLE= ucfirst(stripslashes($eventRow['name']));
         
         
@@ -27,37 +27,52 @@
 <!-- HEAD -->
     <? include("templates/head.php");?>
     
+    <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#slideshow').cycle({
+            fx: 'fade',
+            pager: '#slide_nav',
+            slideExpr: '.slide'
+        });
+    });
+    </script>
 </head>
 
-<body id="<? echo $SUBPAGE; ?>">
+<body id="<? echo $SUBPAGE; ?>" class="<? echo $ACTIVEPAGE; ?>">
 <!-- HEADER -->
     <? include("templates/header.php");?>
 
 <!-- CONTENT -->
     <div id="content">
         <?
-        
         include("templates/define_event.php");
         ?>
-        
-        <section class="event_info">
+        <section class="detail_header">
             <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-            <div class="detail_section date">
+            <div class="nav">
+                <a href="<? echo $backLink; ?>">Back</a>
+                <a href="#">Share with a Friend</a>
+                <a href="#">Venue Details</a>
+            </div>
+        </section>
+        <section class="detail_info">
+            <div class="info_section date">
                 <h3 class="date"><? echo $eventDate; ?></h3>
             </div>
-            <div class="detail_section description">
+            <div class="info_section description">
                 <h4>Description</h4>
                 <p><? echo $eventDescription; ?></p>
             </div>
             <!-- PAST EVENT -->
             <? if(strtotime($eventRow['startdate']) < time()) { ?>
-                <div class="detail_section media_links">
+                <div class="info_section media_links">
                     <a href="#" class="button yellow">More Photos</a>
                     <a href="#" class="button yellow">More Videos</a>
                 </div>
             <!-- UPCOMING EVENT -->
             <? } else { ?>
-            <div class="detail_section tickets">
+            <div class="info_section tickets">
                 <h4>Tickets</h4>
                 <? 
                 $getEventTicket ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
@@ -67,8 +82,8 @@
                 if($totalEventTicketRows>0) {
                   $i=1;
                   while($eventTicketRow = mysql_fetch_assoc($eventTicketResult)) {
-                      $Eventprice ="";
-                      $Eventprice =$eventTicketRow['ticketprice'];
+                      // $Eventprice ="";
+                      // $Eventprice =$eventTicketRow['ticketprice'];
                       $perorderlimit=$eventTicketRow['perorderlimit'];
                       $curdate=strtotime(date("Y-m-d"));
                       
@@ -105,7 +120,7 @@
                   <p><? echo $eventPrice; ?></p>
                 <? } ?>
             </div>
-            <div class="detail_section venue">
+            <div class="info_section venue">
                 <h4>Venue Location</h4>
                 <ul>
                     <li><? echo $venueName; ?></li>
@@ -114,7 +129,7 @@
                     <li><? echo $venuePhone; ?></li>
                 </ul>
             </div>
-            <div class="detail_section details">
+            <div class="info_section details">
                 <h4>Details</h4>
                 <ul>
                     <li><? echo $eventAges; ?></li>
@@ -127,19 +142,36 @@
             </div>
             <?}?>
         </section>
-        <section class="event_pictures">
-            <div class="detail_section nav">
-                <a href="<? echo $backLink; ?>" class="button red">Back</a>
-                <a href="#" class="button red">Share with a Friend</a>
-                <a href="#" class="button red">Venue Details</a>
-            </div>
+        <section class="detail_pictures">
             <div id="slideshow">
-                <div id="slide_nav">
-                    <!-- Links added by cycle plugin -->
-                </div>
-                <div class="slide">
-                    <img src="<? echo $eventPhotoMain; ?>" width="578" alt="photo" />
-                </div>
+                <?
+                    $getPicturesQuery = "SELECT * FROM events_pictures WHERE eventid='".trim($eventId)."' order by id desc";
+                    $getPicturesResult = mysql_query($getPicturesQuery);
+                    $totalPictures = mysql_affected_rows();
+                ?>
+                <? if($totalPictures>0) { ?>
+                    
+                    <div id="slide_nav">
+                        <!-- Links added by cycle plugin -->
+                    </div>
+                    
+                    <? while($pictureRow = mysql_fetch_array($getPicturesResult)) {
+                            $pictureUrl = "../Events/" . $pictureRow['picture'];
+                        ?>
+                        
+                        <div class="slide">
+                            <img src="<? echo $pictureUrl; ?>" width="578" alt="photo" />
+                        </div>
+                        
+                    <? } ?>
+                    
+                <? } else { ?>
+                    
+                    <div class="slide">
+                        <img src="<? echo $eventPhotoMain; ?>" width="578" alt="photo" />
+                    </div>
+                    
+                <? } ?>
             </div>
         </section>
     </div>
