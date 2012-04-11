@@ -26,14 +26,14 @@ body {
 
 a,
 a:visited {
-    color:#999999;
+    color:#666666;
     font-weight: bold;
     text-decoration: none;
 }
 
 a:hover,
 a:active {
-    color: #FFFBE3;
+    color: #ED3547;
 }
 
 .button,
@@ -97,16 +97,13 @@ header nav ul li {
 }
 
 header nav#top_nav {
-    margin: 10px 0 20px;
-    color: #999999;
-}
-
-header nav#top_nav a {
+    color: #666666;
     font-size: 1.1em;
+    margin: 10px 0 20px;
 }
 
 header nav#top_nav li.active a {
-    color: #FFFBE3;
+    color: #ED3547;
 }
 
 header nav#top_nav li.active a:hover {
