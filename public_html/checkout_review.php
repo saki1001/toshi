@@ -143,6 +143,7 @@ if($_POST['HidContinueCheckout']=="1") {
     
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/cart.css" type="text/css" media="all">
     
     <script type="text/javascript" src="ajax_validation.js"></script>
     
