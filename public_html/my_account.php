@@ -42,7 +42,7 @@
         ?>
         <div class="column profile_photo">
             <section class="photo_wrapper">
-                <img src="<? echo $profilePic; ?>" width="250" alt="Profile_Photo"/>
+                <img src="<? echo $profilePic; ?>" width="248" alt="Profile_Photo"/>
             </section>
             <? if($_REQUEST['msg']) {?>
                 <div id="msg" class="active"><? echo $_REQUEST['msg'];?></div>
