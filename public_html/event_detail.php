@@ -28,6 +28,7 @@
     <? include("templates/head.php");?>
     <link rel="stylesheet" href="css/detail.css" type="text/css" media="all">
     
+    <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -45,7 +46,7 @@
     <? include("templates/header.php");?>
 
 <!-- CONTENT -->
-    <div id="content">
+    <div id="content" class="tabs">
         <?
         include("templates/define_event.php");
         ?>
@@ -55,6 +56,9 @@
                 <a href="<? echo $backLink; ?>">Back</a>
                 <a href="#">Share with a Friend</a>
                 <a href="#">Venue Details</a>
+                <? if($totalVideos>0) { ?>
+                    <a href="#videos">Videos</a>
+                <? } ?>
             </div>
         </section>
         <section class="detail_info">
@@ -145,11 +149,6 @@
         </section>
         <section class="detail_pictures">
             <div id="slideshow">
-                <?
-                    $getPicturesQuery = "SELECT * FROM events_pictures WHERE eventid='".trim($eventId)."' order by id desc";
-                    $getPicturesResult = mysql_query($getPicturesQuery);
-                    $totalPictures = mysql_affected_rows();
-                ?>
                 <? if($totalPictures>0) { ?>
                     
                     <div id="slide_nav">
@@ -177,6 +176,43 @@
                     
                 <? } ?>
             </div>
+        </section>
+        <section class="detail_videos">
+            <? if($totalVideos>0) { ?>
+                
+                <ul id="tabs_nav">
+                <? while($videoRow = mysql_fetch_array($getVideosResult)) { ?>
+                    <li>
+                        <a href="#tab_<? echo $videoRow['id']; ?>" class="button tab_style"><? echo $videoRow['caption']; ?></a>
+                    </li>
+                <? } ?>
+                </ul>
+                
+                <!-- reset array to use while loop again -->
+                <? mysql_data_seek($getVideosResult, 0); ?>
+                
+                <div id="videos">
+                
+                <? while($videoRow = mysql_fetch_array($getVideosResult)) { ?>
+                    
+                    <? if($videoRow['video']!=""){ ?>
+                        <div id="tab_<? echo $videoRow['id']; ?>" class="tab">
+                            <? echo stripslashes($videoRow['video']); ?>
+                        </div>
+                    <? } else if($videoRow['videofile']!=""){ ?>
+                        <div id="tab_<? echo $videoRow['id']; ?>" class="tab">
+                            <a  href="../Videos/<? echo $videoRow['videofile']; ?>" id="player"></a> 
+                            <script language="javascript1.1">flowplayer("player", "flowplayer-3.2.7.swf");</script>
+                        </div>
+                    <? } else { ?>
+                        <!-- do nothing -->
+                    <? } ?>
+                <? } ?>
+                </div>
+                
+            <? } else { ?>
+                <!-- do nothing -->
+            <? } ?>
         </section>
     </div>
 <!-- FOOTER -->
