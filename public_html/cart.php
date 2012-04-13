@@ -17,6 +17,7 @@
     
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/cart.css" type="text/css" media="all">
     
 </head>
 
@@ -99,7 +100,9 @@
                         </td>
                         <!-- DELETE -->
                         <td class="rm_col">
-                            <a href="php/cart_update.php?DelItem=YES&priceid=<?=$SESSION_CUSTOMIZE[$i];?>&pid=<?=$SESSION_PRODUCTID[$i];?>" title="Click to remove item"><img src="images/close_x.png" alt="X" width="14" height="14" /></a>
+                            <a href="php/cart_update.php?DelItem=YES&priceid=<?=$SESSION_CUSTOMIZE[$i];?>&pid=<?=$SESSION_PRODUCTID[$i];?>" title="Click to remove item">
+                                <img src="images/close_x.png" alt="X" width="14" height="14" />
+                            </a>
                         </td>
                     </tr>
                     <? } ?>
