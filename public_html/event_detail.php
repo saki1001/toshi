@@ -26,6 +26,7 @@
     
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/detail.css" type="text/css" media="all">
     
     <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
     <script type="text/javascript">
@@ -153,6 +154,9 @@
                     
                     <div id="slide_nav">
                         <!-- Links added by cycle plugin -->
+                    </div>
+                    <div class="slide">
+                        <img src="<? echo $eventPhotoMain; ?>" width="578" alt="photo" />
                     </div>
                     
                     <? while($pictureRow = mysql_fetch_array($getPicturesResult)) {
