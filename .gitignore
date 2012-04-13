@@ -1,2 +1,12 @@
-# Ignoring Database access
+# Ignoring Database access #
 include/config.inc.php
+
+# Ignoring database specific uploaded files #
+banners/
+Events/
+Musics/
+Users/
+Videos/
+
+# OS generated files #
+.DS_Store*
