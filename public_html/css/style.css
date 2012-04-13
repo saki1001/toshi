@@ -63,8 +63,19 @@ a.button.yellow {
 
 .button.yellow:hover,
 a.button.yellow:hover {
-/*    background-color: #FFFBE3;*/
     background-color: #FFE964;
+    color: #111111;
+}
+
+.button.tab_style,
+a.button.tab_style {
+    color: #666666;
+    background-color: #999999;
+}
+
+.button.tab_style:hover,
+a.button.tab_style:hover {
+    background-color: #FFFBE3;
     color: #111111;
 }
 
