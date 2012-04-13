@@ -19,6 +19,16 @@
         $eventPhotoMain = "http://www.placehold.it/578x378";
     }
     
+    // PICTURES
+    $getPicturesQuery = "SELECT * FROM events_pictures WHERE eventid='".trim($eventId)."' order by id desc";
+    $getPicturesResult = mysql_query($getPicturesQuery);
+    $totalPictures = mysql_affected_rows();
+    
+    // VIDEOS
+    $getVideosQuery = "SELECT * FROM events_videos WHERE eventid='".trim($eventId)."' ORDER BY id desc";
+    $getVideosResult = mysql_query($getVideosQuery);
+    $totalVideos = mysql_affected_rows();
+    
     // PRICE VARIABLES
     $priceQuery = "SELECT * FROM events_pricelevel where eventid='".$eventId."'"; 
     $priceResult = mysql_query($priceQuery) or die(mysql_error());
