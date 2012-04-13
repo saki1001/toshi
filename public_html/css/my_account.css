@@ -26,14 +26,12 @@
 
 #my_account .profile_photo .photo_wrapper {
     width: 250px;
-    height: 250px;
     border: solid 10px #FFFBE3;
     overflow: hidden;
 }
 
 #my_account .profile_photo .photo_wrapper img {
-    min-width: 248px;
-    min-height: 248px;
+    width: 248px;
     overflow: hidden;
     color: #222222;
     background: #FCFCFC;
