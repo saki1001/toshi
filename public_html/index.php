@@ -11,6 +11,7 @@
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/index.css" type="text/css" media="all">
     
     <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
     <script type="text/javascript">
