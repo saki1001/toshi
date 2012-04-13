@@ -138,6 +138,10 @@
     text-align: right;
 }
 
+#my_account .my_items.picture_list li.last {
+    text-align: left;
+}
+
 #my_account .my_items.picture_list .item_detail {
     height: 80px;
     max-width: 350px;
