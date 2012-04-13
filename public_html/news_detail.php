@@ -18,6 +18,7 @@
     
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/detail.css" type="text/css" media="all">
     
 </head>
 

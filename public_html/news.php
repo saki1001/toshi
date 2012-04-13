@@ -18,6 +18,7 @@
 <body id="<? echo $ACTIVEPAGE; ?>">
 <!-- HEADER -->
     <? include("templates/header.php");?>
+    <link rel="stylesheet" href="css/news.css" type="text/css" media="all">
 
 <!-- CONTENT -->
     <div id="content" class="tabs">
