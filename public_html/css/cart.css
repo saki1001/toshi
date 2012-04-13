@@ -1,0 +1,171 @@
+/*CART-------------------------------------------*/
+
+#cart .cart_wrapper,
+#cart .checkout_wrapper {
+    width: 650px;
+/*    margin: 0 auto;*/
+}
+
+#cart .billing_info,
+#cart .shipping_info,
+#cart .payment_info,
+#cart .promo_info {
+    width: 300px;
+    float: left;
+}
+
+#cart .billing_info,
+#cart .promo_info {
+    margin-right: 50px;
+}
+
+#cart table,
+#cart #msg,
+#cart .price_summary {
+    float: left;
+}
+
+#cart .empty {
+    font-size: 1.6em;
+    margin-top: 15px;
+}
+
+#cart .empty p {
+    margin-bottom: 5px;
+}
+
+#cart table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#cart #msg {
+    width: 425px;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+#cart .two_col_list {
+    width: 225px;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+#cart .two_col_list li {
+    width: 100%;
+    float: left;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+#cart .two_col_list li .button {
+    font-size: 18px;
+    margin-top: 15px;
+    float: right;
+}
+
+/*#cart .summary li h4*/
+#cart .two_col_list li.left {
+    color: #999999;
+    margin-right: 5px;
+    width: 110px;
+    float: left;
+}
+
+/*#cart .summary li span*/
+#cart .two_col_list li.right {
+    width: 110px;
+    float: left;
+}
+
+#cart table .event_col {
+    width: 350px;
+}
+
+#cart table tr {
+    border-bottom: solid 1px #444444;
+}
+
+#cart table tr.table_head {
+    border-bottom: solid 1px #666666;
+}
+
+#cart table tr th {
+    font-size: 1.4em;
+    font-weight: normal;
+    color: #666666;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#cart table tr th.event_col {
+    text-align: left;
+}
+
+#cart table tr td {
+    font-size: 1.4em;
+    font-weight: normal;
+    color: #F2F2F2;
+    padding: 10px 0 15px 0;
+/*    height: 30px;*/
+    text-align: center;
+}
+
+#cart table tr td.event_col {
+    text-align: left;
+}
+
+#cart table tr td.qty_col input {
+    margin-bottom: -5px;
+}
+
+#cart table .price_col,
+#cart table .sub_total_col {
+    width: 100px;
+}
+
+#cart table .qty_col,
+#cart table .rm_col {
+    width: 50px;
+}
+
+
+#cart form .field.qty_col {
+    padding-bottom: 0;
+}
+
+#cart form .qty_col input[type='text'] {
+    width: 30px;
+    color: #F2F2F2;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    background-color: #444444;
+    border: 1px solid #666666;
+    display: block;
+}
+
+#cart.checkout .shipping_info h3 {
+    float: left;
+    width: 100%;
+}
+
+#cart.checkout .shipping_info h3 span,
+#cart.checkout .shipping_info h3 .same_as_ship {
+    width: 50%;
+    float: left;
+}
+
+#cart.checkout .shipping_info h3 .same_as_ship {
+    font-size: 11px;
+    padding-top: 1px;
+}
+
+#cart.checkout .shipping_info h3 .same_as_ship input[type='checkbox'],
+#cart.checkout .shipping_info h3 .same_as_ship label {
+    float: right;
+    margin: 0 0 0 5px;
+}
+
+#cart.checkout .promo_info #promomsg {
+    float: left;
+}

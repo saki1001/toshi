@@ -1,0 +1,183 @@
+/*MY ACCOUNT-------------------------------------*/
+
+#my_account .column {
+    margin-left: 25px;
+    width: 300px;
+    float: left;
+}
+
+#my_account .column.profile_photo {
+    width: 270px;
+    margin: 0;
+}
+
+#my_account .column.profile_title {
+    width: 655px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+#my_account .column.pictures {
+    width: 330px;
+    min-height: 200px;
+    margin-left: 30px;
+    float: right;
+}
+
+#my_account .profile_photo .photo_wrapper {
+    width: 250px;
+    height: 250px;
+    border: solid 10px #FFFBE3;
+    overflow: hidden;
+}
+
+#my_account .profile_photo .photo_wrapper img {
+    min-width: 248px;
+    min-height: 248px;
+    overflow: hidden;
+    color: #222222;
+    background: #FCFCFC;
+    border: 1px solid #222222;
+    diaply: block;
+}
+
+#my_account .column section {
+    width: 100%;
+    margin-bottom: 25px;
+    float: left;
+}
+
+#my_account .section_title {
+    border-bottom: solid 1px #999999;
+    margin-bottom: 15px;
+    width: 100%;
+    float: left;
+}
+
+#my_account .section_title h3 {
+    font-size: 1.6em;
+    font-weight: normal;
+    padding-bottom: 5px;
+    float: left;
+}
+
+#my_account .section_title a {
+    font-size: 1.2em;
+    padding-top: 3px;
+    float:right;
+}
+
+#my_account .section_content {
+    font-size: 1.4em;
+    float: left;
+}
+
+#my_account .section_content li {
+    margin-bottom: 8px;
+}
+
+#my_account .section_content li span {
+    color: #999999;
+    margin-right: 3px;
+}
+
+/*ACCOUNT UPLOAD PAGES---------------------------*/
+#my_account.upload h2 {
+    margin-bottom: 20px;
+}
+
+#my_account.upload #content section.upload_items {
+    width: 400px;
+    float: left;
+}
+
+#my_account.upload #content section.my_items {
+    width: 400px;
+    margin-left: 30px;
+    float: left;
+}
+
+#my_account.upload .upload_items  form{
+    width: 100%;
+    float: left;
+}
+
+
+/*MY ACCOUNT: DISPLAY ITEMS--------------------*/
+#my_account .my_items .section_content {
+    width: 100%;
+}
+
+#my_account .my_items .section_content li {
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #444444;
+    float: left;
+}
+
+#my_account .my_items .section_content li.last {
+    border: none;
+}
+
+#my_account .my_items .item_detail {
+    font-weight: normal;
+    max-width: 300px;
+    height: 15px;
+    overflow: hidden;
+    float: left;
+}
+
+#my_account .my_items .item_detail img,
+#my_account .my_items .item_detail span {
+    float: left;
+    margin-right: 10px;
+}
+
+#my_account .my_items.picture_list li {
+    text-align: right;
+}
+
+#my_account .my_items.picture_list .item_detail {
+    height: 80px;
+    max-width: 350px;
+    text-align: left;
+}
+
+#my_account .my_items.picture_list .item_detail img {
+    min-height: 80px;
+    max-width: 200px;
+    overflow: hidden;
+    background-color: #CCCCCC;
+}
+
+#my_account .my_items.picture_list .item_detail span {
+    height: 80px;
+    max-width: 130px;
+    overflow: hidden;
+}
+
+#my_account .my_items.picture_list .delete_item {
+    width: 50px;
+    max-height: 80px;
+    text-aligh: right;
+}
+
+#my_account .my_items .delete_item,
+#my_account .my_items .item_date {
+    float: right;
+}
+
+#my_account .my_items.picture_gallery .section_content a {
+    height: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #CCCCCC;
+    overflow: hidden;
+    float: left;
+}
+
+#my_account .my_items.picture_gallery .section_content a.last {
+    margin-right: 0;
+}
+

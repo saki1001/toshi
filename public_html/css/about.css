@@ -1,0 +1,62 @@
+/*ABOUT------------------------------------------*/
+
+#about #content section {
+    margin-bottom: 45px;
+    float: left;
+}
+
+#about #content section.about_us,
+#content section.contact_us {
+    width: 400px;
+    margin-right: 50px;
+}
+
+#about #content section.location {
+    width: 500px;
+    float: right;
+}
+
+#about .section_title {
+    font-family: 'Bangers', sans-serif;
+    font-size: 3.2em;
+    font-weight: normal;
+    color: #FFFBE3;
+    margin-bottom: 10px;
+}
+
+#about section.location .map_wrapper {
+    border: solid 10px #FFFBE3;
+}
+
+#about section.location .map_wrapper #map_canvas {
+    background: #FCFCFC;
+    border: 1px solid #222222;
+    width: 479px;
+    height: 399px;
+}
+
+#about section.about_us p {
+    font-size: 1.4em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+#about section.contact_us ul {
+    width: 180px;
+    margin-right: 20px;
+    float: left;
+}
+
+#about section.contact_us ul li {
+    font-size: 1.4em;
+    line-height: 1.2;
+}
+
+#about section.contact_us form {
+    width: 286px;
+}
+
+#about section.contact_us form .button {
+    float: right;
+    margin-left: 10px;
+}

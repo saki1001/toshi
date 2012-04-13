@@ -1,0 +1,82 @@
+/*REGISTER (AUDITIONS)--------------------------------------*/
+#register #content section {
+    margin-bottom: 25px;
+    float: left;
+}
+
+#register section.instructions {
+    width: 570px;
+    margin-right: 50px;
+}
+
+#register .instructions p {
+    font-size: 1.4em;
+    line-height: 1.2;
+/*    float: left;*/
+}
+
+#content section#register_form_wrapper {
+/*    width: 600px;*/
+    margin-right: 20px;
+}
+
+#content #register_form .form_long.field {
+    display: none;
+}
+
+#content #register_form.extended .form_long.field {
+    display: block;
+}
+
+#register form .field.other {
+    display: none;
+}
+
+#register form .field.other.active {
+    display: block;
+}
+
+/*TODO: fix float bug*/
+#register form .field.captcha {
+    height: 50px;
+}
+
+#register form .field.captcha img {
+    float: left;
+}
+
+#register form .field.captcha input {
+    width: 152px;
+    margin: 8px 0 0 15px;
+    float: left;
+}
+
+/*sign in box------------------------------------*/
+#content section#sign_in_box {
+    width: 310px;
+    border: solid 10px #FFFBE3;
+    margin-top: 15px;
+}
+
+#content #sign_in_box .wrapper {
+    color: #222222;
+    padding: 18px;
+    background: #FCFCFC;
+    border: 1px solid #222222;
+    overflow: hidden;
+}
+
+#content #sign_in_box .wrapper h3 {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2.8em;
+    margin-top: 3px;
+    float: left;
+}
+
+#content #sign_in_box .wrapper .button {
+    float: left;
+    margin-left: 15px;
+}
+
+

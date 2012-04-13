@@ -1,0 +1,34 @@
+/*NEWS-------------------------------------------*/
+/*news navigation by year------------------------*/
+#news #tabs_nav {
+    width: 250px;
+    float: left;
+}
+
+#news #tabs_nav ul li {
+/*    margin-bottom: 5px;*/
+    text-align: right;
+}
+
+#news #tabs_nav ul li a {
+    font-family: 'Bangers', sans-serif;
+    font-weight: normal;
+    font-size: 2.8em;
+    height: 38px;
+    width: 200px;
+    padding: 12px 50px 0 0;
+    display:block;
+}
+
+#news #tabs_nav ul li a.active:hover,
+#news #tabs_nav ul li a.active {
+    color: #FFFBE3;
+    background: url('../images/news-nav-highlight.png') no-repeat 0 0;
+    cursor: default;
+}
+
+#news #tabs_nav ul li a:hover {
+    color: #FFFBE3;
+    background: url('../images/news-nav-hover.png') no-repeat 0 0;
+}
+
