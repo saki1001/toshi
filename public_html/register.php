@@ -17,6 +17,7 @@
 <body id="<? echo $ACTIVEPAGE; ?>">
 <!-- HEADER -->
     <? include("templates/header.php");?>
+    <link rel="stylesheet" href="css/register.css" type="text/css" media="all">
 
 <!-- CONTENT -->
     <div id="content">
@@ -133,7 +134,7 @@
                         <img src="../CaptchaSecurityImages.php" />
                         <input type="text" name="recaptcha_response_field2" id="recaptcha_response_field2" />
                     </div>
-                    <div class="form_standard field newsletter">
+                    <div class="form_standard field checkbox">
                         <input type="checkbox" name="newsletter" value="Y"  checked="checked"/>
                         <label>I'm happy to receive newsletters from <? echo $SITE_NAME;?>.</label>
                     </div>
