@@ -10,6 +10,7 @@
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/news.css" type="text/css" media="all">
     
     <script type="text/javascript" src="js/tabs.js"></script>
     
@@ -18,15 +19,14 @@
 <body id="<? echo $ACTIVEPAGE; ?>">
 <!-- HEADER -->
     <? include("templates/header.php");?>
-    <link rel="stylesheet" href="css/news.css" type="text/css" media="all">
-
+    
 <!-- CONTENT -->
     <div id="content" class="tabs">
         <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
         <!-- <h3 class="info_title">Articles from $YEAR</h3> -->
         <section id="tabs_nav">
             <ul>
-                <li><a class="active" href="#tab_2011">2011</a></li>
+                <li><a href="#tab_2011">2011</a></li>
                 <li><a href="#tab_2010">2010</a></li>
                 <li><a href="#tab_2009">2009</a></li>
                 <li><a href="#tab_2008">2008</a></li>
@@ -34,7 +34,7 @@
                 <li><a href="#tab_2006">2006</a></li>
             </ul>
         </section>
-        <section id="tab_2011" class="article_list tab active">
+        <section id="tab_2011" class="article_list tab">
             <?
             // EVENT TYPE and CSS CLASSES
             $newsType = 'NEWS';
