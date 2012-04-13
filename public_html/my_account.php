@@ -16,6 +16,7 @@
 <body id="<? echo $ACTIVEPAGE; ?>">
 <!-- HEADER -->
     <? include("templates/header.php");?>
+    <link rel="stylesheet" href="css/my_account.css" type="text/css" media="all">
 
 <!-- CONTENT -->
     <div id="content">
@@ -33,21 +34,24 @@
         }
         
         if($userRow['picture']!=""){
-            $profilePic = "Users/thumb/" . $userRow['picture']; 
+            $profilePic = "../Users/" . $userRow['picture']; 
         } else {
             $profilePic = "images/user_silhouette.png";
         }
         
         ?>
         <div class="column profile_photo">
-        <!-- <section class="profile_picture"> -->
-            <img src="<? echo $profilePic; ?>"/>
+            <section class="photo_wrapper">
+                <img src="<? echo $profilePic; ?>" width="250" alt="Profile_Photo"/>
+            </section>
+            <? if($_REQUEST['msg']) {?>
+                <div id="msg" class="active"><? echo $_REQUEST['msg'];?></div>
+            <? } ?>
         </div>
         <div class="column profile_title">
             <h2 class="page_title"><? echo ucfirst(stripslashes($userRow['firstname']));?> <? echo ucfirst(stripslashes($userRow['lastname']));?></h2>
         </div>
         <div class="column profile">
-            <!-- <? if($_REQUEST['msg']){?><div align="center" style="color:#FF0000;"><? echo $_REQUEST['msg'];?></div><? } ?> -->
             <section class="info">
                 <div class="section_title">
                     <h3>My Profile</h3>
@@ -116,7 +120,7 @@
             <section class="my_items music">
                 <div class="section_title">
                     <h3>My Music</h3>
-                    <a href="my_music.php">Upload Music</a>
+                    <a href="my_music.php">Edit Music</a>
                 </div>
                 <ul class="section_content">
                     <?
@@ -150,10 +154,10 @@
                     ?>
                 </ul>
             </section>
-            <section class="videos">
+            <section class="my_items videos">
                 <div class="section_title">
                     <h3>My Videos</h3>
-                    <a href="my_videos.php">Upload Video</a>
+                    <a href="my_videos.php">Edit Videos</a>
                 </div>
                 <ul class="section_content">
                     <?
@@ -192,7 +196,7 @@
             <section class="my_items picture_gallery">
                 <div class="section_title">
                     <h3>My Pictures</h3>
-                    <a href="my_pictures.php">Upload Pictures</a>
+                    <a href="my_pictures.php">Edit Pictures</a>
                 </div>
                 <div class="section_content">
                     <?
@@ -210,7 +214,7 @@
                                 }
                     ?>
                         <a href="#" <? echo $itemClass; ?> onClick="javascript:window.open('<? echo "../Users/".$GetTotalPictureQryRow['picture'];?>', '','width=650,height=500');return false;">
-                            <img src="<? echo "../Users/thumb/".$GetTotalPictureQryRow['picture'];?>" alt="Picture" />
+                            <img src="<? echo "../Users/thumb/".$GetTotalPictureQryRow['picture'];?>" height="80" alt="Picture" />
                         </a>
                     <?
                             }
