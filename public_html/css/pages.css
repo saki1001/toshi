@@ -461,4 +461,17 @@
     display: block;
 }
 
+#content.tabs #videos {
+    position: relative;
+}
+
+#content.tabs #videos .tab {
+    position: relative;
+    z-index: -1;
+}
+
+#content.tabs #videos .tab.active {
+    z-index: 10;
+}
+
 
