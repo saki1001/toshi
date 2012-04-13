@@ -1,12 +1,15 @@
 /*DETAIL VIEW--------------------------*/
 
 
-#detail section {
+#detail #content section {
     float: left;
+    margin-bottom: 30px;
 }
 
-#detail section.detail_pictures {
-    width: 600px;
+#detail #content section.detail_pictures,
+#detail #content section.detail_videos {
+    max-width: 600px;
+    float: right;
 }
 
 #detail #content .detail_header {
@@ -162,4 +165,41 @@
     background-color: #FFE964;
     color: #111111;
     cursor: pointer;
+}
+
+#detail section.detail_videos #videos,
+#detail section.detail_videos #tabs_nav {
+    float: right;
+}
+
+#detail section.detail_videos #videos {
+    margin-bottom: 30px;
+}
+
+#detail section.detail_videos #videos {
+    max-width: 580px;
+    background: #FCFCFC;
+    border: solid 10px #FFFBE3;}
+
+#detail section.detail_videos #videos .tab {
+    max-width: 578px;
+    background: #CCCCCC;
+    border: solid 1px #222222;
+}
+
+#detail section.detail_videos #videos .tab iframe {
+    max-width: 578px !important;
+}
+
+#detail section.detail_videos #tabs_nav li {
+    float: right;
+}
+
+#detail section.detail_videos #tabs_nav li a {
+    float: right;
+}
+
+#detail section.detail_videos #tabs_nav li a.active {
+    background-color: #FFFBE3;;
+    color: #111111;
 }
