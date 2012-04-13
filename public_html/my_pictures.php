@@ -20,7 +20,7 @@ include("php/get_sess.php");
                  $send_name1=ereg_replace("[^A-Za-z0-9.]","_",$file["name"]);        
                  $filename1=rand().$send_name1;        
                  $filetoupload=$file['tmp_name'];                 
-                 $path="Users/".$filename1; 
+                 $path="../Users/".$filename1; 
                  copy($filetoupload,$path);
                  $extsql2=",picture='$filename1'";
                  if($_POST["picture_old"]!="")
@@ -29,29 +29,32 @@ include("php/get_sess.php");
                     @unlink("../Users/thumb/$oldres");
                     @unlink("../Users/$oldres");
                  }
-                 //Create Thumb 90 x 90
+                 //Create Thumb 90px tall
                     $source=$path;
                     $thumb_f2 = $filename1 ;
                     $dest2="../Users/thumb/".$thumb_f2;
-                    $thumb_size_w = 90;
-                    $thumb_size_h = 90;
-                
+                    // $thumb_size_w = 120;
+                    $thumb_size_h = 80;
+                    
                     $size = getimagesize($source);
                     $width = $size[0];
                     $height = $size[1];
-                    $scale = min($thumb_size_w/$width, $thumb_size_h/$height);
-                
+                    // $scale = min($thumb_size_w/$width, $thumb_size_h/$height);
+                    $scale = $thumb_size_h/$height;
+                    
                     if ($scale < 1) 
                     {
+                         // $thumb_size_w = floor($scale*$width);
+                         // $thumb_size_h = floor($scale*$height);
                          $thumb_size_w = floor($scale*$width);
                          $thumb_size_h = floor($scale*$height);
                     }
                     else
                     {
-                         $thumb_size_w = $width;
+                         $thumb_size_w = $scale*$width;
                          $thumb_size_h = $height;
                     }
-                
+                    
                     $new_im = @imagecreatetruecolor($thumb_size_w,$thumb_size_h);
                     $system=explode(".",$thumb_f2);
                     if (preg_match("/jpg|jpeg/",$system[1])){
@@ -86,7 +89,7 @@ include("php/get_sess.php");
             exit;
     }
 
-    $query1="select * from users where id='".trim($_SESSION['UsErId'])."' ";
+    $query1="SELECT * from users where id='".trim($_SESSION['UsErId'])."' ";
     $res=mysql_query($query1);
     $tot=mysql_affected_rows();
     if($tot>0)
@@ -112,6 +115,7 @@ include("php/get_sess.php");
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/my_account.css" type="text/css" media="all">
     
     <script src="js/my_account_upload.js" type="text/javascript"></script>
 </head>
@@ -137,19 +141,17 @@ include("php/get_sess.php");
                         ?>
                     </p>
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>Picture</label>
                     <input type="file" name="picture" id="picture" />
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>Caption</label>
                     <input type="text" name="caption" id="caption" />
                 </div>
-                <div class="field full">
+                <div class="field">
                     <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
                     <input type="submit" value="Upload Picture" class="button red"  onClick="return Proceed();" />
-                    <!-- <a href="#" id="submit" class="button red">Upload Picture</a> -->
-                    
                 </div>
             </form>
         </section>
@@ -177,7 +179,7 @@ include("php/get_sess.php");
                 ?>
                         <li class="<? echo $itemClass; ?>">
                             <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $pictureLink; ?>', '', 'width=650,height=500'); return false;">
-                                <img src="<? echo $pictureThumb; ?>" width="90" alt="Picture" />
+                                <img src="<? echo $pictureThumb; ?>" height="80" alt="Picture" />
                                 <span><? echo $pictureCaption; ?></span>
                             </a>
                             <a class="delete_item" href='#' onClick="javascript:document.location.href='my_pictures.php?Did=<? echo $getPicturesRow['id']; ?>';">Delete</a>
