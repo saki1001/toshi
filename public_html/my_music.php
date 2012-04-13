@@ -56,8 +56,8 @@ include("php/get_sess.php");
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/my_account.css" type="text/css" media="all">
     
-    <script src="js/my_account_upload.js" type="text/javascript"></script>
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>" class="upload <? echo $SUBPAGE; ?>">
@@ -81,15 +81,15 @@ include("php/get_sess.php");
                         ?>
                     </p>
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>Music</label>
                     <input type="file" name="music" id="music" />
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>Caption</label>
                     <input type="text" name="caption" id="caption" />
                 </div>
-                <div class="field full">
+                <div class="field">
                     <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
                     <input type="submit" value="Upload Music" class="button red"  onClick="return Proceed();" />
                     <!-- <a href="#" id="submit" class="button red">Upload Music</a> -->
