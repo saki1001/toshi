@@ -1,5 +1,15 @@
 $(document).ready( function() {
     
+    var showFirstTab = function() {
+        var tabLinks = $('.tabs').find('#tabs_nav a');
+        var tabContent = $('.tabs').find('.tab');
+        
+        // show first tab only
+        $(tabLinks[0]).addClass('active');
+        $(tabContent[0]).addClass('active');
+    };
+    
+    
     var tabsShowHide = function() {
         
         tabLink = $(this);
@@ -23,5 +33,6 @@ $(document).ready( function() {
     };
     
     $('#tabs_nav a').bind('click', tabsShowHide);
+    showFirstTab();
     
 });
