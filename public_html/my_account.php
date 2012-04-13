@@ -173,7 +173,7 @@
                             }
 
                             $getVideoRow = mysql_fetch_array($getVideoResult);
-                            $videoLink .=  "my_video_detail.php?id=" . $getVideoRow['id'] . "&userid=" . $_SESSION['UsErId'];
+                            $videoLink .=  "my_videos_detail.php?id=" . $getVideoRow['id'] . "&userid=" . $_SESSION['UsErId'];
                             $videoCaption = ucfirst(stripslashes($getVideoRow['caption']));
                             $videoDateAdded = date("m/d/Y",strtotime($getVideoRow['addeddate']));                            
                     ?>
