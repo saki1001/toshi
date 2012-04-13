@@ -107,7 +107,7 @@
     
 <!-- HEAD -->
     <? include("templates/head.php");?>
-    
+    <link rel="stylesheet" href="css/cart.css" type="text/css" media="all">
     <script src="js/checkout.js" type="text/javascript"></script>
     
 </head>
