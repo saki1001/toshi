@@ -15,6 +15,7 @@
     
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/about.css" type="text/css" media="all">
     
     <script type="text/javascript">
         function initialize() {
