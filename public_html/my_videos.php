@@ -4,13 +4,11 @@ include("php/get_sess.php");
     if($_REQUEST['Did']>0)
     {
         $Did=trim(mysql_real_escape_string($_REQUEST['Did']));
-        $delpuic=mysql_query("delete from users_videos where id='$Did' and userid='".$_SESSION['UsErId']."'");
+        $delpuic=mysql_query("DELETE FROM users_videos WHERE id='$Did' AND userid='".$_SESSION['UsErId']."'");
         header("location:my_videos.php?msg=Your video has been deleted successfully.");            
         exit;
     }
-
-
-
+    
     if($_POST['HidRegUser']=="1")
     {
         if($_FILES["videofile"]['tmp_name'])
@@ -20,17 +18,18 @@ include("php/get_sess.php");
              $send_name1=ereg_replace("[^A-Za-z0-9.]","_",$file["name"]);        
              $filename1=rand().$send_name1;        
              $filetoupload=$file['tmp_name'];                 
-             $path="Musics/".$filename1; 
+             $path="../Videos/".$filename1; 
              copy($filetoupload,$path);
              $extsql2=",videofile='$filename1'";
         }
         $AddUserQry="INSERT INTO users_videos SET video='".addslashes($_POST['video'])."',caption='".addslashes($_POST['caption'])."',addeddate=curdate(),userid='".$_SESSION['UsErId']."' $extsql2";     
         $AddUserQryRs=mysql_query($AddUserQry);
-        header("location:my_videos.php?msg=Your video has been updated successfully.");            
+        
+        header("location:my_videos.php?msg=Your video has been updated successfully.");
         exit;
     }
-
-    $query1="select * from users where id='".trim($_SESSION['UsErId'])."' ";
+    
+    $query1="SELECT * FROM users WHERE id='".trim($_SESSION['UsErId'])."' ";
     $res=mysql_query($query1);
     $tot=mysql_affected_rows();
     if($tot>0)
@@ -39,7 +38,7 @@ include("php/get_sess.php");
     }
     else
     {
-        header("location:$SITE_URL/login.php?msg=Invalid email or password.&From=".$_GET['From']."");
+        header("location:login.php?msg=Invalid email or password.&From=".$_GET['From']."");
         exit;
     }
 
@@ -56,8 +55,8 @@ include("php/get_sess.php");
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
+    <link rel="stylesheet" href="css/my_account.css" type="text/css" media="all">
     
-    <script src="js/my_account_upload.js" type="text/javascript"></script>
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>" class="upload <? echo $SUBPAGE; ?>">
@@ -81,23 +80,21 @@ include("php/get_sess.php");
                         ?>
                     </p>
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>Video</label>
                     <input type="file" name="videofile" id="videofile" />
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>or embed video code:</label>
                     <textarea name="video" id="video"></textarea>
                 </div>
-                <div class="field half">
+                <div class="field">
                     <label>Caption</label>
                     <input type="text" name="caption" id="caption" />
                 </div>
-                <div class="field full">
+                <div class="field">
                     <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
                     <input type="submit" value="Upload Video" class="button red"  onClick="return Proceed();" />
-                    <!-- <a href="#" id="submit" class="button red">Upload Music</a> -->
-                    
                 </div>
             </form>
         </section>
@@ -107,7 +104,7 @@ include("php/get_sess.php");
             </div>
             <ul class="section_content">
                 <?
-                $getVideosQuery="SELECT * FROM users_videoss WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
+                $getVideosQuery="SELECT * FROM users_videos WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
                 $getVideosResult=mysql_query($getVideosQuery);
                 $getVideosTotal=mysql_affected_rows();
                 
@@ -142,12 +139,13 @@ include("php/get_sess.php");
     <script language="javascript">
     function Proceed()
     {
-        if(document.getElementById('videos').value=='')
+        if(document.getElementById('videofile').value=='' && document.getElementById('video').value=='')
         {
             alert("Please select video file.");
             document.getElementById('videos').focus();
             return false;
-        }if(document.getElementById('caption').value=='')
+        }
+        if(document.getElementById('caption').value=='')
         {
             alert("Please enter video caption text.");
             document.getElementById('caption').focus();
