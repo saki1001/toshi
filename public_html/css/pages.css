@@ -315,6 +315,10 @@
     float: left;
 }
 
+#content form .form_section.last {
+    margin-right: 0;
+}
+
 #content form h3 {
     font-size: 1.5em;
     font-weight:normal;
@@ -329,7 +333,7 @@
 }
 
 #content form .field {
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 }
 
 #content form .field,
@@ -364,7 +368,7 @@
 #content form label {
     font-size: 1.2em;
     color: #888888;
-    margin: 0 15px 8px 0;
+    margin: 0 15px 5px 0;
     display: block;
 }
 
