@@ -8,9 +8,7 @@ include("php/get_sess.php");
         header("location:my_pictures.php?msg=Your picture has been deleted successfully.");            
         exit;
     }
-
-
-
+    
     if($_POST['HidRegUser']=="1")
     {
             if($_FILES["picture"]['tmp_name'])
@@ -121,76 +119,78 @@ include("php/get_sess.php");
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>" class="upload <? echo $SUBPAGE; ?>">
-<!-- HEADER -->
-    <? include("templates/header.php");?>
+    <div id="wrap">
+    <!-- HEADER -->
+        <? include("templates/header.php");?>
 
-<!-- CONTENT -->
-    <div id="content">
-        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-        <section class="upload_items">
-            <div class="section_title">
-                <h3>Upload Pictures</h3>
-                <a href="my_account.php">Back to My Account</a>
-            </div>
-            <form name="upload_form" id="upload_form" enctype="multipart/form-data" method="post">
-                <div class="field full msg">
-                    <p id="msg" class="active">
-                        <? if($_REQUEST['msg']){
-                                echo $_REQUEST['msg'];
-                            }
-                        ?>
-                    </p>
+    <!-- CONTENT -->
+        <div id="content">
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+            <section class="upload_items">
+                <div class="section_title">
+                    <h3>Upload Pictures</h3>
+                    <a href="my_account.php">Back to My Account</a>
                 </div>
-                <div class="field">
-                    <label>Picture</label>
-                    <input type="file" name="picture" id="picture" />
+                <form name="upload_form" id="upload_form" enctype="multipart/form-data" method="post">
+                    <div class="field full msg">
+                        <p id="msg" class="active">
+                            <? if($_REQUEST['msg']){
+                                    echo $_REQUEST['msg'];
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label>Picture</label>
+                        <input type="file" name="picture" id="picture" />
+                    </div>
+                    <div class="field">
+                        <label>Caption</label>
+                        <input type="text" name="caption" id="caption" />
+                    </div>
+                    <div class="field">
+                        <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
+                        <input type="submit" value="Upload Picture" class="button red"  onClick="return Proceed();" />
+                    </div>
+                </form>
+            </section>
+            <section class="my_items picture_list">
+                <div class="section_title">
+                    <h3>My Pictures</h3>
                 </div>
-                <div class="field">
-                    <label>Caption</label>
-                    <input type="text" name="caption" id="caption" />
-                </div>
-                <div class="field">
-                    <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
-                    <input type="submit" value="Upload Picture" class="button red"  onClick="return Proceed();" />
-                </div>
-            </form>
-        </section>
-        <section class="my_items picture_list">
-            <div class="section_title">
-                <h3>My Pictures</h3>
-            </div>
-            <ul class="section_content">
-                <?
-                $getPicturesQuery="SELECT * FROM users_pictures WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
-                $getPicturesResult=mysql_query($getPicturesQuery);
-                $getPicturesTotal=mysql_affected_rows();
+                <ul class="section_content">
+                    <?
+                    $getPicturesQuery="SELECT * FROM users_pictures WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
+                    $getPicturesResult=mysql_query($getPicturesQuery);
+                    $getPicturesTotal=mysql_affected_rows();
                 
-                if($getPicturesTotal>0) {
-                    for($i=1;$i<=$getPicturesTotal;$i++) {
+                    if($getPicturesTotal>0) {
+                        for($i=1;$i<=$getPicturesTotal;$i++) {
                         
-                        if ($i == $getPicturesTotal) {
-                            $itemClass = 'last';
-                        }
+                            if ($i == $getPicturesTotal) {
+                                $itemClass = 'last';
+                            }
                         
-                        $getPicturesRow = mysql_fetch_array($getPicturesResult);
-                        $pictureLink =  "../Users/" . $getPicturesRow['picture'];
-                        $pictureThumb = "../Users/thumb/" .  $getPicturesRow['picture'];
-                        $pictureCaption = ucfirst(stripslashes($getPicturesRow['caption']));
-                ?>
-                        <li class="<? echo $itemClass; ?>">
-                            <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $pictureLink; ?>', '', 'width=650,height=500'); return false;">
-                                <img src="<? echo $pictureThumb; ?>" height="80" alt="Picture" />
-                                <span><? echo $pictureCaption; ?></span>
-                            </a>
-                            <a class="delete_item" href='#' onClick="javascript:document.location.href='my_pictures.php?Did=<? echo $getPicturesRow['id']; ?>';">Delete</a>
-                        </li>
-                <? } ?>
-                <? } else {
-                    echo "<li class='last'>No Pictures.</li>";
-                }
-                ?>
-            </ul>
-        </section>
+                            $getPicturesRow = mysql_fetch_array($getPicturesResult);
+                            $pictureLink =  "../Users/" . $getPicturesRow['picture'];
+                            $pictureThumb = "../Users/thumb/" .  $getPicturesRow['picture'];
+                            $pictureCaption = ucfirst(stripslashes($getPicturesRow['caption']));
+                    ?>
+                            <li class="<? echo $itemClass; ?>">
+                                <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $pictureLink; ?>', '', 'width=650,height=500'); return false;">
+                                    <img src="<? echo $pictureThumb; ?>" height="80" alt="Picture" />
+                                    <span><? echo $pictureCaption; ?></span>
+                                </a>
+                                <a class="delete_item" href='#' onClick="javascript:document.location.href='my_pictures.php?Did=<? echo $getPicturesRow['id']; ?>';">Delete</a>
+                            </li>
+                    <? } ?>
+                    <? } else {
+                        echo "<li class='last'>No Pictures.</li>";
+                    }
+                    ?>
+                </ul>
+            </section>
+        </div>
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>

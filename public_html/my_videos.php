@@ -60,79 +60,81 @@ include("php/get_sess.php");
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>" class="upload <? echo $SUBPAGE; ?>">
-<!-- HEADER -->
-    <? include("templates/header.php");?>
-
-<!-- CONTENT -->
-    <div id="content">
-        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-        <section class="upload_items">
-            <div class="section_title">
-                <h3>Upload Videos</h3>
-                <a href="my_account.php">Back to My Account</a>
-            </div>
-            <form name="upload_form" id="upload_form" enctype="multipart/form-data" method="post">
-                <div class="field full msg">
-                    <p id="msg" class="active">
-                        <? if($_REQUEST['msg']){
-                                echo $_REQUEST['msg'];
-                            }
-                        ?>
-                    </p>
+    <div id="wrap">
+    <!-- HEADER -->
+        <? include("templates/header.php");?>
+        
+    <!-- CONTENT -->
+        <div id="content">
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+            <section class="upload_items">
+                <div class="section_title">
+                    <h3>Upload Videos</h3>
+                    <a href="my_account.php">Back to My Account</a>
                 </div>
-                <div class="field">
-                    <label>Video</label>
-                    <input type="file" name="videofile" id="videofile" />
+                <form name="upload_form" id="upload_form" enctype="multipart/form-data" method="post">
+                    <div class="field full msg">
+                        <p id="msg" class="active">
+                            <? if($_REQUEST['msg']){
+                                    echo $_REQUEST['msg'];
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label>Video</label>
+                        <input type="file" name="videofile" id="videofile" />
+                    </div>
+                    <div class="field">
+                        <label>or embed video code:</label>
+                        <textarea name="video" id="video"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Caption</label>
+                        <input type="text" name="caption" id="caption" />
+                    </div>
+                    <div class="field">
+                        <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
+                        <input type="submit" value="Upload Video" class="button red"  onClick="return Proceed();" />
+                    </div>
+                </form>
+            </section>
+            <section class="my_items">
+                <div class="section_title">
+                    <h3>My Videos</h3>
                 </div>
-                <div class="field">
-                    <label>or embed video code:</label>
-                    <textarea name="video" id="video"></textarea>
-                </div>
-                <div class="field">
-                    <label>Caption</label>
-                    <input type="text" name="caption" id="caption" />
-                </div>
-                <div class="field">
-                    <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
-                    <input type="submit" value="Upload Video" class="button red"  onClick="return Proceed();" />
-                </div>
-            </form>
-        </section>
-        <section class="my_items">
-            <div class="section_title">
-                <h3>My Videos</h3>
-            </div>
-            <ul class="section_content">
-                <?
-                $getVideosQuery="SELECT * FROM users_videos WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
-                $getVideosResult=mysql_query($getVideosQuery);
-                $getVideosTotal=mysql_affected_rows();
+                <ul class="section_content">
+                    <?
+                    $getVideosQuery="SELECT * FROM users_videos WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
+                    $getVideosResult=mysql_query($getVideosQuery);
+                    $getVideosTotal=mysql_affected_rows();
                 
-                if($getVideosTotal>0) {
-                    for($i=1;$i<=$getVideosTotal;$i++) {
+                    if($getVideosTotal>0) {
+                        for($i=1;$i<=$getVideosTotal;$i++) {
                         
-                        if ($i == $getVideosTotal) {
-                            $itemClass = 'last';
-                        }
+                            if ($i == $getVideosTotal) {
+                                $itemClass = 'last';
+                            }
                         
-                        $getVideosRow = mysql_fetch_array($getVideosResult);
-                        $videosLink .=  "my_videos_detail.php?id=" . $getVideosRow['id'] . "&userid=" . $_SESSION['UsErId'];
-                        $videosCaption = ucfirst(stripslashes($getVideosRow['caption']));
-                ?>
-                        <li class="<? echo $itemClass; ?>">
-                            <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $videosLink; ?>', '', 'width=650,height=500'); return false;">
-                                <img src="images/play_button.jpg" width="15" height="15" alt="&gt;" />
-                                <span><? echo $videosCaption; ?></span>
-                            </a>
-                            <a class="delete_item" href='#' onClick="javascript:document.location.href='my_videos.php?Did=<? echo $getVideosRow['id']; ?>';">Delete</a>
-                        </li>
-                <? } ?>
-                <? } else {
-                    echo "<li class='last'>No Videos.</li>";
-                }
-                ?>
-            </ul>
-        </section>
+                            $getVideosRow = mysql_fetch_array($getVideosResult);
+                            $videosLink .=  "my_videos_detail.php?id=" . $getVideosRow['id'] . "&userid=" . $_SESSION['UsErId'];
+                            $videosCaption = ucfirst(stripslashes($getVideosRow['caption']));
+                    ?>
+                            <li class="<? echo $itemClass; ?>">
+                                <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $videosLink; ?>', '', 'width=650,height=500'); return false;">
+                                    <img src="images/play_button.jpg" width="15" height="15" alt="&gt;" />
+                                    <span><? echo $videosCaption; ?></span>
+                                </a>
+                                <a class="delete_item" href='#' onClick="javascript:document.location.href='my_videos.php?Did=<? echo $getVideosRow['id']; ?>';">Delete</a>
+                            </li>
+                    <? } ?>
+                    <? } else {
+                        echo "<li class='last'>No Videos.</li>";
+                    }
+                    ?>
+                </ul>
+            </section>
+        </div>
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>

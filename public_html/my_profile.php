@@ -171,167 +171,169 @@ else
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>">
-<!-- HEADER -->
-    <? include("templates/header.php");?>
-    <link rel="stylesheet" href="css/my_account.css" type="text/css" media="all">
+    <div id="wrap">
+    <!-- HEADER -->
+        <? include("templates/header.php");?>
+        <link rel="stylesheet" href="css/my_account.css" type="text/css" media="all">
 
-<!-- CONTENT -->
-    <div id="content">
-        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-        <form id="AddeventForm" name="AddeventForm" enctype="multipart/form-data" method="post">
-            <div class="form_section">
-                <h3>Account Settings</h3>
-                <div class="field">
-                    <label>First Name</label>
-                    <input type="text" class="input" name="firstname" id="firstname" value="<? echo stripslashes($Row['firstname']);?>" />
+    <!-- CONTENT -->
+        <div id="content">
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+            <form id="AddeventForm" name="AddeventForm" enctype="multipart/form-data" method="post">
+                <div class="form_section">
+                    <h3>Account Settings</h3>
+                    <div class="field">
+                        <label>First Name</label>
+                        <input type="text" class="input" name="firstname" id="firstname" value="<? echo stripslashes($Row['firstname']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input type="text" class="input" name="lastname" id="lastname" value="<? echo stripslashes($Row['lastname']);?>" />
+                    </div>
+                    <!-- <div class="field">
+                        <label>Artist Name</label>
+                        <input type="text" class="input" name="artistname" id="artistname">
+                    </div>
+                    <div class="field">
+                        <label>Genre</label>
+                        <select name="genre" id="genre">
+                            <option value="">Select a genre</option>
+                            <?=GetDropdown(id,name,genre,'  order by name  asc',stripslashes($_REQUEST['genre']));?>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Label Type</label>
+                        <select name="labeltype" id="labeltype">
+                            <option value="">Select a label</option>
+                            <?=GetDropdown(id,name,labeltype,'  order by name  asc',$_REQUEST['labeltype']);?>
+                        </select>
+                    </div> -->
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="text" class="input" name="email" id="email"  value="<? echo stripslashes($Row['email']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" class="input" name="password" id="password"  value="<? echo stripslashes($Row['password']);?>" />
+                    </div>
                 </div>
-                <div class="field">
-                    <label>Last Name</label>
-                    <input type="text" class="input" name="lastname" id="lastname" value="<? echo stripslashes($Row['lastname']);?>" />
-                </div>
-                <!-- <div class="field">
-                    <label>Artist Name</label>
-                    <input type="text" class="input" name="artistname" id="artistname">
-                </div>
-                <div class="field">
-                    <label>Genre</label>
-                    <select name="genre" id="genre">
-                        <option value="">Select a genre</option>
-                        <?=GetDropdown(id,name,genre,'  order by name  asc',stripslashes($_REQUEST['genre']));?>
-                    </select>
-                </div>
-                <div class="field">
-                    <label>Label Type</label>
-                    <select name="labeltype" id="labeltype">
-                        <option value="">Select a label</option>
-                        <?=GetDropdown(id,name,labeltype,'  order by name  asc',$_REQUEST['labeltype']);?>
-                    </select>
-                </div> -->
-                <div class="field">
-                    <label>Email</label>
-                    <input type="text" class="input" name="email" id="email"  value="<? echo stripslashes($Row['email']);?>" />
-                </div>
-                <div class="field">
-                    <label>Password</label>
-                    <input type="password" class="input" name="password" id="password"  value="<? echo stripslashes($Row['password']);?>" />
-                </div>
-            </div>
-            <div class="form_section">
-                <h3>Personal Info</h3>
-                <div class="field gender">
-                    <label>Gender</label>
-                    <label class="male">Male</label>
-                    <input type="radio" name="gender" id="gender1" value="Male" <? if($Row['gender']=="Male"){echo "checked";}?>>
-                    <label class="female">Female</label>
-                    <input type="radio" name="gender" id="gender2" value="Female" <? if($Row['gender']=="Female"){echo "checked";}?>>
-                </div>
-                <div class="field">
-                    <label>Birthday</label>
-                    <? 
-                    $dob=$Row['dob'];
-                    if($dob!='' && $dob!='0000-00-00')
-                    {
-                        $expdob=explode("-",$dob);
-                        $selyear=$expdob[0];
-                        $selmonth=$expdob[1];
-                        $selday=$expdob[2];
-                    }
-                    ?>
-                    <select class="date" name="dob_month">
-                        <option value="">Month</option>
-                        <? echo getMonth($selmonth);?>
-                    </select>
-                    <select class="date" name="dob_day">
-                        <option value="">Day</option><? echo getDayValue($selday);?></select>
-                    <select class="date" name="dob_year">
-                        <option value="">Year</option>
-                        <? echo getYear($selyear,2,'styear',1900);?>
-                    </select>
-                </div>
-                <div class="field">
-                    <label>Weight</label>
-                    <input type="text" class="input" name="weight" id="weight"  value="<? echo stripslashes($Row['weight']);?>">
-                </div>
-                <div class="field">
-                    <label>Height</label>
-                    <select name="height"  id="height">
-                        <option value=""></option>
-                        <?
-                        for($i="124";$i<220;$i++)
+                <div class="form_section">
+                    <h3>Personal Info</h3>
+                    <div class="field gender">
+                        <label>Gender</label>
+                        <label class="male">Male</label>
+                        <input type="radio" name="gender" id="gender1" value="Male" <? if($Row['gender']=="Male"){echo "checked";}?>>
+                        <label class="female">Female</label>
+                        <input type="radio" name="gender" id="gender2" value="Female" <? if($Row['gender']=="Female"){echo "checked";}?>>
+                    </div>
+                    <div class="field">
+                        <label>Birthday</label>
+                        <? 
+                        $dob=$Row['dob'];
+                        if($dob!='' && $dob!='0000-00-00')
                         {
-                            if($Row['height']==$i){$sel='selected';}else{$sel='';}
-                            echo '<option value="'.$i.'" '.$sel.'>'.$i.'cm / '.get_height($i).'';
+                            $expdob=explode("-",$dob);
+                            $selyear=$expdob[0];
+                            $selmonth=$expdob[1];
+                            $selday=$expdob[2];
                         }
                         ?>
-                    </select>
-                </div>
-                <? if($Row['accounttype']=="Actors" || $Row['accounttype']=="tosh-ette" || $Row['accounttype']=="tosh-hunk") { ?>
-                <div class="field">
-                    <label>Bust</label>
-                    <input type="text" class="input" name="bust" id="bust" value="<? echo stripslashes($Row['bust']);?>" />
-                </div>
-                <div class="field">
-                    <label>Hips</label>
-                    <input type="text" class="input" name="hips" id="hips" value="<? echo stripslashes($Row['hips']);?>" />
-                </div>
-                <div class="field">
-                    <label>Shoe Size</label>
-                    <input type="text" class="input" name="shoesize" id="shoesize" value="<? echo stripslashes($Row['shoesize']);?>" />
-                </div>
-                <div class="field">
-                    <label>Inseam</label>
-                    <input type="text" class="input" name="inseam" id="inseam" value="<? echo stripslashes($Row['inseam']);?>" />
-                </div>
-                <div class="field">
-                    <label>Neck</label>
-                    <input type="text" class="input" name="neck" id="neck" value="<? echo stripslashes($Row['neck']);?>" />
-                </div>
-                <div class="field">
-                    <label>Sleeve</label>
-                    <input type="text" class="input" name="sleeve" id="sleeve" value="<? echo stripslashes($Row['sleeve']);?>" />
-                </div>
-                <? } ?>
-            </div>
-            <div class="form_section">
-                <h3>Profile Settings</h3>
-                <? if($Row['picture']!=""){?>
-                <div class="field">
-                    <label>Current Picture</label>
-                    <img src="../Users/thumb/<?=$Row['picture'];?>" />
-                </div>
-                <? } ?>
-                <div class="field">
-                    <label>Upload a Picture</label>
-                    <input type="file" name="picture" id="picture" />
-                    <input type="hidden" name="picture_old" id="picture_old" value="<?=$Row['picture'];?>" />
-                </div>
-                <!-- <div class="field">
-                    <label>About You</label>
-                    <textarea  class="input" name="aboutme" id="aboutme">
-                        <? echo stripslashes($Row['aboutme']);?>
-                    </textarea>
-                </div> -->
-                <div class="field checkbox">
-                    <input type="checkbox" name="newsletter" value="Y"  <? if($Row['newsletter']=="Y"){?>checked="checked"<? } ?>/>
-                    <label>I'm happy to receive newsletters from <? echo $SITE_NAME;?>.</label>
-                </div>
-                <div class="field checkbox">
-                    <input type="checkbox" name="displayprofile" value="Y"  <? if($Row['displayprofile']=="Y"){?>checked="checked"<? } ?>/>
-                    <label>Display your Profile?</label>
-                </div>
-                <div class="field">
-                    <? if($_REQUEST['msg']) {?>
-                        <div id="msg" class="active">
-                            <? echo $_REQUEST['msg'];?>
-                        </div>
+                        <select class="date" name="dob_month">
+                            <option value="">Month</option>
+                            <? echo getMonth($selmonth);?>
+                        </select>
+                        <select class="date" name="dob_day">
+                            <option value="">Day</option><? echo getDayValue($selday);?></select>
+                        <select class="date" name="dob_year">
+                            <option value="">Year</option>
+                            <? echo getYear($selyear,2,'styear',1900);?>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Weight</label>
+                        <input type="text" class="input" name="weight" id="weight"  value="<? echo stripslashes($Row['weight']);?>">
+                    </div>
+                    <div class="field">
+                        <label>Height</label>
+                        <select name="height"  id="height">
+                            <option value=""></option>
+                            <?
+                            for($i="124";$i<220;$i++)
+                            {
+                                if($Row['height']==$i){$sel='selected';}else{$sel='';}
+                                echo '<option value="'.$i.'" '.$sel.'>'.$i.'cm / '.get_height($i).'';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <? if($Row['accounttype']=="Actors" || $Row['accounttype']=="tosh-ette" || $Row['accounttype']=="tosh-hunk") { ?>
+                    <div class="field">
+                        <label>Bust</label>
+                        <input type="text" class="input" name="bust" id="bust" value="<? echo stripslashes($Row['bust']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Hips</label>
+                        <input type="text" class="input" name="hips" id="hips" value="<? echo stripslashes($Row['hips']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Shoe Size</label>
+                        <input type="text" class="input" name="shoesize" id="shoesize" value="<? echo stripslashes($Row['shoesize']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Inseam</label>
+                        <input type="text" class="input" name="inseam" id="inseam" value="<? echo stripslashes($Row['inseam']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Neck</label>
+                        <input type="text" class="input" name="neck" id="neck" value="<? echo stripslashes($Row['neck']);?>" />
+                    </div>
+                    <div class="field">
+                        <label>Sleeve</label>
+                        <input type="text" class="input" name="sleeve" id="sleeve" value="<? echo stripslashes($Row['sleeve']);?>" />
+                    </div>
                     <? } ?>
                 </div>
-                <div class="field">
-                    <input type="hidden" name="HidRegUser" id="HidRegUser" value="0">
-                    <a href="#" class="button red" onClick="return valid();">Update Profile</a>
+                <div class="form_section">
+                    <h3>Profile Settings</h3>
+                    <? if($Row['picture']!=""){?>
+                    <div class="field">
+                        <label>Current Picture</label>
+                        <img src="../Users/thumb/<?=$Row['picture'];?>" />
+                    </div>
+                    <? } ?>
+                    <div class="field">
+                        <label>Upload a Picture</label>
+                        <input type="file" name="picture" id="picture" />
+                        <input type="hidden" name="picture_old" id="picture_old" value="<?=$Row['picture'];?>" />
+                    </div>
+                    <!-- <div class="field">
+                        <label>About You</label>
+                        <textarea  class="input" name="aboutme" id="aboutme">
+                            <? echo stripslashes($Row['aboutme']);?>
+                        </textarea>
+                    </div> -->
+                    <div class="field checkbox">
+                        <input type="checkbox" name="newsletter" value="Y"  <? if($Row['newsletter']=="Y"){?>checked="checked"<? } ?>/>
+                        <label>I'm happy to receive newsletters from <? echo $SITE_NAME;?>.</label>
+                    </div>
+                    <div class="field checkbox">
+                        <input type="checkbox" name="displayprofile" value="Y"  <? if($Row['displayprofile']=="Y"){?>checked="checked"<? } ?>/>
+                        <label>Display your Profile?</label>
+                    </div>
+                    <div class="field">
+                        <? if($_REQUEST['msg']) {?>
+                            <div id="msg" class="active">
+                                <? echo $_REQUEST['msg'];?>
+                            </div>
+                        <? } ?>
+                    </div>
+                    <div class="field">
+                        <input type="hidden" name="HidRegUser" id="HidRegUser" value="0">
+                        <a href="#" class="button red" onClick="return valid();">Update Profile</a>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>

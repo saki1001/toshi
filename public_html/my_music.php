@@ -61,77 +61,79 @@ include("php/get_sess.php");
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>" class="upload <? echo $SUBPAGE; ?>">
-<!-- HEADER -->
-    <? include("templates/header.php");?>
+    <div id="wrap">
+    <!-- HEADER -->
+        <? include("templates/header.php");?>
 
-<!-- CONTENT -->
-    <div id="content">
-        <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-        <section class="upload_items">
-            <div class="section_title">
-                <h3>Upload Music</h3>
-                <a href="my_account.php">Back to My Account</a>
-            </div>
-            <form name="upload_form" id="upload_form" enctype="multipart/form-data" method="post">
-                <div class="field full msg">
-                    <p id="msg" class="active">
-                        <? if($_REQUEST['msg']){
-                                echo $_REQUEST['msg'];
-                            }
-                        ?>
-                    </p>
+    <!-- CONTENT -->
+        <div id="content">
+            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+            <section class="upload_items">
+                <div class="section_title">
+                    <h3>Upload Music</h3>
+                    <a href="my_account.php">Back to My Account</a>
                 </div>
-                <div class="field">
-                    <label>Music</label>
-                    <input type="file" name="music" id="music" />
-                </div>
-                <div class="field">
-                    <label>Caption</label>
-                    <input type="text" name="caption" id="caption" />
-                </div>
-                <div class="field">
-                    <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
-                    <input type="submit" value="Upload Music" class="button red"  onClick="return Proceed();" />
-                    <!-- <a href="#" id="submit" class="button red">Upload Music</a> -->
+                <form name="upload_form" id="upload_form" enctype="multipart/form-data" method="post">
+                    <div class="field full msg">
+                        <p id="msg" class="active">
+                            <? if($_REQUEST['msg']){
+                                    echo $_REQUEST['msg'];
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label>Music</label>
+                        <input type="file" name="music" id="music" />
+                    </div>
+                    <div class="field">
+                        <label>Caption</label>
+                        <input type="text" name="caption" id="caption" />
+                    </div>
+                    <div class="field">
+                        <input type="hidden" name="HidRegUser" id="HidRegUser" value="0" />
+                        <input type="submit" value="Upload Music" class="button red"  onClick="return Proceed();" />
+                        <!-- <a href="#" id="submit" class="button red">Upload Music</a> -->
                     
+                    </div>
+                </form>
+            </section>
+            <section class="my_items">
+                <div class="section_title">
+                    <h3>My Music</h3>
                 </div>
-            </form>
-        </section>
-        <section class="my_items">
-            <div class="section_title">
-                <h3>My Music</h3>
-            </div>
-            <ul class="section_content">
-                <?
-                $getMusicQuery="SELECT * FROM users_musics WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
-                $getMusicResult=mysql_query($getMusicQuery);
-                $getMusicTotal=mysql_affected_rows();
+                <ul class="section_content">
+                    <?
+                    $getMusicQuery="SELECT * FROM users_musics WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
+                    $getMusicResult=mysql_query($getMusicQuery);
+                    $getMusicTotal=mysql_affected_rows();
                 
-                if($getMusicTotal>0) {
-                    for($i=1;$i<=$getMusicTotal;$i++) {
+                    if($getMusicTotal>0) {
+                        for($i=1;$i<=$getMusicTotal;$i++) {
                         
-                        if ($i == $getMusicTotal) {
-                            $itemClass = 'last';
-                        }
+                            if ($i == $getMusicTotal) {
+                                $itemClass = 'last';
+                            }
                         
-                        $getMusicRow = mysql_fetch_array($getMusicResult);
-                        $musicLink .=  "my_music_detail.php?id=" . $getMusicRow['id'] . "&userid=" . $_SESSION['UsErId'];
-                        $musicCaption = ucfirst(stripslashes($getMusicRow['caption']));
-                ?>
-                        <li class="<? echo $itemClass; ?>">
-                            <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $musicLink; ?>', '', 'width=650,height=500'); return false;">
-                                <img src="images/play_button.jpg" width="15" height="15" alt="&gt;" />
-                                <span><? echo $musicCaption; ?></span>
-                            </a>
-                            <a class="delete_item" href='#' onClick="javascript:document.location.href='my_music.php?Did=<? echo $getMusicRow['id']; ?>';">Delete</a>
-                        </li>
-                <? } ?>
-                <? } else {
-                    echo "<li class='last'>No Music.</li>";
-                }
-                ?>
-            </ul>
-        </section>
+                            $getMusicRow = mysql_fetch_array($getMusicResult);
+                            $musicLink .=  "my_music_detail.php?id=" . $getMusicRow['id'] . "&userid=" . $_SESSION['UsErId'];
+                            $musicCaption = ucfirst(stripslashes($getMusicRow['caption']));
+                    ?>
+                            <li class="<? echo $itemClass; ?>">
+                                <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $musicLink; ?>', '', 'width=650,height=500'); return false;">
+                                    <img src="images/play_button.jpg" width="15" height="15" alt="&gt;" />
+                                    <span><? echo $musicCaption; ?></span>
+                                </a>
+                                <a class="delete_item" href='#' onClick="javascript:document.location.href='my_music.php?Did=<? echo $getMusicRow['id']; ?>';">Delete</a>
+                            </li>
+                    <? } ?>
+                    <? } else {
+                        echo "<li class='last'>No Music.</li>";
+                    }
+                    ?>
+                </ul>
+            </section>
+        </div>
     </div>
 <!-- FOOTER -->
     <? include("templates/footer.php");?>

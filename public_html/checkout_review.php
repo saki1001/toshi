@@ -150,193 +150,194 @@ if($_POST['HidContinueCheckout']=="1") {
 </head>
 
 <body id="<? echo $ACTIVEPAGE; ?>" class="<? echo $SUBPAGE; ?>">
-<!-- HEADER -->
-    <? include("templates/header.php");?>
+    <div id="wrap">
+    <!-- HEADER -->
+        <? include("templates/header.php");?>
 
-<!-- CONTENT -->
-    <div id="content">
-        <div class="checkout_wrapper">
-            <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-            <? if($_REQUEST['msg']){?>
-                <div id="msg" class="active">
-                    <? echo stripslashes($_REQUEST['msg']);?>
-                </div>
-            <? } ?>
+    <!-- CONTENT -->
+        <div id="content">
+            <div class="checkout_wrapper">
+                <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+                <? if($_REQUEST['msg']){?>
+                    <div id="msg" class="active">
+                        <? echo stripslashes($_REQUEST['msg']);?>
+                    </div>
+                <? } ?>
             
-            <form name="frmShipInfo" id="frmShipInfo" enctype="multipart/form-data" method="post">
-                <section class="billing_summary">
-                    <h3>Billing Information</h3>
-                    <ul>
-                        <li>
-                            <? echo stripslashes($_SESSION['fname']);?>&nbsp;
-                            <? echo stripslashes($_SESSION['lname']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['address1']);?>&nbsp;
-                            <? echo stripslashes($_SESSION['address2']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['city']);?>,&nbsp;
-                            <? echo stripslashes($_SESSION['state']);?>&nbsp;
-                            <? echo stripslashes($_SESSION['zipcode']);?>&nbsp;
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['country']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['day_telephone']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['email']);?>
-                        </li>
-                    </ul>
-                </section>
-                <section class="shipping_summary">
-                    <h3>Shipping Information</h3>
-                    <ul>
-                        <li>
-                            <? echo stripslashes($_SESSION['ship_fname']);?>&nbsp;
-                            <? echo stripslashes($_SESSION['ship_lname']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['ship_address1']);?>&nbsp;
-                            <? echo stripslashes($_SESSION['ship_address2']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['ship_city']);?>,&nbsp;
-                            <? echo stripslashes($_SESSION['ship_state']);?>&nbsp;
-                            <? echo stripslashes($_SESSION['ship_zipcode']);?>&nbsp;
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['ship_country']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['ship_day_telephone']);?>
-                        </li>
-                        <li>
-                            <? echo stripslashes($_SESSION['email']);?>
-                        </li>
-                    </ul>
-                </section>
-                <section class="cart_summary">
-                    <h3>Order Details</h3>
-                    <?
-                        $SESSION_PRODUCTID  = isset($_SESSION['SESSION_PRODUCTID']) ? $_SESSION['SESSION_PRODUCTID'] : 0;
-                        $SESSION_QUANTITY   = isset($_SESSION['SESSION_QUANTITY']) ? $_SESSION['SESSION_QUANTITY'] : 0;
-                        $SESSION_PRICE      = isset($_SESSION['SESSION_PRICE']) ? $_SESSION['SESSION_PRICE'] : 0;
-                        $SESSION_CUSTOMIZE  = isset($_SESSION['SESSION_CUSTOMIZE']) ? $_SESSION['SESSION_CUSTOMIZE'] : 0;
-                    ?>
-                    <?
-                        $subtotal=0;
-
-                        if($SESSION_PRODUCTID>0) {
-                    ?>
+                <form name="frmShipInfo" id="frmShipInfo" enctype="multipart/form-data" method="post">
+                    <section class="billing_summary">
+                        <h3>Billing Information</h3>
+                        <ul>
+                            <li>
+                                <? echo stripslashes($_SESSION['fname']);?>&nbsp;
+                                <? echo stripslashes($_SESSION['lname']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['address1']);?>&nbsp;
+                                <? echo stripslashes($_SESSION['address2']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['city']);?>,&nbsp;
+                                <? echo stripslashes($_SESSION['state']);?>&nbsp;
+                                <? echo stripslashes($_SESSION['zipcode']);?>&nbsp;
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['country']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['day_telephone']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['email']);?>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="shipping_summary">
+                        <h3>Shipping Information</h3>
+                        <ul>
+                            <li>
+                                <? echo stripslashes($_SESSION['ship_fname']);?>&nbsp;
+                                <? echo stripslashes($_SESSION['ship_lname']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['ship_address1']);?>&nbsp;
+                                <? echo stripslashes($_SESSION['ship_address2']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['ship_city']);?>,&nbsp;
+                                <? echo stripslashes($_SESSION['ship_state']);?>&nbsp;
+                                <? echo stripslashes($_SESSION['ship_zipcode']);?>&nbsp;
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['ship_country']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['ship_day_telephone']);?>
+                            </li>
+                            <li>
+                                <? echo stripslashes($_SESSION['email']);?>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="cart_summary">
+                        <h3>Order Details</h3>
                         <?
-                            for($i=0;$i<count($SESSION_PRODUCTID);$i++) {
-                                $model="";
-                                $descr="";
-                                $img="";
-                                $catname="";
-                                $ProductName=stripslashes(GetName1("events","name","id",$SESSION_PRODUCTID[$i]));
-                                $ProductDescr=stripslashes(GetName1("events","description","id",$SESSION_PRODUCTID[$i]));                                                                            
-                                $totalcost = $SESSION_PRICE[$i]*$SESSION_QUANTITY[$i];
-                                $subtotal = $subtotal +  $totalcost;
-                                $_SESSION['total'] = $subtotal;
-                                //$_SESSION['SESSION_TOTAL'] = $subtotal;
+                            $SESSION_PRODUCTID  = isset($_SESSION['SESSION_PRODUCTID']) ? $_SESSION['SESSION_PRODUCTID'] : 0;
+                            $SESSION_QUANTITY   = isset($_SESSION['SESSION_QUANTITY']) ? $_SESSION['SESSION_QUANTITY'] : 0;
+                            $SESSION_PRICE      = isset($_SESSION['SESSION_PRICE']) ? $_SESSION['SESSION_PRICE'] : 0;
+                            $SESSION_CUSTOMIZE  = isset($_SESSION['SESSION_CUSTOMIZE']) ? $_SESSION['SESSION_CUSTOMIZE'] : 0;
                         ?>
-                            <ul>
-                                <li>
-                                    <span>Event</span>
-                                    <a href="event_detail.php?eventId=<?=$SESSION_PRODUCTID[$i];?>">
-                <?=$ProductName;?></a>
-                                </li>
-                                <li>
-                                    <span>Quantity</span>
-                                    <?=$SESSION_QUANTITY[$i];?>
-                                </li>
-                                <li>
-                                    <span>Price</span>
-                                    $<?=$SESSION_PRICE[$i];?>
-                                </li>
-                            </ul>
-                        <? } ?>
-                    <?  }?>
-                </section>
-                <section class="price_summary">
-                    <h3>Price Summary</h3>
-                    <?
-                        $Final=$_SESSION['total'] + $_SESSION['ShippingCharge'] - $_SESSION['discount'];
-                        $_SESSION['finaltotal']=int_to_Decimal($Final);
-                    ?>
-                    <ul class="two_col_list">
-                        <li class="left">
-                            Sub-total
-                        </li>
-                        <li class="right">
-                            $<?=int_to_Decimal($_SESSION['total']);?>
-                        </li>
-                        <li class="left">
-                            Shipping
-                        </li>
-                        <li class="right">
-                            $<? if($_SESSION['ShippingCharge']) {
-                                    echo int_to_Decimal($_SESSION['ShippingCharge']);
-                                } else {
-                                    echo "0.00";
-                                }
+                        <?
+                            $subtotal=0;
+
+                            if($SESSION_PRODUCTID>0) {
+                        ?>
+                            <?
+                                for($i=0;$i<count($SESSION_PRODUCTID);$i++) {
+                                    $model="";
+                                    $descr="";
+                                    $img="";
+                                    $catname="";
+                                    $ProductName=stripslashes(GetName1("events","name","id",$SESSION_PRODUCTID[$i]));
+                                    $ProductDescr=stripslashes(GetName1("events","description","id",$SESSION_PRODUCTID[$i]));                                                                            
+                                    $totalcost = $SESSION_PRICE[$i]*$SESSION_QUANTITY[$i];
+                                    $subtotal = $subtotal +  $totalcost;
+                                    $_SESSION['total'] = $subtotal;
+                                    //$_SESSION['SESSION_TOTAL'] = $subtotal;
                             ?>
-                        </li>
-                        <li class="left">
-                            Tax
-                        </li>
-                        <li class="right">
-                            $<? if($_SESSION['ShippingTax']) {
-                                echo int_to_Decimal($_SESSION['ShippingTax']);
-                                } else {
-                                    echo "0.00";
-                                }
-                            ?>
-                        </li>
-                        <li class="left">
-                            Discount
-                        </li>
-                        <li class="right">
-                            -$<? if($_SESSION['discount']) {
-                                echo int_to_Decimal($_SESSION['discount']);
+                                <ul>
+                                    <li>
+                                        <span>Event</span>
+                                        <a href="event_detail.php?eventId=<?=$SESSION_PRODUCTID[$i];?>">
+                    <?=$ProductName;?></a>
+                                    </li>
+                                    <li>
+                                        <span>Quantity</span>
+                                        <?=$SESSION_QUANTITY[$i];?>
+                                    </li>
+                                    <li>
+                                        <span>Price</span>
+                                        $<?=$SESSION_PRICE[$i];?>
+                                    </li>
+                                </ul>
+                            <? } ?>
+                        <?  }?>
+                    </section>
+                    <section class="price_summary">
+                        <h3>Price Summary</h3>
+                        <?
+                            $Final=$_SESSION['total'] + $_SESSION['ShippingCharge'] - $_SESSION['discount'];
+                            $_SESSION['finaltotal']=int_to_Decimal($Final);
+                        ?>
+                        <ul class="two_col_list">
+                            <li class="left">
+                                Sub-total
+                            </li>
+                            <li class="right">
+                                $<?=int_to_Decimal($_SESSION['total']);?>
+                            </li>
+                            <li class="left">
+                                Shipping
+                            </li>
+                            <li class="right">
+                                $<? if($_SESSION['ShippingCharge']) {
+                                        echo int_to_Decimal($_SESSION['ShippingCharge']);
+                                    } else {
+                                        echo "0.00";
+                                    }
+                                ?>
+                            </li>
+                            <li class="left">
+                                Tax
+                            </li>
+                            <li class="right">
+                                $<? if($_SESSION['ShippingTax']) {
+                                    echo int_to_Decimal($_SESSION['ShippingTax']);
+                                    } else {
+                                        echo "0.00";
+                                    }
+                                ?>
+                            </li>
+                            <li class="left">
+                                Discount
+                            </li>
+                            <li class="right">
+                                -$<? if($_SESSION['discount']) {
+                                    echo int_to_Decimal($_SESSION['discount']);
                                 
-                                } else {
-                                    echo 0.00;
-                                }
-                            ?>
-                        </li>
-                        <li class="left">
-                            Order Total
-                        </li>
-                        <li class="right">
-                            $<?=int_to_Decimal($_SESSION['finaltotal']);?>
-                        </li>
-                        <li class="left">
-                            <a href="checkout.php" class="button red">Edit Details</a>
-                        </li>
-                        <li class="right">
-                            <input type="hidden" name="HidContinueCheckout" id="HidContinueCheckout" value="" /> 
-                            <a href="#" class="button yellow" onClick="return FrmChkInfo();">Submit Order</a>
-                        </li>
-                    </ul>
-                </section>
-            </form>
+                                    } else {
+                                        echo 0.00;
+                                    }
+                                ?>
+                            </li>
+                            <li class="left">
+                                Order Total
+                            </li>
+                            <li class="right">
+                                $<?=int_to_Decimal($_SESSION['finaltotal']);?>
+                            </li>
+                            <li class="left">
+                                <a href="checkout.php" class="button red">Edit Details</a>
+                            </li>
+                            <li class="right">
+                                <input type="hidden" name="HidContinueCheckout" id="HidContinueCheckout" value="" /> 
+                                <a href="#" class="button yellow" onClick="return FrmChkInfo();">Submit Order</a>
+                            </li>
+                        </ul>
+                    </section>
+                </form>
+            </div>
         </div>
     </div>
-    <!-- FOOTER -->
-        <? include("templates/footer.php");?>
-        <script language="javascript" type="text/javascript">
-        function FrmChkInfo()
-        {
-            form=document.frmShipInfo;
-            form.HidContinueCheckout.value=1;
-            form.submit();
-            return true;
-        }    
-        </script>
+<!-- FOOTER -->
+    <? include("templates/footer.php");?>
+    <script language="javascript" type="text/javascript">
+    function FrmChkInfo() {
+        form=document.frmShipInfo;
+        form.HidContinueCheckout.value=1;
+        form.submit();
+        return true;
+    }    
+    </script>
 </body>
 </html>
