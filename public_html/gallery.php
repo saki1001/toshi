@@ -34,7 +34,7 @@
                 $articleType = "two_column";
                 
                 // GETTING EVENTS (PAST 30)
-                $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate < CURDATE() ORDER BY startdate ASC LIMIT 30";
+                $eventQuery = "SELECT * FROM events WHERE approve='Y' AND startdate < CURDATE() ORDER BY startdate DESC LIMIT 30";
                 $eventResult = mysql_query($eventQuery) or die(mysql_error());
                 
                 // POPULATE EVENTS
