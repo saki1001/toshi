@@ -1,4 +1,7 @@
-<?
+<?  
+    // EVENT NAME
+    $eventName = ucfirst(stripslashes($eventRow['name']));
+    
     // THUMBNAIL
     $eventThumbLink = $SITE_URL . "onlinethumb.php?nm=Events/" . $eventRow['picture'] . "&mwidth=120&mheight=80";
     
@@ -16,7 +19,7 @@
         $eventPhotoMain = $SITE_URL . "Events/" . $eventRow['picture'];
     }else{
         // TODO: replace with image of toshi
-        $eventPhotoMain = "http://www.placehold.it/578x378";
+        $eventPhotoMain = "images/default_article_thumb.jpg";
     }
     
     // PICTURES
@@ -55,6 +58,9 @@
     $venueAddressLine1 = stripslashes($venueRow['address']);
     $venueAddressLine2 = stripslashes($venueRow['city'] . ", " . $venueRow['state'] . " " . $venueRow['zipcode']);
     $venuePhone = $venueRow['phone'];
+    $venueEmail = $venueRow['email'];
+    $venuePicture = "../Venues/" . $venueRow['picture'];
+    $venueDescription = $venueRow['description'];
     
     // DATE VARIBLES
     $eventStartDate = date('F j, Y', strtotime($eventRow['startdate']));
