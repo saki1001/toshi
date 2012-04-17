@@ -179,7 +179,8 @@
 #detail section.detail_videos #videos {
     max-width: 580px;
     background: #FCFCFC;
-    border: solid 10px #FFFBE3;}
+    border: solid 10px #FFFBE3;
+}
 
 #detail section.detail_videos #videos .tab {
     max-width: 578px;
@@ -203,3 +204,106 @@
     background-color: #FFFBE3;;
     color: #111111;
 }
+
+
+/*EVENT DIALOGS---------------------------*/
+
+#dialog {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#dialog.active {
+    display: block;
+}
+
+#dialog .dialog_wrapper {
+    background: #222222;
+    border: solid 10px #444444;
+    position: absolute;
+    overflow: hidden;
+    width: 544px;
+    top: 20%;
+    left: 25%;
+}
+
+#dialog .dialog_wrapper #close_dialog {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#dialog .dialog_wrapper section#venue_details,
+#dialog .dialog_wrapper section#event_share {
+    z-index: 1000;
+    display: none;
+    border: solid 1px #111111;
+    padding: 20px;
+    margin-bottom: 0;
+    width: 502px;
+}
+
+#dialog .dialog_wrapper section#venue_details.active,
+#dialog .dialog_wrapper section#event_share.active {
+    display: block;
+}
+
+#dialog .dialog_wrapper #event_share .instructions {
+    margin-bottom: 20px;
+    float: left;
+}
+
+#dialog .dialog_wrapper #event_share .instructions p {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+#dialog .dialog_wrapper #event_share form {
+    float: left;
+    width: 500px;
+}
+
+#content #dialog form .form_section {
+    width: 235px;
+}
+
+#dialog .dialog_wrapper #venue_details .text_wrapper,
+#dialog .dialog_wrapper #venue_details .picture {
+    font-size: 1.2em;
+    float: left;
+}
+
+#dialog .dialog_wrapper #venue_details .text_wrapper {
+    margin-right: 20px;
+}
+
+#dialog .dialog_wrapper #venue_details .description,
+#dialog .dialog_wrapper #venue_details .location {
+    margin-bottom: 20px;
+    width: 180px;
+}
+
+#dialog .dialog_wrapper #venue_details .description h3,
+#dialog .dialog_wrapper #venue_details .location h3 {
+    color: #777777;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+#dialog .dialog_wrapper #venue_details .location ul li {
+    margin-bottom: 3px;
+}
+
+#dialog .dialog_wrapper #venue_details .picture {
+    max-width: 300px;
+    overflow: hidden;
+}
+
