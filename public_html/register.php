@@ -24,7 +24,11 @@
         <div id="content">
             <section class="instructions">
                 <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-                <p>Suspendisse euismod mollis posuere. Aliquam elementum diam eu ligula volutpat porta tincidunt purus commodo. In hac habitasse platea dictumst. Phasellus iaculis dictum urna, eget elementum justo posuere in. Maecenas non lectus dui, convallis interdum metus.</p>
+                <p><strong>toshi's Living Room</strong> invites performance artists of all genres to come in and showcase their talent on the magnetic stage in the lounge of the Flatiron Hotel.  We are currently looking for musicians with a flare to engage the crowd and keep the dance floor full all night long.  This beautiful venue is open to a hip, modish crowd who knows how to party!</p>
+                <p>Do you have a flare for playing funk, pop covers, and current mainstream music? Well, we are looking just for you! Full bands, solo singers, contemporary dancers, and all original acts are welcome!</p>
+                <p>Auditions take place every (fill in day), and we invite you to take the stage to perform your most lively dance and modern musical acts.</p>
+                <p><strong>toshi's Living Room</strong>...Will you be the next star?</p>
+                </p>
             </section>
             <section id="sign_in_box">
                 <div class="wrapper">
@@ -89,7 +93,7 @@
                             <input type="radio" name="gender" id="gender2" value="Female"/>
                         </div>
                     </div>
-                    <div class="form_section">
+                    <div class="form_section last">
                         <h3>Measurements</h3>
                         <div class="form_standard field">
                             <label>Height</label>
