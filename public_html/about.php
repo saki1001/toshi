@@ -55,6 +55,14 @@
     <!-- CONTENT -->
         <div id="content">
             <div id="wrap">
+                <section class="about_us">
+                    <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
+                    <p><strong>toshi's Living Room</strong> is committed to bringing arts, entertainment, and flair to all those who seek opportunities to showcase and improve their talents. We believe that art should be accessible to all. That's why we provide a great venue for talents of all kinds. Whether you sing, dance, act or have any other valuable skills that you want to perform and share with us, at <strong>toshi's Living Room</strong> we will give you your chance! Our young, creative, and dynamic team provides not only venues but also offers you a merit-based and competitive wage.</p>
+                    <p>All of our events will take place in <strong>toshi's Living Room</strong>, located in New York's exclusive Flatiron Hotel on 26th Street and Broadway. The hotel offers a spacious place to allow you what it takes to be a successful artist and maybe even get discovered.</p>
+                    <p>We are seeking to produce original plays, manuscripts, and live TV shows: light entertainment by day and amusing dinner‐theater by night.</p>
+                    <p>To learn more about our mission and shows, visit our <a href="https://www.facebook.com/pages/Toshis-Living-Room/380277968659709" target="_blank">Facebook page</a> and write us with inquiries, feedback, or for assistance applying to <strong>toshi's Living Room</strong>. Don't forget to check out our special offers and post videos or pictures that display your talents.</p>
+                    <p>We are looking forward for your questions and comments.</p>
+                </section>
                 <section class="location">
                     <h2 class="section_title">Location</h2>
                     <div class="map_wrapper">
@@ -62,16 +70,8 @@
                             <!-- map inserted dynamically -->
                         </div>
                     </div>
-                </section>
-                <section class="about_us">
-                    <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec elit ac neque convallis aliquam. Aliquam risus massa, scelerisque a volutpat sit amet, fermentum ut lacus. Integer ut erat neque, eget dictum lacus. Suspendisse pulvinar pulvinar ante, egestas ultrices diam vulputate et. Nunc euismod quam a sapien euismod sollicitudin. Sed arcu justo, fringilla ut malesuada sed, bibendum eleifend nunc.</p>
-                    <p>Quisque sapien orci, molestie vel tempor quis, rutrum nec ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum imperdiet convallis ipsum, ac tempus arcu ornare non. Proin id elit tellus. Integer sed ullamcorper nunc. Aenean ut rutrum dolor. In cursus eros nibh. Cras lacinia venenatis risus blandit feugiat.</p>
-                </section>
-                <section class="contact_us">
-                    <h2 class="section_title">Contact Us</h2>
                     <ul>
-                        <li><strong>Toshi's Living Room</strong></li>
+                        <li><strong>toshi's Living Room</strong></li>
                         <li>9 W. 26th Street</li>
                         <li>New York, NY 10010</li>
                     </ul>
