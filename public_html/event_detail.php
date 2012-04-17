@@ -10,25 +10,29 @@
         $eventResult = mysql_query($eventQuery) or die(mysql_error());
         $eventRow = mysql_fetch_array($eventResult);
         
-        if(strtotime($eventRow['startdate']) < time()) { 
-            $ACTIVEPAGE='gallery';
-            $eventType = 'PAST';
-        } else {
+        if($eventRow['startdate'] >= date("Y-m-d", time())) { 
             $ACTIVEPAGE='events';
             $eventType = 'CURRENT';
+        } else {
+            $ACTIVEPAGE='gallery';
+            $eventType = 'PAST';
         }
         
+        // defines all event variables
+        include("templates/define_event.php");
+        
         $SUBPAGE='detail';
-        $PAGETITLE= ucfirst(stripslashes($eventRow['name']));
+        $PAGETITLE= $eventName;
         
         
     ?>
     
 <!-- HEAD -->
-    <? include("templates/head.php");?>
+    <? include("templates/head.php"); ?>
     <link rel="stylesheet" href="css/detail.css" type="text/css" media="all">
     
     <script type="text/javascript" src="js/tabs.js"></script>
+    <script type="text/javascript" src="js/event_dialogs.js"></script>
     <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -45,18 +49,15 @@
     <div id="wrap">
     <!-- HEADER -->
         <? include("templates/header.php");?>
-
     <!-- CONTENT -->
         <div id="content" class="tabs">
-            <?
-            include("templates/define_event.php");
-            ?>
+            <? include("templates/event_dialogs.php"); ?>
             <section class="detail_header">
                 <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
                 <div class="nav">
                     <a href="<? echo $backLink; ?>">Back</a>
-                    <a href="#">Share with a Friend</a>
-                    <a href="#">Venue Details</a>
+                    <a href="#" id="event_share_link">Email to a Friend</a>
+                    <a href="#" id="venue_details_links">Venue Details</a>
                     <? if($totalVideos>0) { ?>
                         <a href="#videos">Videos</a>
                     <? } ?>
@@ -71,7 +72,7 @@
                     <p><? echo $eventDescription; ?></p>
                 </div>
                 <!-- PAST EVENT -->
-                <? if(strtotime($eventRow['startdate']) < time()) { ?>
+                <? if($eventType === 'PAST') { ?>
                     <div class="info_section media_links">
                         <a href="#" class="button yellow">More Photos</a>
                         <a href="#" class="button yellow">More Videos</a>
@@ -127,7 +128,7 @@
                     <? } ?>
                 </div>
                 <div class="info_section venue">
-                    <h4>Venue Location</h4>
+                    <h4>Location</h4>
                     <ul>
                         <li><? echo $venueName; ?></li>
                         <li><? echo $venueAddressLine1; ?></li>
@@ -180,7 +181,7 @@
             </section>
             <section class="detail_videos">
                 <? if($totalVideos>0) { ?>
-                
+                    
                     <ul id="tabs_nav">
                     <? while($videoRow = mysql_fetch_array($getVideosResult)) { ?>
                         <li>
@@ -188,14 +189,14 @@
                         </li>
                     <? } ?>
                     </ul>
-                
+                    
                     <!-- reset array to use while loop again -->
                     <? mysql_data_seek($getVideosResult, 0); ?>
-                
-                    <div id="videos">
-                
-                    <? while($videoRow = mysql_fetch_array($getVideosResult)) { ?>
                     
+                    <div id="videos">
+                    
+                    <? while($videoRow = mysql_fetch_array($getVideosResult)) { ?>
+                        
                         <? if($videoRow['video']!=""){ ?>
                             <div id="tab_<? echo $videoRow['id']; ?>" class="tab">
                                 <? echo stripslashes($videoRow['video']); ?>
