@@ -4,12 +4,27 @@
             <img src="images/toshi-logo.png" width="141" height"72" alt="Toshi's PlayHouse" />
         </a>
     </div>
+    <div class="newsletter_signup">
+        <a href="#" id="close_newsletter">
+            <img src="images/close_x.png" />
+        </a>
+        <div id="newsletter_form" class="form">
+            <h3>Get Our Newsletter</h3>
+            <div id="msg"></div>
+            <div class="field">
+                <input type="email" name="newsletter_email" id="newsletter_email" value="Enter Your Email" />
+            </div>
+            <div class="field">
+                <a href="#" id="newsletter_submit" class="button red">Submit</a>
+            </div>
+        </div>
+    </div>
     <nav id="top_nav">
         <ul>
             <? if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0){?><!-- No Welcome -->
             <? }else{?><li>Welcome <a href="my_account.php" >       <?=ucfirst(stripslashes(GetName1("users","firstname","id",$_SESSION['UsErId'])));?> <?=ucfirst(stripslashes(GetName1("users","lastname","id",$_SESSION['UsErId'])));?>
                 </a></li><? } ?>
-            <!-- <li><a href="#">Get Our Newsletter</a></li> -->
+            <li><a href="#" id="newsletter_signup_link">Get Our Newsletter</a></li>
             <li <? if($ACTIVEPAGE=='cart'){?>class="active"<? }?> ><a href="cart.php">Cart</a></li>
             <li <? if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0){?>
                 <? if($ACTIVEPAGE=='login'){?>class="active"<? }?>><a href="login.php">Sign In</a>
