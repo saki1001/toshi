@@ -1,15 +1,7 @@
-header:after,
-header nav:after,
-header nav ul:after,
-#content:after,
-footer:after,
-footer .footer_wrapper:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
+header,
+#wrap,
+#content {
+    zoom: 1;
 }
 
 html, body {
@@ -19,7 +11,7 @@ html, body {
 
 body {
     background: url('../images/leather-bg.jpg') #111111 top left;
-    color: #FCFCFC;
+    color: #DDDDDD;
     font-family: 'Arial', sans-serif;
     font-size: 62.5%;
     line-height: 1;
@@ -31,10 +23,12 @@ footer .footer_wrapper {
     width:950px;
     margin:0 auto;
     padding: 0 20px;
+    overflow: hidden;
 }
 
 #wrap {
     min-height: 100%;
+    overflow: hidden;
 }
 
 #content {
