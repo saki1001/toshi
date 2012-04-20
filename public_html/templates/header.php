@@ -1,7 +1,7 @@
 <header>
     <div class="branding">
         <a href="index.php" id="logo">
-            <img src="images/toshi-logo.png" width="141" height"72" alt="Toshi's PlayHouse" />
+            <img src="images/toshi-logo-ticket.png" width="158" height"72" alt="Toshi's PlayHouse" />
         </a>
     </div>
     <div class="newsletter_signup">
@@ -28,7 +28,18 @@
             <li <? if($ACTIVEPAGE=='cart'){?>class="active"<? }?> ><a href="cart.php">Cart</a></li>
             <li <? if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0){?>
                 <? if($ACTIVEPAGE=='login'){?>class="active"<? }?>><a href="login.php">Sign In</a>
-                <? }else{?>><a href="php/logout.php">Logout</a><? }?></li>
+                <? }else{?>><a href="php/logout.php">Logout</a><? }?>
+            </li>
+            <li class="social">
+                <a href="https://www.facebook.com/pages/Toshis-Living-Room/380277968659709" title="Facebook">
+                    <img src="images/icon-facebook.gif" width="18" height="18" alt="f" />
+                </a>
+            </li>
+            <li class="social">
+                <a href="http://twitter.com/#!/toshislivingrm" title="Twitter">
+                    <img src="images/icon-twitter.gif" width="18" height="18" alt="t" />
+                </a>
+            </li>
         </ul>
     </nav>
     <nav id="menu">
