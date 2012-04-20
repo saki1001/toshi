@@ -23,10 +23,10 @@
     $newsPublication = 'Publication Name';
     
     // DATE
-    $newsDate = date('n/j/Y', strtotime($newsRow['startdate']));
+    $newsDate = date('n/j/Y', strtotime($newsRow['date_display']));
     
-    // DESCRIPTION
-    $newsDescription = stripslashes($newsRow['description']);
+    // SUMMARY
+    $newsSummary = stripslashes($newsRow['shortdesc']);
     
     // PDF
     $pdfLink = 'images/Saki-Sato-Resume-2-2012.pdf';
