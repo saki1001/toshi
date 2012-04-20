@@ -7,6 +7,10 @@
     <?
         $ACTIVEPAGE='news';
         $PAGETITLE='News & Press';
+        
+        // SET NEWS TO MOST RECENT 5 YEARS
+        $startYear = date('Y');
+        $endYear = date('Y') - 5;
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
@@ -27,59 +31,44 @@
             <!-- <h3 class="info_title">Articles from $YEAR</h3> -->
             <section id="tabs_nav">
                 <ul>
-                    <li><a href="#tab_2011">2011</a></li>
-                    <li><a href="#tab_2010">2010</a></li>
-                    <li><a href="#tab_2009">2009</a></li>
-                    <li><a href="#tab_2008">2008</a></li>
-                    <li><a href="#tab_2007">2007</a></li>
-                    <li><a href="#tab_2006">2006</a></li>
+                <?
+                    for($i=$startYear; $i>=$endYear; $i--) {
+                        echo "<li><a href='#tab_" . $i . "'>" . $i . "</a></li>";
+                    }
+                ?>
                 </ul>
             </section>
-            <section id="tab_2011" class="article_list tab">
-                <?
-                // EVENT TYPE and CSS CLASSES
-                $newsType = 'NEWS';
-                $articleType = "two_column";
+            <?
             
-                // GETTING EVENTS (NEXT 30)
-                $newsQuery = "SELECT * FROM events WHERE approve='Y' AND startdate >= CURDATE() ORDER BY startdate ASC LIMIT 30";
+            // EVENT TYPE and CSS CLASSES
+            $newsType = 'NEWS';
+            $articleType = "two_column";
+            
+            for($i=$startYear; $i>=$endYear; $i--) {
+                
+                // SECTION OPEN
+                echo "<section id='tab_" . $i . "' class='article_list tab'>";
+
+                // GETTING NEWS FOR YEAR
+                $newsQuery = "SELECT * FROM press WHERE date_format(date_display,'%Y')='$i' ORDER BY date_display DESC";
                 $newsResult = mysql_query($newsQuery) or die(mysql_error());
-            
-                // POPULATE EVENTS
-                while($newsRow = mysql_fetch_array($newsResult)){
-                    $newsId = $newsRow['id'];
-                    include("templates/article_news.php");
+                $newsTotal = mysql_affected_rows();
+                
+                // POPULATE PRESS
+                if($newsTotal > 0) {                    
+                    while($newsRow = mysql_fetch_array($newsResult)){
+                        $newsId = $newsRow['id'];
+                        include("templates/article_news.php");
+                    }
+
+                } else {
+                    echo "No News available.";
                 }
-                ?>
-            </section>
-            <section id="tab_2010" class="article_list tab">
-                <?
-                // EVENT TYPE and CSS CLASSES
-                $articleType = "two_column";
-            
-                // GETTING EVENTS (NEXT 30)
-                $newsQuery = "SELECT * FROM events WHERE approve='Y' AND startdate <= CURDATE() ORDER BY startdate ASC LIMIT 30";
-                $newsResult = mysql_query($newsQuery) or die(mysql_error());
-            
-                // POPULATE EVENTS
-                while($newsRow = mysql_fetch_array($newsResult)){
-                    $newsId = $newsRow['id'];
-                    include("templates/article_news.php");
-                }
-                ?>
-            </section>
-            <section id="tab_2009" class="article_list tab">
-                2009
-            </section>
-            <section id="tab_2008" class="article_list tab">
-                2008
-            </section>
-            <section id="tab_2007" class="article_list tab">
-                2007
-            </section>
-            <section id="tab_2006" class="article_list tab">
-                2006
-            </section>
+                
+                // SECTION CLOSE
+                echo "</section>";
+            }
+            ?>
         </div>
     </div>
 <!-- FOOTER -->
