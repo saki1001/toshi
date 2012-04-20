@@ -33,6 +33,12 @@
 		<tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='manage_banners.php';" onmouseover="className='menuover';" onmouseout="className='menuon';">Manage Home Page Banners</td>
         </tr>
+        <tr>
+          <td height="20" class="mail_font" >News & Press Management</td>
+        </tr>
+        <tr>
+          <td height="20" class="menuon" onClick="javascript:document.location.href='manage_press.php';" onmouseover="className='menuover';" onmouseout="className='menuon';">Manage News & Press</td>
+        </tr>
 		<tr>
           <td height="20" class="mail_font" >Admin Username & Password</td>
         </tr>
@@ -52,26 +58,26 @@
           <td height="20" class="menuon" onClick="javascript:document.location.href='manage_newsletter.php';" onmouseover="className='menuover';" onmouseout="className='menuon';">Manage Newsletter Subscriber</td>
         </tr>
 		<tr>
-          <td height="20" class="mail_font">Static Page Management </td>
+          <!-- <td height="20" class="mail_font">Static Page Management </td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=1';" onmouseover="className='menuover';" onmouseout="className='menuon';">About Us</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=2';" onmouseover="className='menuover';" onmouseout="className='menuon';">Contact Us</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=3';" onmouseover="className='menuover';" onmouseout="className='menuon';">Our Mission</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=4';" onmouseover="className='menuover';" onmouseout="className='menuon';">News & Press</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=5';" onmouseover="className='menuover';" onmouseout="className='menuon';">How to help</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=6';" onmouseover="className='menuover';" onmouseout="className='menuon';">Jobs</td>
-        </tr>
+        </tr> -->
 		<? } else if($mlevel==3){ ?> 
 		<tr>
           <td height="20" class="mail_font" >Admin Username & Password</td>
@@ -93,6 +99,15 @@
         </tr>
 		<tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='manage_banners.php';" onmouseover="className='menuover';" onmouseout="className='menuon';">Manage Home Page Banners</td>
+        </tr>
+		<tr>
+          <td height="20" class="mail_font" >News & Press Management</td>
+        </tr>
+		<tr>
+          <td height="20" class="menuon" onClick="javascript:document.location.href='add_press.php';" onmouseover="className='menuover';" onmouseout="className='menuon';">Add News & Press</td>
+        </tr>
+		<tr>
+          <td height="20" class="menuon" onClick="javascript:document.location.href='manage_press.php';" onmouseover="className='menuover';" onmouseout="className='menuon';">Manage News & Press</td>
         </tr>
 		<tr>
           <td height="20" class="mail_font" >Email To Friend Management</td>

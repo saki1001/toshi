@@ -47,6 +47,8 @@ if(isset($_POST['Submit']))
 						category='".addslashes($_POST['category'])."',
 						ages='".addslashes($_POST['ages'])."',
 						website='".addslashes($_POST['website'])."',
+						flickerurl='".addslashes($_POST['flickerurl'])."',
+						vimeourl='".addslashes($_POST['vimeourl'])."',
 						picture_display='".addslashes($_POST['picture_display'])."' where id='".$_REQUEST['id']."'";	 
 		$AddUserQryRs=mysql_query($AddUserQry);
 		$insertid=mysql_insert_id();
@@ -94,6 +96,8 @@ if(isset($_POST['Submit']))
 						category='".addslashes($_POST['category'])."',
 						ages='".addslashes($_POST['ages'])."',
 						website='".addslashes($_POST['website'])."',
+						flickerurl='".addslashes($_POST['flickerurl'])."',
+						vimeourl='".addslashes($_POST['vimeourl'])."',
 						picture_display='".addslashes($_POST['picture_display'])."',
 						addeddate=curdate()";	 
 		$AddUserQryRs=mysql_query($AddUserQry);
@@ -397,6 +401,14 @@ function closeshadow()
                           <td height="25" colspan="3" valign="top"><input type="text" name="website" id="website" class="solidinput" style="width:260px;" value="<? if($Row['website']==""){ echo "http://";}else{ echo htmlentities(stripslashes($Row['website'])); }?>" /></td>
                         </tr>
 						<tr>
+                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span>Flickr Page:&nbsp;</strong></td>
+                          <td height="25" colspan="3" valign="top"><input type="text" name="flickerurl" id="flickerurl" class="solidinput" style="width:360px;" value="<? if($Row['flickerurl']==""){ echo "http://";}else{ echo htmlentities(stripslashes($Row['flickerurl'])); }?>" /></td>
+                        </tr>
+						<tr>
+                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span>Vimeo Page:&nbsp;</strong></td>
+                          <td height="25" colspan="3" valign="top"><input type="text" name="vimeourl" id="vimeourl" class="solidinput" style="width:360px;" value="<? if($Row['vimeourl']==""){ echo "http://";}else{ echo htmlentities(stripslashes($Row['vimeourl'])); }?>" /></td>
+                        </tr>
+						<tr>
                           <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span>Image:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top"><input type="file" name="picture" id="picture" />
 						  <? if($Row['picture']!=''){?><br><img src="../Events/<? echo $Row['picture'];?>" height="120"><? } ?>
@@ -456,7 +468,7 @@ function valid()
 			return false;
 	}
 	//document.AddeventForm.HidRegUser.value='1';
-	document.AddeventForm.submit();
+	//document.AddeventForm.submit();
 	return  true;    
 }
 </script>

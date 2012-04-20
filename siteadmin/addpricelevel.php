@@ -216,7 +216,7 @@ function valid()
 	}
 	
 	document.AddeventForm2.HidRegUser.value='1';
-	document.AddeventForm2.submit();
+	//document.AddeventForm2.submit();
 	return  true;    
 }
 </script>

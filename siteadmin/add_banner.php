@@ -157,15 +157,15 @@ function valid()
                           <td height="25" colspan="3" valign="top">
 						  	<select name="position" id="position" style="width:400px;">
 								<option value="Home Page - Top Slider Banner" <? if($ROW->position=="Home Page - Top Slider Banner"){echo "selected";}?>>Home Page - Top Slider Banner</option>
-								<option value="Home Page - Middle Banner" <? if($ROW->position=="Home Page - Middle Banner"){echo "selected";}?>>Home Page - Middle Banner</option>
+								<?php /*?><option value="Home Page - Middle Banner" <? if($ROW->position=="Home Page - Middle Banner"){echo "selected";}?>>Home Page - Middle Banner</option><?php */?>
 							</select>
 						  </td>
                         </tr>
 						<tr>
                           <td width="12%" height="25" align="right" valign="top"><strong> Image:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top"><input  type="file" name="image" id="image" class="solidinput">&nbsp;<? if($_REQUEST['id']==""){?>&nbsp;&nbsp;<a href="#" onClick="document.getElementById('image').value='';return false;">Delete Image</a><? } ?><br>
-						  <span class="a">Ideal Size: Home Page - Top Slider Banner = Width: 928px;  Height:428px;</span><br>
-						  <span class="a">Ideal Size: Home Page - Middle Banner = Width: 290px;  Height:205px;</span>
+						  <span class="a">Ideal Size: Home Page -  Slider Banner = Width: 928px; Height:428px;</span><br>
+						  <?php /*?><span class="a">Ideal Size: Home Page - Middle Banner = Width: 290px;  Height:205px;</span><?php */?>
 						  </td>
                         </tr>
 						<? if($ROW->image!="" && file_exists("../banners/".$ROW->image)){?>
