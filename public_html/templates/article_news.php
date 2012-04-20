@@ -13,7 +13,7 @@
         <div class="info">
             <h2><? echo ucfirst(stripslashes($newsRow['name']));?></h2>
             <p class="date"><? echo $newsDate; ?></p>
-            <p class="summary"><? echo stripslashes($newsRow['description']); ?></p>
+            <p class="summary"><? echo $newsSummary; ?></p>
         </div>
     </a>
 </article>
