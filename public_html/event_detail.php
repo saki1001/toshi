@@ -74,8 +74,12 @@
                 <!-- PAST EVENT -->
                 <? if($eventType === 'PAST') { ?>
                     <div class="info_section media_links">
-                        <a href="#" class="button yellow">More Photos</a>
-                        <a href="#" class="button yellow">More Videos</a>
+                    <? if($flickrUrl != '' && $flickrUrl != 'http://') { ?>
+                        <a href="<? echo $flickrUrl; ?>" class="button yellow">More Photos</a>
+                    <? } ?>
+                    <? if($vimeoUrl != '' && $vimeoUrl != 'http://') { ?>
+                        <a href="<? echo $vimeoUrl; ?>" class="button yellow">More Videos</a>
+                    <? } ?>
                     </div>
                 <!-- UPCOMING EVENT -->
                 <? } else { ?>
