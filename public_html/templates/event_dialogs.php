@@ -127,15 +127,20 @@ if($_POST['HidSubmitAddUser']=="1") {
     <section id="venue_details">
         <h2 class="page_title"><? echo $venueName; ?></h2>
         <div class="text_wrapper">
-            <div class="description">
+            <div class="info description">
                 <h3>Description</h3>
                 <p><? echo $venueDescription; ?></p>
             </div>
-            <div class="location">
+            <div class="info location">
                 <h3>Location</h3>
                 <ul>
                     <li><? echo $venueAddressLine1; ?></li>
                     <li><? echo $venueAddressLine2; ?></li>
+                </ul>
+            </div>
+            <div class="info contact">
+                <h3>Contact</h3>
+                <ul>
                     <li><? echo $venuePhone; ?></li>
                     <li><? echo $venueEmail; ?></li>
                 </ul>
