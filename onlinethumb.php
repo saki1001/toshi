@@ -20,7 +20,8 @@ if ($img) {
     # Get image size and scale ratio
     $width = imagesx($img);
     $height = imagesy($img);
-    $scale = min(MAX_WIDTH/$width, MAX_HEIGHT/$height);
+    $scale = MAX_WIDTH/$width;
+    // $scale = min(MAX_WIDTH/$width, MAX_HEIGHT/$height);
 
     # If the image is larger than the max shrink it
     if ($scale < 1) {
