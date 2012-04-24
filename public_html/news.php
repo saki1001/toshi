@@ -58,7 +58,7 @@
             <?
             // EVENT TYPE and CSS CLASSES
             $newsType = 'NEWS';
-            $articleType = "two_column";
+            $articleType = "full_width";
             
             if($newsYearTotal > 0) {
                 // SECTION BY YEAR
