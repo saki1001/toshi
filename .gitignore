@@ -5,6 +5,7 @@ include/config.inc.php
 banners/
 Events/
 Musics/
+presspdf/
 Users/
 Videos/
 
