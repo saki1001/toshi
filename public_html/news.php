@@ -8,9 +8,22 @@
         $ACTIVEPAGE='news';
         $PAGETITLE='News & Press';
         
-        // SET NEWS TO MOST RECENT 5 YEARS
-        $startYear = date('Y');
-        $endYear = date('Y') - 5;
+        // GETTING YEARS FOR NEWS
+        $newsYears = array();
+        $newsYearQuery = "SELECT * FROM press ORDER BY date_display DESC";
+        $newsYearResult = mysql_query($newsYearQuery) or die(mysql_error());
+        $newsYearTotal = mysql_affected_rows();
+        
+        while($newsYearRow = mysql_fetch_array($newsYearResult)){
+            
+            $currentYear = date('Y', strtotime($newsYearRow['date_display']));
+            
+            if(in_array($currentYear, $newsYears)) {
+                // do nothing
+            } else {
+                array_push($newsYears, $currentYear);
+            }
+        }
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
@@ -23,49 +36,52 @@
 <body id="<? echo $ACTIVEPAGE; ?>">
     <div id="wrap">
     <!-- HEADER -->
-        <? include("templates/header.php");?>
+        <? include("templates/header.php"); ?>
     
     <!-- CONTENT -->
         <div id="content" class="tabs">
             <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-            <!-- <h3 class="info_title">Articles from $YEAR</h3> -->
             <section id="tabs_nav">
                 <ul>
                 <?
-                    for($i=$startYear; $i>=$endYear; $i--) {
-                        echo "<li><a href='#tab_" . $i . "'>" . $i . "</a></li>";
+                if($newsYearTotal > 0) {
+                    // LINK BY YEAR
+                    for($i=0; $i<count($newsYears); $i++) {
+                        echo "<li><a href='#tab_" . $newsYears[$i] . "'>" . $newsYears[$i] . "</a></li>";
                     }
+                } else {
+                    echo "<li><a href='#tab_" . $newsYears[$i] . "'>" . date('Y') . "</a></li>";
+                }
                 ?>
                 </ul>
             </section>
             <?
-            
             // EVENT TYPE and CSS CLASSES
             $newsType = 'NEWS';
             $articleType = "two_column";
             
-            for($i=$startYear; $i>=$endYear; $i--) {
-                
-                // SECTION OPEN
-                echo "<section id='tab_" . $i . "' class='article_list tab'>";
-
-                // GETTING NEWS FOR YEAR
-                $newsQuery = "SELECT * FROM press WHERE date_format(date_display,'%Y')='$i' ORDER BY date_display DESC";
-                $newsResult = mysql_query($newsQuery) or die(mysql_error());
-                $newsTotal = mysql_affected_rows();
-                
-                // POPULATE PRESS
-                if($newsTotal > 0) {                    
+            if($newsYearTotal > 0) {
+                // SECTION BY YEAR
+                for($i=0; $i<count($newsYears); $i++) {
+                    $newsQuery = "SELECT * FROM press WHERE date_format(date_display,'%Y')='$newsYears[$i]' ORDER BY date_display DESC";
+                    $newsResult = mysql_query($newsQuery) or die(mysql_error());
+                    $newsTotal = mysql_affected_rows();
+                    
+                    // SECTION OPEN
+                    echo "<section id='tab_" . $newsYears[$i] . "' class='article_list tab'>";
+                    
+                    // POPULATE PRESS
                     while($newsRow = mysql_fetch_array($newsResult)){
                         $newsId = $newsRow['id'];
                         include("templates/article_news.php");
                     }
-
-                } else {
-                    echo "No News available.";
+                    
+                    // SECTION CLOSE
+                    echo "</section>";
                 }
-                
-                // SECTION CLOSE
+            } else {
+                echo "<section class='article_list'>";
+                echo "<p class='empty'>No articles available.</p>";
                 echo "</section>";
             }
             ?>
