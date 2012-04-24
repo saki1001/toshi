@@ -7,32 +7,18 @@
 }
 
 #detail #content section.detail_pictures,
-#detail #content section.detail_videos {
+#detail #content section.detail_videos,
+#detail #content section.detail_nav {
     max-width: 600px;
     float: right;
 }
 
-#detail #content .detail_header {
-    width: 100%;
-    margin-bottom: 5px;
-    float: left;
+#detail #content section.detail_nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#detail #content .detail_header .page_title {
-    width: 320px;
-    max-height: 35px;
-    overflow: hidden;
-    margin: 0 30px 0 0;
-    float: left;
-}
-
-#detail .detail_header .nav {
-    width: 600px;
-    margin-top: 17px;
-    float: right;
-}
-
-#detail .detail_header .nav a {
+#detail .detail_nav a {
     font-size: 1.2em;
     margin-left: 20px;
     float: right;
@@ -89,6 +75,14 @@
 
 #detail.news section.detail_info {
     width: 420px;
+}
+
+#detail #content .detail_info .page_title {
+    width: 320px;
+/*    max-height: 35px;
+    overflow: hidden;*/
+    margin: 0 30px 5px 0;
+    float: left;
 }
 
 #detail .detail_info .info_section {
@@ -289,20 +283,18 @@
     margin-right: 20px;
 }
 
-#dialog .dialog_wrapper #venue_details .description,
-#dialog .dialog_wrapper #venue_details .location {
+#dialog .dialog_wrapper #venue_details .info  {
     margin-bottom: 20px;
     width: 180px;
 }
 
-#dialog .dialog_wrapper #venue_details .description h3,
-#dialog .dialog_wrapper #venue_details .location h3 {
+#dialog .dialog_wrapper #venue_details .info h3 {
     color: #777777;
     font-weight: normal;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
-#dialog .dialog_wrapper #venue_details .location ul li {
+#dialog .dialog_wrapper #venue_details .info ul li {
     margin-bottom: 3px;
 }
 
