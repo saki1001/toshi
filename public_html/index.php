@@ -38,12 +38,12 @@
                 </div>
                 <?
                 // GETTING BANNERS
-                $bannerQuery = "SELECT * FROM banners";
+                $bannerQuery = "SELECT * FROM banners ORDER BY id";
                 $bannerResult = mysql_query($bannerQuery) or die(mysql_error());
             
                 // POPULATE BANNERS
                 while($bannerRow = mysql_fetch_array($bannerResult)){
-                    $bannerTitle = $bannerRow['title'];
+                    $bannerTitle = stripslashes($bannerRow['title']);
                     $bannerImageUrl = $SITE_URL . $BANNERS . $bannerRow['image'];
                     echo "<div class='slide'>";
                     echo "<h2 class='slide_title'>" . $bannerTitle . "</h2>";
@@ -51,6 +51,17 @@
                     echo "</div>";
                 }
                 ?>
+            </section>
+            <section id="restaurant">
+                <div class="wrapper">
+                    <h2>toshi's Living Room</h2>
+                    <p>toshi's Living Room is the place to come because you've heard about us from a friend. No hype. No famous or pseudo famous celebrity chef, who's never around. Just good honest traditional comfort food, good cheer and great shows. toshi's Living Room is a place that's warm and friendly that comes from a real place, a place like home...toshi's home. In fact, Ponzu, our door Morkie, senses niceness and barks at meanies. We have a no meanies door policy and Ponzu's very strict.</p>
+                    <p>Located at the "crossroads of the universe", the corner 26th and broadway in Manhattan, the stage at toshi's Living Room is where music acts and musicals are created thru a hybrid of top music, playwright, composer and choreography students from all over the world performing side by side with seasoned professionals.  This fusion of fresh young talent paired with experienced pros produces an excitement, a magic we call toshi's Living Room.</p>
+                    <div class="button_wrapper">
+                        <a class="button red" href="#">View Menu</a>
+                        <a class="button red" href="#">Reservations</a>
+                    </div>
+                </div>
             </section>
             <section class="article_list">
                 <h3>Upcoming Events</h3>
@@ -69,16 +80,6 @@
                     include("templates/article_event.php");
                 }
                 ?>
-            </section>
-            <section id="restaurant">
-                <div class="wrapper">
-                    <h2>Toshi's Restaurant</h2>
-                    <p>Short Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut odio vitae est tempor congue. Nulla orci libero, molestie ut pulvinar sit amet, adipiscing sit amet purus. Praesent at nulla nec tortor sagittis vestibulum.</p>
-                    <div class="button_wrapper">
-                        <a class="button red" href="#">View Menu</a>
-                        <a class="button red" href="#">Reservations</a>
-                    </div>
-                </div>
             </section>
         </div>
     </div>
