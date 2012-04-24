@@ -201,6 +201,12 @@ function valid()
 		alert("Please enter Event Venue city.");
 		form.city.focus();
 		return false;
+	}
+	else if(form.phone.value.split(" ").join("")=="")
+	{
+		alert("Please enter Event Venue phone number.");
+		form.city.focus();
+		return false;
 	}	
 	else
 	{
@@ -328,7 +334,7 @@ function valid()
                           <td height="25" colspan="3" valign="top"><input name="url" style="width:270px;"  value="<? echo htmlentities(stripslashes($ROW->url));?>" type="text"  class="solidinput"></td>
                         </tr>
 						<tr>
-                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span>  Phone:&nbsp;</strong></td>
+                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a">*</span>  Phone:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top"><input name="phone" style="width:270px;"  value="<? echo htmlentities(stripslashes($ROW->phone));?>" type="text"  class="solidinput"></td>
                         </tr>
                         <tr>
