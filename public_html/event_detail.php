@@ -10,7 +10,7 @@
         $eventResult = mysql_query($eventQuery) or die(mysql_error());
         $eventRow = mysql_fetch_array($eventResult);
         
-        if($eventRow['startdate'] >= date("Y-m-d", time())) { 
+        if($eventRow['startdate'] >= date("Y-m-d", time()) || $eventRow['enddate'] >= date("Y-m-d", time())) { 
             $ACTIVEPAGE='events';
             $eventType = 'CURRENT';
         } else {
