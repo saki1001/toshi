@@ -22,6 +22,12 @@
         $eventPhotoMain = "images/default_article_thumb.jpg";
     }
     
+    // FLICKR LINK
+    $flickrUrl = $eventRow['flickerurl'];
+    
+    // VIMEO LINK
+    $vimeoUrl = $eventRow['vimeourl'];
+    
     // PICTURES
     $getPicturesQuery = "SELECT * FROM events_pictures WHERE eventid='".trim($eventId)."' order by id desc";
     $getPicturesResult = mysql_query($getPicturesQuery);
@@ -81,8 +87,7 @@
     $eventDescription = stripslashes($eventRow['description']);
     
     // EVENTTYPE: sort based on whether PAST or CURRENT
-    if(strtotime($eventRow['startdate']) < time()) {
-        // event time < current time == PAST event
+    if($eventType === 'PAST') {
         $backLink = "gallery.php";
         $eventDate = $eventStartDate;
         
