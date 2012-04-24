@@ -237,7 +237,7 @@ function closeshadow()
 						  </td>
                         </tr>
 						<tr>
-                          <td width="21%" height="25" align="right" valign="top"><strong>Event End Date:&nbsp;</strong></td>
+                          <td width="21%" height="25" align="right" valign="top"><span class="a">*</span><strong>Event End Date:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top"><? if($Row['enddate']!='' && $Row['enddate']!='0000-00-00'){$enddate=ymd_to_mdy($Row['enddate']);}else{$enddate='';}?>
 						  <input type="text" class="solidinput" name="enddate" id="enddate" style="width:80px;" value="<? echo stripslashes($enddate);?>" onClick="displayCalendar(document.getElementById('enddate'),'mm/dd/yyyy',this);" >
 							<select style="width:53px;padding:1px 2px;font:11px;height:20px" name="enddate_hour">
@@ -290,7 +290,7 @@ function closeshadow()
                           <td height="25" colspan="3" valign="top"><a  href="#" onClick="javascript:window.open('addnewvenue.php','','width=400,height=300');return false;"  class='example5' style="float:left;padding:0px;width:150px;">Add New Venue</a></td>
                         </tr>
 						<tr>
-                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span> Description:&nbsp;</strong></td>
+                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a">*</span> Description:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top"><textarea name="description" class="solidinput" style="width:250px;height:80px;" id="description" ><? echo htmlentities(stripslashes($Row['description']));?></textarea></td>
                         </tr>
 						<tr>
@@ -367,7 +367,7 @@ function closeshadow()
                           <td  height="25" colspan="4" align="left" valign="middle" class="blue"><strong><span class="a"></span> Settings</strong></td>
                         </tr>
 						<tr>
-                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span>Category:&nbsp;</strong></td>
+                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a">*</span>Category:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top">
 						  <select name="category" id="category" style="width:260px;padding:1px 2px;font:11px;height:20px">
 								<option value="">Select Category</option>
@@ -385,7 +385,7 @@ function closeshadow()
                         </tr>
 						
 						<tr>
-                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a"></span>Ages:&nbsp;</strong></td>
+                          <td width="21%" height="25" align="right" valign="top"><strong><span class="a">*</span>Ages:&nbsp;</strong></td>
                           <td height="25" colspan="3" valign="top">
 						  <select name="ages" id="ages" style="width:260px;padding:1px 2px;font:11px;height:20px">
 								<option value="">Select Age Group</option>
@@ -449,10 +449,22 @@ function valid()
 		form.startdate.focus();
 		return false;
 	}
+	if(form.enddate.value.split(" ").join("")=="")
+	{
+		alert("Please enter event end date.")
+		form.enddate.focus();
+		return false;
+	}
 	if(form.venueid.value.split(" ").join("")=="")
 	{
 			alert("Please select venue.")
 			form.venueid.focus();
+			return false;
+	}
+	if(form.description.value.split(" ").join("")=="")
+	{
+			alert("Please enter description.")
+			form.description.focus();
 			return false;
 	}
 	if(form.category.value.split(" ").join("")=="")

@@ -209,7 +209,7 @@ function valid()
                         </tr>
 						<tr>
                           <td width="19%" height="25" align="right" valign="top"><strong>Source Link:&nbsp;</strong></td>
-                          <td height="25" colspan="3" valign="top"><input name="linktosite" id="linktosite" style="width:570px;"  value="<? echo htmlentities(stripslashes($ROW->linktosite));?>" type="text"  class="solidinput"></td>
+                          <td height="25" colspan="3" valign="top"><input name="linktosite" id="linktosite" style="width:570px;"  value="<? if($ROW->linktosite==''){ echo 'http://';}else{ echo htmlentities(stripslashes($ROW->linktosite)); }?>" type="text"  class="solidinput"></td>
                         </tr>
 						<tr>
                           <td width="19%" height="25" align="right" valign="top"><strong>Author:&nbsp;</strong></td>
