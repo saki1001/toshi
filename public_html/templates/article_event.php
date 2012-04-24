@@ -5,7 +5,7 @@
     <a href="<? echo $eventDetailLink ?>" class="detail_link">
         <div class="thumb">
         <? if($eventRow['picture']!='' && $eventRow['picture_display']=='Y'){?>
-            <img src="<? echo $eventThumbLink; ?>" height="80" alt="thumbnail" />
+            <img src="<? echo $eventThumbLink; ?>" width="120" alt="thumbnail" />
         <? }else{ ?>
             <!-- TODO: replace with image of toshi -->
             <img src="images/default_article_thumb.jpg" width="120" height="80" alt="thumbnail" />
