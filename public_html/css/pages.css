@@ -100,8 +100,9 @@
     float: left;
 }
 
-#events #content .article_list {
-    width: 730px;
+#events #content .article_list,
+#gallery #content .article_list {
+    width: 700px;
     float: left;
 }
 
@@ -140,8 +141,8 @@
 }
 
 #content .article_list article .thumb img {
-    max-width: 120px;
-    max-height: 80px;
+    min-width: 120px;
+/*    max-height: 80px;*/
     overflow: hidden;
 }
 
@@ -176,11 +177,12 @@
 
 /* FULL WIDTH ARTICLE-----------------------------*/
 #content .article_list article.full_width {
-    margin: 0 0 20px 50px;
+    margin: 0 0 20px 20px;
 }
 
 #content .article_list article.full_width.short {
     margin: 0 0 20px 0;
+    width: 480px;
 }
 
 #content .article_list article.full_width a.detail_link {
@@ -206,7 +208,7 @@
 #content .article_list article.full_width.short .info h2,
 #content .article_list article.full_width.short .info .date,
 #content .article_list article.full_width.short .info .summary {
-    width: 341px;
+    width: 285px;
 }
 
 #content .article_list article.full_width .info h2 {
@@ -276,6 +278,7 @@
 /*CALENDAR-------------------------------------*/
 /*in gallery and events*/
 #calendar_wrapper {
+    padding-right: 30px;
     float: left;
 }
 
