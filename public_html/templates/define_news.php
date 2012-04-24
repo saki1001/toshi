@@ -1,26 +1,25 @@
 <?
+    // MAIN PHOTO
+    if($newsRow['thumbnail']!=''){
+        $newsPicture = $SITE_URL . "presspdf/" . $newsRow['thumbnail'];
+    }else{
+        $newsPicture = $SITE_URL . $HOME . "images/default_article_thumb.jpg";
+    }
+    
     // THUMBNAIL
-    $newsThumbLink = $SITE_URL . "onlinethumb.php?nm=Events/" . $newsRow['picture'] . "&mwidth=120&mheight=80";
+    $newsThumbLink = $SITE_URL . "onlinethumb.php?nm=" . $newsPicture . "&mwidth=120&mheight=80";
     
     // DETAIL PAGE
     $newsDetailLink = $SITE_URL . $HOME . "news_detail.php?eventId=" . $newsRow['id'];
     
-    // WEBSITE
-    $newsWebsite = $newsRow['website'];
-    
-    // MAIN PHOTO
-    if($newsRow['picture']!='' && $newsRow['picture_display']=='Y'){
-        $newsPhotoMain = $SITE_URL . "Events/" . $newsRow['picture'];
-    }else{
-        // TODO: replace with image of toshi
-        $newsPhotoMain = "http://www.placehold.it/578x378";
-    }
+    // SOURCE LINK
+    $newsWebsite = $newsRow['linktosite'];
     
     // AUTHOR
-    $newsAuthor = 'Author Name';
+    $newsAuthor = stripslashes($newsRow['author']);
     
     // PUBLICATION
-    $newsPublication = 'Publication Name';
+    $newsPublication = stripslashes($newsRow['publication']);
     
     // DATE
     $newsDate = date('n/j/Y', strtotime($newsRow['date_display']));
@@ -28,7 +27,10 @@
     // SUMMARY
     $newsSummary = stripslashes($newsRow['shortdesc']);
     
+    // FULL TEXT
+    $newsFullText = stripslashes($newsRow['description']);
+    
     // PDF
-    $pdfLink = 'images/Saki-Sato-Resume-2-2012.pdf';
+    $newsPdfLink = "presspdf/" . $newsRow['picture'];
     
 ?>
