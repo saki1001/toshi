@@ -69,8 +69,10 @@
     $venueDescription = $venueRow['description'];
     
     // DATE VARIBLES
-    $eventStartDate = date('F j, Y', strtotime($eventRow['startdate']));
+    $eventStartDate = date('M j', strtotime($eventRow['startdate']));
     $eventStartTime = date('g:i', strtotime($eventRow['startdate_hour'] . ":" . $eventRow['startdate_minute'])) . $eventRow['startdate_ampm'];
+    
+    $eventPastDate = date('F j, Y', strtotime($eventRow['startdate']));
     
     // DATE: based on end date
     if($eventRow['startdate'] == $eventRow['enddate']) {
@@ -80,7 +82,7 @@
         // no enddate
         $eventEndDate = '?';
     } else {
-        $eventEndDate = date('F j, Y, g:i', strtotime($eventRow['enddate'] . " " . $eventRow['enddate_hour'] . ":" . $eventRow['enddate_minute'])) . $eventRow['enddate_ampm'];
+        $eventEndDate = date('M j, g:i', strtotime($eventRow['enddate'] . " " . $eventRow['enddate_hour'] . ":" . $eventRow['enddate_minute'])) . $eventRow['enddate_ampm'];
     }
     
     // DESCRIPTION
@@ -89,11 +91,11 @@
     // EVENTTYPE: sort based on whether PAST or CURRENT
     if($eventType === 'PAST') {
         $backLink = "gallery.php";
-        $eventDate = $eventStartDate;
+        $eventDate = $eventPastDate;
         
     } else {
         $backLink = "events.php";
-        $eventDate = $eventStartDate . " " . $eventStartTime . " - " . $eventEndDate;
+        $eventDate = $eventStartDate . ", " . $eventStartTime . " - " . $eventEndDate;
     }
     
 ?>
