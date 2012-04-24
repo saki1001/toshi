@@ -52,18 +52,16 @@
     <!-- CONTENT -->
         <div id="content" class="tabs">
             <? include("templates/event_dialogs.php"); ?>
-            <section class="detail_header">
-                <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-                <div class="nav">
+            <section class="detail_nav">
                     <a href="<? echo $backLink; ?>">Back</a>
                     <a href="#" id="event_share_link">Email to a Friend</a>
                     <a href="#" id="venue_details_links">Venue Details</a>
                     <? if($totalVideos>0) { ?>
                         <a href="#videos">Videos</a>
                     <? } ?>
-                </div>
             </section>
             <section class="detail_info">
+                <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
                 <div class="info_section date">
                     <h3 class="date"><? echo $eventDate; ?></h3>
                 </div>
