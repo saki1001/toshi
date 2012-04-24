@@ -247,6 +247,7 @@ footer {
 footer .footer_wrapper {
     padding-top: 15px;
     padding-bottom: 10px;
+    overflow: hidden;
 }
 
 footer ul li {

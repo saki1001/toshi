@@ -57,25 +57,25 @@
 #detail #slideshow .slide img {
 }
 
-#detail .detail_pdf {
-    width: 580px;
+#detail .detail_image {
+    width: 480px;
     min-height: 300px;
     background: #333333;
     border: solid 10px #FFFBE3;
 }
 
-#detail .detail_pdf #pdf {
-    width: 578px;
-    min-height: 300px;
+#detail .detail_image #image {
+    width: 478px;
+/*    min-height: 300px;*/
     border: solid 1px #222222;
 }
 
-#detail .detail_pdf #pdf object {
+#detail .detail_image #image object {
     min-height: 300px;
 }
 
-#detail .detail_pdf #pdf p {
-    width: 300px;
+#detail .detail_image #image p {
+    width: 478px;
     text-align: center;
     margin: 0 auto;
     padding-top: 135px;
@@ -85,6 +85,10 @@
 #detail section.detail_info {
     width: 320px;
     margin-right: 30px;
+}
+
+#detail.news section.detail_info {
+    width: 420px;
 }
 
 #detail .detail_info .info_section {

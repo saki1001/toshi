@@ -1,10 +1,13 @@
 /*INDEX (HOMEPAGE)---------------------------------------*/
 
+#home #content section {
+    margin-bottom: 30px;
+}
+
 /*specific slideshow styles----------------------*/
 #home #slideshow {
     width: 930px;
     height: 430px;
-    margin-bottom: 20px;
 }
 
 #home .slide {
@@ -13,9 +16,22 @@
     height: 428px;
 }
 
+/*event articles---------------------------------*/
+#home .article_list {
+    width: 480px;
+    margin: 0 0 0 30px;
+    float: left;
+}
+
+#home .article_list h3 {
+    font-size: 1.3em;
+    color: #555555;
+    margin: 0 0 8px 0;
+}
+
 /*restaurant-------------------------------------*/
 #content #restaurant {
-    width: 330px;
+    width: 420px;
     border: solid 10px #FFFBE3;
     float: left;
 }

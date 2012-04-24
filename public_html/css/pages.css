@@ -36,22 +36,12 @@
 
 #events #content .page_title,
 #gallery #content .page_title {
-    width:250px;
+    width:100%;
     float:left;
 }
 
 #detail #content .section_title {
     width:100%;
-}
-
-#content .info_title {
-    font-size: 1.5em;
-    font-weight: normal;
-    color: #555555;
-    margin: 14px 0 13px;
-    width:680px;
-    margin-left: 20px;
-    float:left;
 }
 
 /*SLIDESHOW--------------------------------------*/
@@ -110,16 +100,18 @@
     float: left;
 }
 
-#home .article_list {
-    width: 580px;
-    margin: 0 20px 0 0;
+#events #content .article_list {
+    width: 730px;
     float: left;
 }
 
-#home .article_list h3 {
-    font-size: 1.3em;
-    color: #555555;
-    margin: 0 0 8px 0;
+#content .article_list .empty {
+    margin: 10px 0 0 50px;
+    font-size: 1.6em;
+}
+
+#content #news .article_list .empty {
+    margin: 20px 0 0 20px;
 }
 
 #content .article_list article {
@@ -127,10 +119,6 @@
     display: block;
     position: relative;
     float: left;
-}
-
-#content .article_list article.full_width.short {
-    margin: 0 0 20px 0;
 }
 
 #content .article_list article a {
@@ -188,7 +176,11 @@
 
 /* FULL WIDTH ARTICLE-----------------------------*/
 #content .article_list article.full_width {
+    margin: 0 0 20px 50px;
+}
 
+#content .article_list article.full_width.short {
+    margin: 0 0 20px 0;
 }
 
 #content .article_list article.full_width a.detail_link {
@@ -214,7 +206,7 @@
 #content .article_list article.full_width.short .info h2,
 #content .article_list article.full_width.short .info .date,
 #content .article_list article.full_width.short .info .summary {
-    width: 441px;
+    width: 341px;
 }
 
 #content .article_list article.full_width .info h2 {
@@ -288,9 +280,41 @@
 }
 
 #calendar_wrapper #calendar {
-    width: 250px;
+    width: 220px;
     height: 300px;
-    background-color: #CCCCCC;
+}
+
+#calendar_wrapper #calendar td {
+    vertical-align: middle;
+}
+
+#calendar_wrapper #calendar #calendar_title {
+    font-size: 1.6em;
+}
+
+#calendar_wrapper #calendar a.calendar_arrow {
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-image: url('../images/calendar_arrow.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#calendar_wrapper #calendar a.calendar_arrow.left {
+    background-position: 0 0;
+}
+
+#calendar_wrapper #calendar a.calendar_arrow.left:hover {
+    background-position: -15px 0;
+}
+
+#calendar_wrapper #calendar a.calendar_arrow.right {
+    background-position: -45px 0;
+}
+
+#calendar_wrapper #calendar a.calendar_arrow.right:hover {
+    background-position: -30px 0;
 }
 
 /*FIELDS-----------------------------------------*/
