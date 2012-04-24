@@ -32,9 +32,7 @@
 
     <!-- CONTENT -->
         <div id="content">
-            <section class="detail_header">
-                <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-                <div class="nav">
+            <section class="detail_nav">
                     <a href="news.php">Back</a>
                 <? if($newsWebsite != '' && $newsWebsite != 'http://') { ?>
                     <a href="<? echo $newsWebsite; ?>">Visit Article Website</a>
@@ -42,9 +40,9 @@
                 <? if($newsPdfLink != '') { ?>
                     <a href="../download.php?file=<? echo $newsPdfLink; ?>">Download PDF</a>
                 <? } ?>
-                </div>
             </section>
             <section class="detail_info">
+                <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
                 <div class="info_section sub_head">
                 <? if($newsDate != '') { ?>
                     <p>Published <? echo $newsDate; ?></p>
