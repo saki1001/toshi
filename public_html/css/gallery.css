@@ -1,0 +1,11 @@
+#gallery .future_month {
+    display: none;
+}
+
+#gallery .future_month.active {
+    display: block;
+}
+
+#gallery #content .article_list .empty {
+    margin-top: 20px;
+}
