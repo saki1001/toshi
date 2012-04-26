@@ -3,12 +3,12 @@
 
 if($_GET['Paid']=="Y")
 {
-	$query_order = "update ordermaster set ispaid = 'paid' where id='".$_REQUEST['orid']."'";			
+	$query_order = "update ordermaster set ispaid = 'paid' where id='".trim(mysql_real_escape_string($_REQUEST['orid']))."'";			
 	mysql_query($query_order) or die(mysql_error()); 
 }
 
 	
-$ordermaster_query = "select * from ordermaster where id ='".$_REQUEST['orid']."'";
+$ordermaster_query = "select * from ordermaster where id ='".trim(mysql_real_escape_string($_REQUEST['orid']))."'";
 $static_page_queryRs = mysql_query($ordermaster_query);
 $ordermaster_row = mysql_fetch_object($static_page_queryRs);
 $ShippingInformation="";
@@ -166,6 +166,6 @@ if ($_SERVER['SERVER_NAME']!="plus")
 {
 	HtmlMailSend($toemail,$subject1,$mailcontent1,$from1);
 }	
-header("location:orderreceipt.php?orid=".$_REQUEST['orid']."");
+header("location:orderreceipt.php?orid=".trim(mysql_real_escape_string($_REQUEST['orid']))."");
 exit;
 ?>
