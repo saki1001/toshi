@@ -84,16 +84,16 @@
                 <div class="info_section tickets">
                     <h4>Tickets</h4>
                     <? 
-                    $getEventTicket ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
-                    $eventTicketResult = mysql_query($getEventTicket);
-                    $totalEventTicketRows=mysql_affected_rows();
+                    $getPrice ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
+                    $priceResult = mysql_query($getPrice);
+                    $totalPrices=mysql_affected_rows();
 
-                    if($totalEventTicketRows>0) {
+                    if($totalPrices>0) {
                       $i=1;
-                      while($eventTicketRow = mysql_fetch_assoc($eventTicketResult)) {
+                      while($priceRow = mysql_fetch_assoc($priceResult)) {
                           // $Eventprice ="";
-                          // $Eventprice =$eventTicketRow['ticketprice'];
-                          $perorderlimit=$eventTicketRow['perorderlimit'];
+                          // $Eventprice =$priceRow['ticketprice'];
+                          $perorderlimit=$priceRow['perorderlimit'];
                           $curdate=strtotime(date("Y-m-d"));
                       
                           if($perorderlimit<=0) {
@@ -103,10 +103,17 @@
                       <form name="frmgen<?=$i?>" id="frmgen<?=$i?>" action="php/cart_add.php" method="get">
                           <ul class="ticket_option">
                             <li class="name">
-                              <? echo ucfirst(stripslashes($eventTicketRow['pricelevelname']));?>
+                              <? echo ucfirst(stripslashes($priceRow['pricelevelname']));?>
                             </li>
-                            <li class="price">
-                              $<?=GetTicketPrice($eventTicketRow['id']);?>
+                            <li class="price early">
+                              <?//=GetTicketPrice($priceRow['id']);?>
+                              $<? echo $priceRow['earlybird_price']; ?>
+                            </li>
+                            <li class="price advanced">
+                              $<? echo $priceRow['advanced_price']; ?>
+                            </li>
+                            <li class="price full">
+                              $<? echo $priceRow['full_price']; ?>
                             </li>
                             <li class="qty">
                               <select name="quantity" id="quantity">
@@ -115,12 +122,12 @@
                               <? } ?>
                               </select>
                             </li>
-                            <li class="submit_form">
-                               <input type="hidden" name="HidPid" id="HidPid" value="<? echo $eventId;?>" />
-                               <input type="hidden" name="HidPriceid" id="HidPriceid" value="<? echo $eventTicketRow['id'];?>" />
-                               <input type="submit" value="Buy"  class="">
-                            </li>
                         </ul>
+                        <div class="submit_form">
+                           <input type="hidden" name="HidPid" id="HidPid" value="<? echo $eventId;?>" />
+                           <input type="hidden" name="HidPriceid" id="HidPriceid" value="<? echo $priceRow['id'];?>" />
+                           <input type="submit" value="Buy"  class="">
+                        </div>
                       </form>
                     <? 
                       $i++;
