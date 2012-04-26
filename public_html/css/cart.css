@@ -3,10 +3,21 @@
 #cart .cart_wrapper,
 #cart .checkout_wrapper {
     width: 650px;
-/*    margin: 0 auto;*/
 }
 
-#cart .billing_info,
+#cart .billing_info {
+    width: 650px;
+}
+
+#cart .billing_info .field.full {
+    width: 300px;
+    float: left;
+}
+
+#cart .billing_info .field.full.left {
+    margin-right: 50px;
+}
+
 #cart .shipping_info,
 #cart .payment_info,
 #cart .promo_info {
@@ -64,7 +75,6 @@
     float: right;
 }
 
-/*#cart .summary li h4*/
 #cart .two_col_list li.left {
     color: #999999;
     margin-right: 5px;
@@ -72,7 +82,6 @@
     float: left;
 }
 
-/*#cart .summary li span*/
 #cart .two_col_list li.right {
     width: 110px;
     float: left;
@@ -142,28 +151,6 @@
     background-color: #444444;
     border: 1px solid #666666;
     display: block;
-}
-
-#cart.checkout .shipping_info h3 {
-    float: left;
-    width: 100%;
-}
-
-#cart.checkout .shipping_info h3 span,
-#cart.checkout .shipping_info h3 .same_as_ship {
-    width: 50%;
-    float: left;
-}
-
-#cart.checkout .shipping_info h3 .same_as_ship {
-    font-size: 11px;
-    padding-top: 1px;
-}
-
-#cart.checkout .shipping_info h3 .same_as_ship input[type='checkbox'],
-#cart.checkout .shipping_info h3 .same_as_ship label {
-    float: right;
-    margin: 0 0 0 5px;
 }
 
 #cart.checkout .promo_info #promomsg {
