@@ -16,7 +16,7 @@ if($_REQUEST['activationkey']!="")
             $_SESSION['UsErId']=$GetUserQryRow['id'];
             $toemail=$GetUserQryRow['email'];
             $FinalName=ucfirst($GetUserQryRow['firstname']);
-            $subject1="Thank you for auditions at Toshi's Playhouse";
+            $subject1="Thank you for auditions at Toshi's Living Room";
             $from1=$ADMIN_MAIL;    
             $mailcontent1="<html>
                         <body>
