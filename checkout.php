@@ -37,7 +37,7 @@ if($_POST['HidContinueCheckout']=="1")
 		$_SESSION['day_telephone'] = addslashes($_POST['phone']);
 		$_SESSION['email'] = addslashes($_POST['email']);
 			
-		header("location:orderreview.php");
+		header("location:$SECURE_URL/orderreview.php");
 		exit;
 }
 
@@ -320,7 +320,7 @@ function FrmChkInfo()
 		return false;
 	}*/
 	
-	if(document.frmShipInfo.cardtype.value=="")	
+	/*if(document.frmShipInfo.cardtype.value=="")	
     {
     	alert("Please select the credit card type.");
 		document.frmShipInfo.cardtype.focus();
@@ -454,7 +454,7 @@ function FrmChkInfo()
 		 		}
      		}
 		}
-	}
+	}*/
 	
 	form.HidContinueCheckout.value=1;
 	form.submit();
@@ -784,13 +784,13 @@ function promodisc(pmcode)
 																		  </table>
 																	</td>
 																</tr> <?php */?> 
-																<tr>
+																<?php /*?><tr>
 																	<td align="left" valign="middle" >&nbsp;</td>
 																</tr>
 																<tr>
 																	<td align="left" valign="middle" bgcolor="#999999" class="font_13_blk"><strong>Payment Information </strong></td>
-																</tr>
-																<tr>
+																</tr><?php */?>
+																<?php /*?><tr>
 																	<td valign="top" style="padding-top:10px;">
 																		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="5">
 																		<tr>
@@ -835,7 +835,7 @@ function promodisc(pmcode)
 																		</tr>
 																	  </table>
 																	</td>
-																</tr>
+																</tr><?php */?>
 																<tr>
 																	<td align="left" valign="middle" >&nbsp;</td>
 																</tr>
