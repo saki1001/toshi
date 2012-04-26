@@ -142,24 +142,30 @@
 }
 
 #detail .detail_info .ticket_option li.name {
-    width: 140px;
+    width: 95px;
     margin-left: 0;
 }
 
-#detail .detail_info .ticket_option li.price,
+#detail .detail_info .ticket_option li.price {
+    width: 45px;
+    text-align: right;
+}
+
 #detail .detail_info .ticket_option li.qty,
 #detail .detail_info .ticket_option li.submit_form {
     width: 50px;
     text-align: right;
 }
 
-#detail .detail_info .ticket_option input[type='submit'] {
+#detail .detail_info .submit_form input[type='submit'] {
     color: #222222;
     background-color: #FFF4A5;
     font-weight: bold;
+    margin-bottom: 10px;
+    float: right;
 }
 
-#detail .detail_info .ticket_option input[type='submit']:hover {
+#detail .detail_info .submit_form input[type='submit']:hover {
     background-color: #FFE964;
     color: #111111;
     cursor: pointer;
