@@ -10,18 +10,19 @@
 #content #register .instructions p:after,
 #content #register_form_wrapper form .field:after,
 #content .field #submit:after {
-/*    content: ".";
+    content: ".";
     display: block;
     clear: both;
     visibility: hidden;
     line-height: 0;
-    height: 0;*/
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
     height: 0;
+}
+
+/* clearfix with overflow */
+#content form .gender,
+#content form .checkbox,
+#content form .submit {
+    overflow: hidden;
 }
 
 /*GLOBAL STYLES----------------------------------*/
@@ -320,6 +321,7 @@
     background-position: -30px 0;
 }
 
+
 /*FIELDS-----------------------------------------*/
 /*field------------------------------------------*/
 #content .field.msg {
@@ -421,13 +423,6 @@
 #content form .field input.invalid_email,
 #content form .field textarea.error {
     border: 1px solid #BB232A;
-}
-
-/*TODO: fix float bug*/
-#content form .field.gender,
-#content form .field.checkbox,
-#content form .field.submit {
-    height: 30px;
 }
 
 #content form .field.gender label.male,
