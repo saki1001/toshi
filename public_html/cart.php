@@ -36,8 +36,7 @@
                 $SESSION_QUANTITY = isset($_SESSION['SESSION_QUANTITY']) ? $_SESSION['SESSION_QUANTITY'] : 0;
                 $SESSION_CUSTOMIZE = isset($_SESSION['SESSION_CUSTOMIZE']) ? $_SESSION['SESSION_CUSTOMIZE'] : 0;
                 $SESSION_PRICE = isset($_SESSION['SESSION_PRICE']) ? $_SESSION['SESSION_PRICE'] : 0;
-                if($SESSION_PRODUCTID > 0)
-                {
+                if($SESSION_PRODUCTID > 0) {
                     $cartflag = 1;
                 ?>
                     <table>
@@ -125,12 +124,6 @@
                             $<?=number_format($_SESSION['total'], 2, '.', '');?>
                         </li>
                         <li class="left">
-                            Shipping
-                        </li>
-                        <li class="right">
-                            $<?=number_format($_SESSION['shippingtotal'], 2, '.', '');?>
-                        </li>
-                        <li class="left">
                             Total
                         </li>
                         <li class="right">
@@ -149,8 +142,6 @@
                     $_SESSION['total'] = "0";
                     $_SESSION['SESSION_TOTAL'] = "0";
                     $_SESSION['finaltotal']="0";
-                    $_SESSION['SESSION_handling_fee']='0';
-                    $_SESSION['ShippingCharge']='0';
                 ?>
                 <div class="empty">
                     <p>There are currently no events in your cart.</p>
