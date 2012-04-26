@@ -35,6 +35,7 @@
         $_SESSION['day_telephone'] = addslashes($_POST['phone']);
         $_SESSION['email'] = addslashes($_POST['email']);
         
+        // header("location:$SECURE_URL/checkout_review.php");
         header("location:checkout_review.php");
         exit;
     }
@@ -207,7 +208,7 @@
                     <!-- BILLING -->
                     <section class="billing_info">
                         <h3>Billing Information</h3>
-                        <div class="field full">
+                        <div class="field left full">
                             <label>First Name*</label>
                             <input name="firstname" type="text" class="register_textfield2" id="firstname" value="<?=stripslashes($_SESSION['fname']);?>"/>
                         </div>
@@ -215,7 +216,7 @@
                             <label>Last Name*</label>
                             <input name="lastname" type="text" class="register_textfield2" id="lastname" value="<?=stripslashes($_SESSION['lname']);?>"/>
                         </div>
-                        <div class="field full">
+                        <div class="field left full">
                             <label>Address Line 1*</label>
                             <input name="address1" type="text" class="register_textfield2" id="address1" value="<?=stripslashes($_SESSION['address1']);?>"/>
                         </div>
@@ -223,7 +224,7 @@
                             <label>Address Line 2</label>
                             <input name="address2" type="text" class="register_textfield2" id="address2" value="<?=stripslashes($_SESSION['address2']);?>"/>
                         </div>
-                        <div class="field full">
+                        <div class="field left full">
                             <label>City*</label>
                             <input name="city" type="text" class="register_textfield2" id="city" value="<?=stripslashes($_SESSION['city']);?>"/>
                         </div>
@@ -233,7 +234,7 @@
                                 <option value="">Select Country</option>                                                  <?=GetDropdown(country_name,country_name,country,' order by country_name asc',$_SESSION['country']);?>
                             </select>
                         </div>
-                        <div class="field full">
+                        <div class="field left full">
                             <label>State/Province*</label>
                             <span id="bstate2"><?  fillbstate($bcountry,$_SESSION['state']); ?></span>
                         </div>
@@ -241,62 +242,13 @@
                             <label>Zip Code*</label>
                             <input name="zip" type="text" class="register_textfield2" id="zip" value="<?=stripslashes($_SESSION['zipcode']);?>"/>
                         </div>
-                        <div class="field full">
+                        <div class="field left full">
                             <label>Phone*</label>
                             <input name="phone" type="text" class="register_textfield2" id="phone" value="<?=stripslashes($_SESSION['day_telephone']);?>"/>
                         </div>
                         <div class="field full">
                             <label>Email*</label>
                             <input name="email" type="text" class="register_textfield2" id="email" value="<?=stripslashes($_SESSION['email']);?>"/>
-                        </div>
-                    </section>
-                    <!-- SHIPPING -->
-                    <section class="shipping_info">
-                        <h3>
-                            <span>Shipping Information</span>
-                            <span class="same_as_ship">
-                                <input type="checkbox" name="sameasship" onClick="chk_ship();" />
-                                <label>Same as Billing</label>
-                            </span>
-                        </h3>
-                        <div class="field full">
-                            <label>First Name*</label>
-                            <input name="ship_firstname" type="text" class="register_textfield2" id="ship_firstname" value="<?=stripslashes($_SESSION['ship_fname']);?>"/>
-                        </div>
-                        <div class="field full">
-                            <label>Last Name*</label>
-                            <input name="ship_lastname" type="text" class="register_textfield2" id="ship_lastname" value="<?=stripslashes($_SESSION['ship_lname']);?>"/>
-                        </div>
-                        <div class="field full">
-                            <label>Address Line 1*</label>
-                            <input name="ship_address1" type="text" class="register_textfield2" id="ship_address1" value="<?=stripslashes($_SESSION['ship_address1']);?>"/>
-                        </div>
-                        <div class="field full">
-                            <label>Address Line 2</label>
-                            <input name="ship_address2" type="text" class="register_textfield2" id="ship_address2" value="<?=stripslashes($_SESSION['ship_address2']);?>"/>
-                        </div>
-                        <div class="field full">
-                            <label>City*</label>
-                            <input name="ship_city" type="text" class="register_textfield2" id="ship_city" value="<?=stripslashes($_SESSION['ship_city']);?>"/>
-                        </div>
-                        <div class="field full">
-                            <label>Country*</label>
-                            <select name="ship_country" id="ship_country"  class="register_textfield2"     onchange="LoadCountry_States('LoadCountr_States_ID2',this.value,'ship_state','153');" >
-                                <option value="">Select Country</option>
-                                <?=GetDropdown(country_name,country_name,country,' order by country_name asc',$_SESSION['ship_country']);?>
-                            </select>
-                        </div>
-                        <div class="field full">
-                            <label>State/Province*</label>
-                            <span id="sstate1"><? fillsstate($scountry,$_SESSION['ship_state']); ?></span>
-                        </div>
-                        <div class="field full">
-                            <label>Zip Code*</label>
-                            <input name="ship_zip" type="text" class="register_textfield2" id="ship_zip" value="<?=stripslashes($_SESSION['ship_zipcode']);?>"/>
-                        </div>
-                        <div class="field full">
-                            <label>Phone*</label>
-                            <input name="ship_phone" type="text" class="register_textfield2" id="ship_phone" value="<?=stripslashes($_SESSION['ship_day_telephone']);?>"/>
                         </div>
                     </section>
                     <section class="promo_info">
@@ -307,7 +259,7 @@
                             <input name="promocode" type="text" class="register_textfield2" id="promocode"   value="<?=$_SESSION["promocode"];?>" autocomplete="off"/> 
                             <!-- <input type="button" name="applycoupon" class="button1" onClick="promodisc(document.frmShipInfo.promocode.value); return false;"  value="Apply"/> -->
                         </div>
-                        <div class="field full">
+                        <div class="field full submit">
                             <span id="promomsg"></span>
                             <a href="#" onClick="promodisc(document.frmShipInfo.promocode.value); return false;" class="button red">Apply</a>
                         </div>
@@ -319,7 +271,7 @@
                         </div>
                         <div class="field full">
                             <input type="hidden" name="HidContinueCheckout" id="HidContinueCheckout" value="" /> 
-                            <a href="#" onClick="return FrmChkInfo();" class="button yellow">Review Order</a>
+                            <input type="submit" onClick="return FrmChkInfo();" class="button yellow" value="Review Order" />
                         </div>
                     </section>
                 </form>
