@@ -1,36 +1,30 @@
 /*MY ACCOUNT-------------------------------------*/
 
-#my_account .column {
-    margin-left: 25px;
-    width: 300px;
+/*clearixing*/
+#my_account .main .column section {
+    overflow: hidden;
+}
+
+#my_account .side {
+    width: 270px;
+    margin-bottom: 30px;
     float: left;
 }
 
-#my_account .column.profile_photo {
-    width: 270px;
-    margin: 0;
-}
-
-#my_account .column.profile_title {
+#my_account .main {
     width: 655px;
     padding-top: 10px;
-    margin-bottom: 15px;
+    margin: 0 0 30px 25px;
+    float: left;
 }
 
-#my_account .column.pictures {
-    width: 330px;
-    min-height: 200px;
-    margin-left: 30px;
-    float: right;
-}
-
-#my_account .profile_photo .photo_wrapper {
+#my_account .side .photo_wrapper {
     width: 250px;
     border: solid 10px #FFFBE3;
     overflow: hidden;
 }
 
-#my_account .profile_photo .photo_wrapper img {
+#my_account .side .photo_wrapper img {
     width: 248px;
     overflow: hidden;
     color: #222222;
@@ -39,10 +33,22 @@
     diaply: block;
 }
 
-#my_account .column section {
+#my_account .main .column {
+    float: left;
+}
+
+#my_account .main .column.profile {
+    width: 300px;
+}
+
+#my_account .main .column.auditions {
+    width: 330px;
+    margin-left: 25px;
+}
+
+#my_account .main .column section {
     width: 100%;
     margin-bottom: 25px;
-    float: left;
 }
 
 #my_account .section_title {
