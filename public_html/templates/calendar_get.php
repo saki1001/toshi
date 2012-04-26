@@ -60,11 +60,11 @@ $allcaldta.='<table width="220"  border="0" align="left" cellpadding="2" cellspa
       <td width="100%" height="34" valign="middle" ><table width="98%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="15%" align="left" valign="middle" >
-                <a href="#" class="calendar_arrow left" onclick="window.location.href=\'events.php?cdate='.$prevdate.'&viewtype=week\';"  ></a>
+                <a href="#" class="calendar_arrow left" onclick="window.location.href=\'events.php?cdate='.$prevdate.'&viewtype=month\';"  ></a>
             </td>
             <td id="calendar_title" width="70%" align="center" valign="middle" >'.$montharr[$mn].', '.$yr.'</td>
             <td width="15%" align="right" valign="middle" >
-                <a href="#" class="calendar_arrow right" onclick="window.location.href=\'events.php?cdate='.$nextdate.'&viewtype=week\';"  ></a>
+                <a href="#" class="calendar_arrow right" onclick="window.location.href=\'events.php?cdate='.$nextdate.'&viewtype=month\';"  ></a>
             </td>
           </tr>
         </table></td>
