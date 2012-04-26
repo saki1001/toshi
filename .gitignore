@@ -2,12 +2,12 @@
 include/config.inc.php
 
 # Ignoring database specific uploaded files #
-banners/
-Events/
-Musics/
-presspdf/
-Users/
-Videos/
+# banners/
+# Events/
+# Musics/
+# presspdf/
+# Users/
+# Videos/
 
 # OS generated files #
 .DS_Store*
