@@ -128,31 +128,43 @@
     float: left;
 }
 
-#detail .detail_info .ticket_option {
+#detail .detail_info .options_list {
     width: 100%;
+    margin-bottom: 10px;
     float: left;
 }
 
-#detail .detail_info .ticket_option li {
+#detail .detail_info .options_list li {
     float: left;
     margin-left: 10px;
     max-height: 18px;
-    margin-bottom: 5px;
     overflow: hidden;
 }
 
-#detail .detail_info .ticket_option li.name {
-    width: 95px;
+#detail .detail_info .options_list li.name,
+#detail .detail_info .options_list li.audition_date {
     margin-left: 0;
 }
 
-#detail .detail_info .ticket_option li.price {
+#detail .detail_info .options_list li.name {
+    width: 95px;
+}
+
+#detail .detail_info .options_list li.audition_date,
+#detail .detail_info .options_list li.audition_time {
+    width: 70px;
+}
+
+#detail .detail_info .options_list li.audition_duration {
+    width: 80px;
+}
+
+#detail .detail_info .options_list li.price {
     width: 45px;
     text-align: right;
 }
 
-#detail .detail_info .ticket_option li.qty,
-#detail .detail_info .ticket_option li.submit_form {
+#detail .detail_info .options_list li.qty {
     width: 50px;
     text-align: right;
 }
@@ -161,7 +173,6 @@
     color: #222222;
     background-color: #FFF4A5;
     font-weight: bold;
-    margin-bottom: 10px;
     float: right;
 }
 
