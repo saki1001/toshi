@@ -179,6 +179,7 @@
 /* FULL WIDTH ARTICLE-----------------------------*/
 #content .article_list article.full_width {
     margin: 0 0 20px 20px;
+    width: 680px;
 }
 
 #content .article_list article.full_width.short {
@@ -201,9 +202,12 @@
 }
 
 #content .article_list article.full_width .info h2,
-#content .article_list article.full_width .info .date,
+#content .article_list article.full_width .info .date {
+    width: 440px;
+}
+
 #content .article_list article.full_width .info .summary {
-    width: 541px;
+    width: 540px;
 }
 
 #content .article_list article.full_width.short .info h2,
