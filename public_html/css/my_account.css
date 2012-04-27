@@ -85,28 +85,6 @@
     margin-right: 3px;
 }
 
-/*ACCOUNT UPLOAD PAGES---------------------------*/
-#my_account.upload h2 {
-    margin-bottom: 20px;
-}
-
-#my_account.upload #content section.upload_items {
-    width: 400px;
-    float: left;
-}
-
-#my_account.upload #content section.my_items {
-    width: 400px;
-    margin-left: 30px;
-    float: left;
-}
-
-#my_account.upload .upload_items  form{
-    width: 100%;
-    float: left;
-}
-
-
 /*MY ACCOUNT: DISPLAY ITEMS--------------------*/
 #my_account .my_items .section_content {
     width: 100%;
@@ -120,16 +98,24 @@
     float: left;
 }
 
+#my_account .auditions .my_items .section_content li {
+    margin-bottom: 10px;
+}
+
 #my_account .my_items .section_content li.last {
     border: none;
 }
 
 #my_account .my_items .item_detail {
     font-weight: normal;
-    max-width: 300px;
     height: 15px;
     overflow: hidden;
     float: left;
+}
+
+#my_account .my_items.music .item_detail,
+#my_account .my_items.videos .item_detail {
+    max-width: 220px;
 }
 
 #my_account .my_items .item_detail img,
@@ -138,6 +124,48 @@
     margin-right: 10px;
 }
 
+/*AUDITIONS LIST-------------------------------*/
+#my_account .auditions .my_items .item_detail {
+    max-width: 270px;
+    margin-bottom: 8px;
+}
+
+#my_account .auditions .my_items .item_detail {
+    max-width: 270px;
+    margin-bottom: 8px;
+}
+
+#my_account .auditions .my_items .item_submit {
+    margin-bottom: 8px;
+}
+
+/*hide span, show input*/
+#my_account .auditions .my_items .item_submit.selected input,
+#my_account .auditions .my_items .item_submit span {
+    display: none;
+}
+/*show span, hide input*/
+#my_account .auditions .my_items .item_submit input,
+#my_account .auditions .my_items .item_submit.selected span {
+    display: block;
+}
+
+#my_account .auditions .my_items .event_name {
+    margin-bottom: 8px;
+    width: 100%;
+    float: left;
+}
+
+#my_account .auditions .my_items .item_detail .event_date,
+#my_account .auditions .my_items .item_detail .duration {
+    width: 90px;
+}
+
+#my_account .auditions .my_items .item_detail .time {
+    width: 60px;
+}
+
+/*PICTURE LIST*/
 #my_account .my_items.picture_list li {
     text-align: right;
 }
@@ -172,7 +200,8 @@
 }
 
 #my_account .my_items .delete_item,
-#my_account .my_items .item_date {
+#my_account .my_items .item_date,
+#my_account .my_items .item_submit {
     float: right;
 }
 
@@ -187,5 +216,26 @@
 
 #my_account .my_items.picture_gallery .section_content a.last {
     margin-right: 0;
+}
+
+/*ACCOUNT UPLOAD PAGES---------------------------*/
+#my_account.upload h2 {
+    margin-bottom: 20px;
+}
+
+#my_account.upload #content section.upload_items {
+    width: 400px;
+    float: left;
+}
+
+#my_account.upload #content section.my_items {
+    width: 400px;
+    margin-left: 30px;
+    float: left;
+}
+
+#my_account.upload .upload_items  form{
+    width: 100%;
+    float: left;
 }
 
