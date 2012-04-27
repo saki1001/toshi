@@ -18,7 +18,6 @@
     if($eventRow['picture']!='' && $eventRow['picture_display']=='Y'){
         $eventPhotoMain = $SITE_URL . "Events/" . $eventRow['picture'];
     }else{
-        // TODO: replace with image of toshi
         $eventPhotoMain = "images/default_article_thumb.jpg";
     }
     
@@ -39,24 +38,46 @@
     $totalVideos = mysql_affected_rows();
     
     // PRICE VARIABLES
-    $priceQuery = "SELECT * FROM events_pricelevel where eventid='".$eventId."'"; 
+    $priceQuery = "SELECT * FROM events_pricelevel WHERE eventid='".$eventId."'"; 
     $priceResult = mysql_query($priceQuery) or die(mysql_error());
     $priceRow = mysql_fetch_array($priceResult);
-        
+    
     // PRICE: whether free or buy
     if(!$priceRow['onlineprice'] && !$priceRow['boxofficeprice']) {
-        $eventPriceColor = 'red';
-        $eventPriceType = 'Free';
         $eventPrice = 'Free';
     } else {
-        $eventPriceColor = 'yellow';
-        $eventPriceType = 'Buy';
         $eventPrice = "$" . $priceRow['onlineprice'];
+    }
+    
+    // DO AUDITIONS EXISTS?
+    $auditionExistsQuery = "SELECT EXISTS(SELECT * FROM events_timeslots WHERE eventid='".$eventId."' AND status='Available')";
+    $auditionExistsResult = mysql_query($auditionExistsQuery);
+    $auditionExists = mysql_fetch_array($auditionExistsResult);
+    
+    // SETTING CALLOUT BUTTON
+    if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0) {
+        // NOT LOGGGED IN
+        if($eventPrice === 'Free') {
+            $eventCalloutColor = 'red';
+            $eventCalloutName = 'Free';
+        } else {
+            $eventCalloutColor = 'yellow';
+            $eventCalloutName = 'Buy';
+        }
+    } else {
+        // LOGGED IN
+        if($auditionExists[0] === '1') {
+            $eventCalloutColor = 'yellow';
+            $eventCalloutName = 'Auditions';
+        } else {
+            $eventCalloutColor = 'red';
+            $eventCalloutName = 'Details';
+        }
     }
     
     // VENUE VARIABLES
     $venueId = $eventRow['venueid'];
-    $venueQuery = "SELECT * FROM event_venues where id='".$venueId."'"; 
+    $venueQuery = "SELECT * FROM event_venues WHERE id='".$venueId."'"; 
     $venueResult = mysql_query($venueQuery) or die(mysql_error());
     $venueRow = mysql_fetch_array($venueResult);
     
