@@ -31,6 +31,7 @@
     <? include("templates/head.php"); ?>
     <link rel="stylesheet" href="css/detail.css" type="text/css" media="all">
     
+    <script type="text/javascript" src="js/audition_select.js"></script>
     <script type="text/javascript" src="js/tabs.js"></script>
     <script type="text/javascript" src="js/event_dialogs.js"></script>
     <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
@@ -81,61 +82,98 @@
                     </div>
                 <!-- UPCOMING EVENT -->
                 <? } else { ?>
-                <div class="info_section tickets">
-                    <h4>Tickets</h4>
-                    <? 
-                    $getPrice ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
-                    $priceResult = mysql_query($getPrice);
-                    $totalPrices=mysql_affected_rows();
+                    <!-- NOT LOGGED IN -->
+                    <? if(!$_SESSION['UsErId'] || $_SESSION['UsErId']<0) { ?>
+                    <div class="info_section tickets">
+                        <h4>Tickets</h4>
+                        <? 
+                        $getPrice ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
+                        $priceResult = mysql_query($getPrice);
+                        $totalPrices=mysql_affected_rows();
+                        
+                        if($totalPrices>0) {
+                          $i=1;
+                          while($priceRow = mysql_fetch_assoc($priceResult)) {
+                            // $Eventprice ="";
+                            // $Eventprice =$priceRow['ticketprice'];
+                            $perorderlimit=$priceRow['perorderlimit'];
+                            $curdate=strtotime(date("Y-m-d"));
 
-                    if($totalPrices>0) {
-                      $i=1;
-                      while($priceRow = mysql_fetch_assoc($priceResult)) {
-                          // $Eventprice ="";
-                          // $Eventprice =$priceRow['ticketprice'];
-                          $perorderlimit=$priceRow['perorderlimit'];
-                          $curdate=strtotime(date("Y-m-d"));
-                      
-                          if($perorderlimit<=0) {
+                            if($perorderlimit<=0) {
                               $perorderlimit=10;
+                            }
+                        ?>
+                          <form name="frmgen<?=$i?>" id="frmgen<?=$i?>" action="php/cart_add.php" method="get">
+                              <ul class="options_list">
+                                <li class="name">
+                                  <? echo ucfirst(stripslashes($priceRow['pricelevelname']));?>
+                                </li>
+                                <li class="price early">
+                                  <?//=GetTicketPrice($priceRow['id']);?>
+                                  $<? echo $priceRow['earlybird_price']; ?>
+                                </li>
+                                <li class="price advanced">
+                                  $<? echo $priceRow['advanced_price']; ?>
+                                </li>
+                                <li class="price full">
+                                  $<? echo $priceRow['full_price']; ?>
+                                </li>
+                                <li class="qty">
+                                  <select name="quantity" id="quantity">
+                                  <? for($PO=1;$PO<=$perorderlimit;$PO++){?>
+                                      <option value="<? echo $PO;?>"><? echo $PO;?></option>
+                                  <? } ?>
+                                  </select>
+                                </li>                            
+                                <li class="submit_form">
+                                   <input type="hidden" name="HidPid" id="HidPid" value="<?=$eventId;?>" />
+                                   <input type="hidden" name="HidPriceid" id="HidPriceid" value="<?=$priceRow['id'];?>" />
+                                   <input type="submit" value="Buy"  class="">
+                                </li>
+                            </ul>
+                          </form>
+                        <? 
+                          $i++;
                           }
-                    ?>
-                      <form name="frmgen<?=$i?>" id="frmgen<?=$i?>" action="php/cart_add.php" method="get">
-                          <ul class="ticket_option">
-                            <li class="name">
-                              <? echo ucfirst(stripslashes($priceRow['pricelevelname']));?>
-                            </li>
-                            <li class="price early">
-                              <?//=GetTicketPrice($priceRow['id']);?>
-                              $<? echo $priceRow['earlybird_price']; ?>
-                            </li>
-                            <li class="price advanced">
-                              $<? echo $priceRow['advanced_price']; ?>
-                            </li>
-                            <li class="price full">
-                              $<? echo $priceRow['full_price']; ?>
-                            </li>
-                            <li class="qty">
-                              <select name="quantity" id="quantity">
-                              <? for($PO=1;$PO<=$perorderlimit;$PO++){?>
-                                  <option value="<? echo $PO;?>"><? echo $PO;?></option>
-                              <? } ?>
-                              </select>
-                            </li>
-                        </ul>
-                        <div class="submit_form">
-                           <input type="hidden" name="HidPid" id="HidPid" value="<? echo $eventId;?>" />
-                           <input type="hidden" name="HidPriceid" id="HidPriceid" value="<? echo $priceRow['id'];?>" />
-                           <input type="submit" value="Buy"  class="">
-                        </div>
-                      </form>
-                    <? 
-                      $i++;
-                      }
-                    } else { ?>
-                      <p><? echo $eventPrice; ?></p>
-                    <? } ?>
-                </div>
+                        } else { ?>
+                          <p><? echo $eventPrice; ?></p>
+                        <? } ?>
+                    </div>
+                <!-- LOGGED IN -->
+                <? } else { ?>
+                    <div class="info_section auditions">
+                        <h4>Auditions</h4>
+                        <?
+                        $auditionQuery = "SELECT * FROM events_timeslots WHERE eventid='" . $eventId . "' AND status='Available'";
+                        $auditionResult = mysql_query($auditionQuery);
+                        $totalAuditions = mysql_affected_rows();
+                        ?>
+                        <? if($totalAuditions>0) { ?>
+                            <? while($auditionRow = mysql_fetch_array($auditionResult)) { ?>
+                                <form name="frmselect" class="audition_select_form" action="php/audition_select.php" method="get">
+                                    <ul class="options_list">
+                                        <li class="audition_date">
+                                            <?=date('m/d/Y', strtotime($eventRow['startdate']))?>
+                                        </li>
+                                        <li class="audition_time">
+                                            <? echo $auditionRow['slot_hour'] . ":" . $auditionRow['slot_minute'] . $auditionRow['slot_ampm']; ?>
+                                        </li>
+                                        <li class="audition_duration">
+                                            <? echo $auditionRow['slot_duration']; ?>&nbsp;minutes
+                                        </li>
+                                        <li class="submit_form">
+                                            <input type="hidden" name="eventid" value="<?=$eventId?>">
+                                            <input type="hidden" name="timeslotid" value="<?=$auditionRow['id']?>">
+                                            <input type="submit" class="" value="Sign Up" onClick="return valid();" />
+                                        </li>
+                                    </ul>
+                                </form>
+                            <? } ?>
+                        <? } else { ?>
+                            <p>No auditions available.</p>
+                        <? } ?>
+                    </div>
+                <? } ?>
                 <div class="info_section venue">
                     <h4>Location</h4>
                     <ul>
