@@ -1,12 +1,12 @@
 <header>
     <div class="branding">
         <a href="index.php" id="logo">
-            <img src="images/toshi-logo-ticket.png" width="158" height"72" alt="Toshi's PlayHouse" />
+            <img src="images/toshi-logo-ticket.png" width="158" height="72" alt="Toshi's PlayHouse" />
         </a>
     </div>
     <div class="newsletter_signup">
         <a href="#" id="close_newsletter">
-            <img src="images/close_x.png" />
+            <img src="images/close_x.png" alt="x" />
         </a>
         <div id="newsletter_form" class="form">
             <h3>Get Our Newsletter</h3>
