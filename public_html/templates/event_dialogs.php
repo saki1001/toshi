@@ -146,8 +146,9 @@ if($_POST['HidSubmitAddUser']=="1") {
                 </ul>
             </div>
         </div>
-        <div class="picture">
-            <img src="<? echo $venuePicture; ?>" alt="Venue Photo" />
+        <div class="pictures">
+            <img class="venue_pic" src="<? echo $venuePicture; ?>" width="300" alt="Venue Photo" />
+            <img class="seating_pic" src="<? echo $venueSeatingChart; ?>" width="300" alt="Seating Chart" />
         </div>
     </section>
 </div>
