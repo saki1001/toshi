@@ -7,8 +7,7 @@
     header("Location:$SITE_URL/cart.php");
     exit;
     }
-
-
+    
     if($_POST['HidContinueCheckout']=="1") {
         $_SESSION['cctype'] = addslashes($_POST['cardtype']);
         $_SESSION['ccnumber'] = addslashes($_POST['cnumber']);
@@ -122,89 +121,19 @@
         <div id="content">
             <div class="checkout_wrapper">
                 <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-                <form name="frmShipInfo" id="frmShipInfo"  enctype="multipart/form-data" method="post">        
+                <?
+                $SESSION_PRODUCTID = isset($_SESSION['SESSION_PRODUCTID']) ? $_SESSION['SESSION_PRODUCTID'] : 0;
+                $SESSION_QUANTITY = isset($_SESSION['SESSION_QUANTITY']) ? $_SESSION['SESSION_QUANTITY'] : 0;
+                $SESSION_CUSTOMIZE = isset($_SESSION['SESSION_CUSTOMIZE']) ? $_SESSION['SESSION_CUSTOMIZE'] : 0;
+                $SESSION_PRICE = isset($_SESSION['SESSION_PRICE']) ? $_SESSION['SESSION_PRICE'] : 0;
+
+                if($SESSION_PRODUCTID > 0) {
+                $cartflag = 1;
+                ?>
+                <form name="frmShipInfo" id="frmShipInfo"  enctype="multipart/form-data" method="post">
                     <section class="ticket_info">
-                        <?
-                        $SESSION_PRODUCTID = isset($_SESSION['SESSION_PRODUCTID']) ? $_SESSION['SESSION_PRODUCTID'] : 0;
-                        $SESSION_QUANTITY = isset($_SESSION['SESSION_QUANTITY']) ? $_SESSION['SESSION_QUANTITY'] : 0;
-                        $SESSION_CUSTOMIZE = isset($_SESSION['SESSION_CUSTOMIZE']) ? $_SESSION['SESSION_CUSTOMIZE'] : 0;
-                        $SESSION_PRICE = isset($_SESSION['SESSION_PRICE']) ? $_SESSION['SESSION_PRICE'] : 0;
-                        if($SESSION_PRODUCTID > 0) {
-                        $cartflag = 1;
-                        ?>
-                        <table>
-                        <tr class="table_head">
-                        <th class="event_col">
-                            Event
-                        </th>
-                        <th class="qty_col">
-                            Qty.
-                        </th>
-                        <th class="price_col">
-                            Price
-                        </th>
-                        <th class="sub_total_col">
-                            Sub Total
-                        </th>
-                        <th class="rm_col">
-                            Delete
-                        </th>
-                        </tr>
-                          <?
-                            for($i=0;$i<count($SESSION_PRODUCTID);$i++) {
-                              $totalcost = $SESSION_PRICE[$i]*$SESSION_QUANTITY[$i];
-                              $subtotal = $subtotal +  $totalcost;
-                              $_SESSION['total'] = int_to_Decimal($subtotal);
-                              $_SESSION['SESSION_TOTAL'] = int_to_Decimal($subtotal);
-                              $_SESSION['finaltotal']=int_to_Decimal($subtotal);
-
-                              $getEventTicket ="SELECT * FROM events_pricelevel WHERE eventid = '$SESSION_PRODUCTID[$i]' AND activeornot='Yes'";
-                              $eventTicketResult = mysql_query($getEventTicket);
-                              $eventTicketRow = mysql_fetch_assoc($eventTicketResult);
-
-                              if(!$eventTicketRow['perorderlimit']) {
-                                  $eventOrderLimit = 10;
-                              } else {
-                                  $eventOrderLimit=$eventTicketRow['perorderlimit'];
-                              }
-
-                              $ProductName=stripslashes(GetName1("events","name","id",$SESSION_PRODUCTID[$i]));
-                              $ProductName=stripslashes(GetName1("events","name","id",$SESSION_PRODUCTID[$i]));
-                          ?>
-                          <tr>
-                              <!-- EVENT -->
-                              <td class="event_col">
-                                  <a href="event_detail.php?eventId=<?=$SESSION_PRODUCTID[$i];?>"><?=$ProductName;?></a>
-                                  <input type="hidden" name="val<?=$i;?>" value="<?=$i;?>@<?=$SESSION_PRODUCTID[$i];?>" />
-                                  <input type="hidden" name="i" value="<?=$i;?>"  />
-                                  <input type="hidden" name="size<?=$i;?>" value="<?=$SESSION_CUSTOMIZE[$i];?>" />
-                              </td>
-                              <!-- QUANTITY -->
-                              <td class="qty_col" valign="bottom">
-                                  <?=$SESSION_QUANTITY[$i];?>
-                              </td>
-                              <!-- PRICE -->
-                              <td class="price_col">
-                                  $<?=int_to_Decimal($SESSION_PRICE[$i]);?>
-                              </td>
-                              <!-- SUBTOTAL -->
-                              <td class="sub_total_col">
-                                  $<?=int_to_Decimal($totalcost);?>
-                              </td>
-                              <!-- DELETE -->
-                              <td class="rm_col">
-                                  <a href="php/cart_update.php?DelItem=YES&priceid=<?=$SESSION_CUSTOMIZE[$i];?>&pid=<?=$SESSION_PRODUCTID[$i];?>" title="Click to remove item"><img src="images/close_x.png" alt="X" width="14" height="14" /></a>
-                              </td>
-                          </tr>
-                          <? } ?>
-                        </table>
-                        <? } ?>
+                        <? include("templates/cart_table.php"); ?>
                     </section>
-                    <? if($_REQUEST['msg']){?>
-                        <div id="msg" class="active">
-                            <? echo stripslashes($_REQUEST['msg']);?>
-                        </div>
-                    <? } ?>
                     <!-- BILLING -->
                     <section class="billing_info">
                         <h3>Billing Information</h3>
@@ -267,7 +196,7 @@
                     <section class="payment_info">
                         <h3>Payment Information</h3>
                         <div class="field full">
-                            <label>All payments made through PayPal.</labe>
+                            <label>All payments made through PayPal.</label>
                         </div>
                         <div class="field full">
                             <input type="hidden" name="HidContinueCheckout" id="HidContinueCheckout" value="" /> 
@@ -275,6 +204,17 @@
                         </div>
                     </section>
                 </form>
+                <? } else { ?>
+                <?
+                    $_SESSION['total'] = "0";
+                    $_SESSION['SESSION_TOTAL'] = "0";
+                    $_SESSION['finaltotal']="0";
+                ?>
+                <div class="empty">
+                    <p>There are currently no events in your cart.</p>
+                    <p><a href="events.php">Click Here</a> to browse upcoming events.</p>
+                </div>
+                <? } ?>
             </div>
         </div>
     </div>
