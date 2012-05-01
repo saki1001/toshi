@@ -48,49 +48,49 @@ function fillst()
 
 ocntid=0;
 ostid=0;
-function chk_ship()
-{
-    form=document.frmShipInfo;
-    if(form.sameasship.checked)
-    {
-        form.ship_firstname.value=form.firstname.value;
-        form.ship_lastname.value=form.lastname.value;        
-        form.ship_address1.value=form.address1.value;
-        form.ship_address2.value=form.address2.value;
-        form.ship_city.value=form.city.value;
-        form.ship_zip.value=form.zip.value;
-        form.ship_phone.value=form.phone.value;
-        ocntid=form.country.selectedIndex;
-        if(ocntid!=0)
-           ostid=form.state.selectedIndex;
-        form.ship_country.selectedIndex=form.country.selectedIndex;
-        form.ship_state.selectedIndex=form.state.selectedIndex;
-        //updatestate(form.country.value,'sstate','sstate1');
-        // LoadCountry_States('LoadCountr_States_ID2',form.country.value,'ship_state','188')
-        //r=setTimeout("fillst()",1000);
-    }
-    else
-    {
-        form.ship_firstname.value="";
-        form.ship_lastname.value="";
-        form.ship_address1.value="";
-        form.ship_address2.value="";
-        form.ship_city.value="";
-        form.ship_zip.value="";
-        form.ship_phone.value="";
-        form.ship_country.selectedIndex=0;
-        form.ship_state.selectedIndex=0;
-        //updatestate(form.ship_country.value,'sstate','sstate1');
-        // LoadCountry_States('LoadCountr_States_ID2',form.ship_country.value,'ship_state','188')
-        //r=setTimeout("fillst2()",1000);
-    }
-}
+// function chk_ship()
+// {
+//     form=document.frmShipInfo;
+//     if(form.sameasship.checked)
+//     {
+//         form.ship_firstname.value=form.firstname.value;
+//         form.ship_lastname.value=form.lastname.value;        
+//         form.ship_address1.value=form.address1.value;
+//         form.ship_address2.value=form.address2.value;
+//         form.ship_city.value=form.city.value;
+//         form.ship_zip.value=form.zip.value;
+//         form.ship_phone.value=form.phone.value;
+//         ocntid=form.country.selectedIndex;
+//         if(ocntid!=0)
+//            ostid=form.state.selectedIndex;
+//         form.ship_country.selectedIndex=form.country.selectedIndex;
+//         form.ship_state.selectedIndex=form.state.selectedIndex;
+//         //updatestate(form.country.value,'sstate','sstate1');
+//         // LoadCountry_States('LoadCountr_States_ID2',form.country.value,'ship_state','188')
+//         //r=setTimeout("fillst()",1000);
+//     }
+//     else
+//     {
+//         form.ship_firstname.value="";
+//         form.ship_lastname.value="";
+//         form.ship_address1.value="";
+//         form.ship_address2.value="";
+//         form.ship_city.value="";
+//         form.ship_zip.value="";
+//         form.ship_phone.value="";
+//         form.ship_country.selectedIndex=0;
+//         form.ship_state.selectedIndex=0;
+//         //updatestate(form.ship_country.value,'sstate','sstate1');
+//         // LoadCountry_States('LoadCountr_States_ID2',form.ship_country.value,'ship_state','188')
+//         //r=setTimeout("fillst2()",1000);
+//     }
+// }
 
-function fillst2()
-{
-    form=document.frmShipInfo;
-    form.ship_state.selectedIndex=ostid;
-}
+// function fillst2()
+// {
+//     form=document.frmShipInfo;
+//     form.ship_state.selectedIndex=ostid;
+// }
 function FrmChkInfo()
 {
     form=document.frmShipInfo;
