@@ -34,17 +34,17 @@ $(document).ready(function() {
           {  
               if(http3_SDLS1.responseText==1)
               {
-                $('#msg').text('Please enter email address.');
+                $('#news_msg').text('Please enter email address.');
                 return false;
               }
               else if(http3_SDLS1.responseText==3)
               {
-                $('#msg').text('That email address is already subscribed.');
+                $('#news_msg').text('That email address is already subscribed.');
                 return false;
               }
               if(http3_SDLS1.responseText==2)
               {
-                $('#newsletter_form').html('<div id="msg">Thank you for subscribing.</div>');
+                $('#newsletter_form').html('<div id="news_msg">Thank you for subscribing.</div>');
                 return false;
               }
           } 
@@ -58,13 +58,13 @@ $(document).ready(function() {
         
         if(emailValue.split(" ").join("")=="")
         {
-            $('#msg').text("Please enter your email address.")
+            $('#news_msg').text("Please enter your email address.")
             email.focus();
             return false;
         }
         else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)))
         {
-            $('#msg').text("Please enter a proper email address.");
+            $('#news_msg').text("Please enter a proper email address.");
             email.focus();
             return false;
         }
@@ -86,6 +86,22 @@ $(document).ready(function() {
             $(this).attr('value', 'Enter Your Email');
         }
     };
+    
+    // BIND ENTER
+    // submits form when pressing 'Enter'
+    var submitKeydown = function(e) {
+        
+        var keyPressed = e.keyCode;
+        
+        if( keyPressed === 13 ){
+            
+            $('#newsletter_submit').click();
+            return false;
+        }
+        
+    };
+    
+    $('#newsletter_form input').bind('keydown', submitKeydown);
     
     $('#newsletter_email').bind('focus', clearDefaultValue);
     $('#newsletter_email').bind('blur', replaceDefaultValue);
