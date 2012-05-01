@@ -142,7 +142,7 @@
 }
 
 #detail .detail_info .options_list li.name,
-#detail .detail_info .options_list li.audition_date {
+#detail .detail_info .options_list li.audition_time {
     margin-left: 0;
 }
 
@@ -150,7 +150,6 @@
     width: 95px;
 }
 
-#detail .detail_info .options_list li.audition_date,
 #detail .detail_info .options_list li.audition_time {
     width: 70px;
 }
