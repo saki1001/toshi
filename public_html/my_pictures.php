@@ -160,33 +160,8 @@ include("php/get_sess.php");
                 </div>
                 <ul class="section_content">
                     <?
-                    $getPicturesQuery="SELECT * FROM users_pictures WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
-                    $getPicturesResult=mysql_query($getPicturesQuery);
-                    $getPicturesTotal=mysql_affected_rows();
-                
-                    if($getPicturesTotal>0) {
-                        for($i=1;$i<=$getPicturesTotal;$i++) {
-                        
-                            if ($i == $getPicturesTotal) {
-                                $itemClass = 'last';
-                            }
-                        
-                            $getPicturesRow = mysql_fetch_array($getPicturesResult);
-                            $pictureLink =  "../Users/" . $getPicturesRow['picture'];
-                            $pictureThumb = "../Users/thumb/" .  $getPicturesRow['picture'];
-                            $pictureCaption = ucfirst(stripslashes($getPicturesRow['caption']));
-                    ?>
-                            <li class="<? echo $itemClass; ?>">
-                                <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $pictureLink; ?>', '', 'width=650,height=500'); return false;">
-                                    <img src="<? echo $pictureThumb; ?>" height="80" alt="Picture" />
-                                    <span><? echo $pictureCaption; ?></span>
-                                </a>
-                                <a class="delete_item" href='#' onClick="javascript:document.location.href='my_pictures.php?Did=<? echo $getPicturesRow['id']; ?>';">Delete</a>
-                            </li>
-                    <? } ?>
-                    <? } else {
-                        echo "<li class='last'>No Pictures.</li>";
-                    }
+                        $pageType = 'EDIT';
+                        include("templates/my_account_pictures.php");
                     ?>
                 </ul>
             </section>
