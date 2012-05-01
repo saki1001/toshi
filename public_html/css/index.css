@@ -1,5 +1,12 @@
 /*INDEX (HOMEPAGE)---------------------------------------*/
 
+/* clearfix with overflow */
+#home #restaurant .wrapper,
+#home #restaurant .wrapper .text,
+#home #restaurant .wrapper .button_wrapper {
+    overflow: hidden;
+}
+
 #home #content section {
     margin-bottom: 30px;
 }
@@ -30,38 +37,42 @@
 }
 
 /*restaurant-------------------------------------*/
-#content #restaurant {
+#home #restaurant {
     width: 420px;
     border: solid 10px #FFFBE3;
     float: left;
 }
 
-#content #restaurant .wrapper {
+#home #restaurant .wrapper {
     color: #222222;
-    padding: 18px 15px 25px 15px;
+    padding: 18px 15px 20px 15px;
     background: #FCFCFC;
     border: 1px solid #222222;
 }
 
-#content #restaurant .wrapper h2 {
+#home #restaurant .wrapper h2 {
     font-family: 'Bangers', sans-serif;
     font-weight: normal;
     font-size: 2em;
     margin-bottom: 10px;
 }
 
-#content #restaurant .wrapper p {
+#home #restaurant .wrapper .text {
+    margin-bottom: 15px;
+}
+
+#home #restaurant .wrapper .text p {
     font-size: 1.2em;
     line-height: 1.1;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
-/*float bug for buttons so added wrapper*/
-#content #restaurant .wrapper .button_wrapper {
-    text-align: right;
+#home #restaurant .wrapper .button_wrapper {
+/*    text-align: right;*/
 }
 
-#content #restaurant .wrapper .button {
-    display: inline;
+#home #restaurant .wrapper .button {
+    float: right;
+/*    display: inline;*/
     margin-left: 10px;
 }

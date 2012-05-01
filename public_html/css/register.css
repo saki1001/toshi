@@ -1,4 +1,16 @@
 /*REGISTER (AUDITIONS)--------------------------------------*/
+#register .instructions h2:after,
+#register .instructions p:after,
+#register #register_form_wrapper form .field:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+
 #register #content section {
     margin-bottom: 25px;
     float: left;

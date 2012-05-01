@@ -314,8 +314,12 @@
     margin-bottom: 3px;
 }
 
-#dialog .dialog_wrapper #venue_details .picture {
+#dialog .dialog_wrapper #venue_details .pictures {
     max-width: 300px;
     overflow: hidden;
+}
+
+#dialog .dialog_wrapper #venue_details .pictures .venue_pic {
+    margin-bottom: 15px;
 }
 

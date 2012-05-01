@@ -1,4 +1,8 @@
 /*CART-------------------------------------------*/
+/*clearfix with overflow*/
+#cart .two_col_list {
+    overflow: hidden;
+}
 
 #cart .cart_wrapper,
 #cart .checkout_wrapper {
@@ -54,6 +58,7 @@
     width: 425px;
     font-size: 1.4em;
     margin-bottom: 30px;
+    padding-top: 0;
 }
 
 #cart .two_col_list {
@@ -138,7 +143,6 @@
     width: 50px;
 }
 
-
 #cart form .field.qty_col {
     padding-bottom: 0;
 }
@@ -154,5 +158,6 @@
 }
 
 #cart.checkout .promo_info #promomsg {
+    font-size: 1.2em;
     float: left;
 }
