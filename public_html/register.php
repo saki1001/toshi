@@ -7,6 +7,14 @@
     <?
         $ACTIVEPAGE='register';
         $PAGETITLE='Register for Auditions';
+        
+        $staticPageId = '6';
+        $staticPageQuery = "SELECT * FROM staticpage WHERE id='$staticPageId' ";
+        $staticPageResult = mysql_query($staticPageQuery);
+        $staticPageRow = mysql_fetch_array($staticPageResult);
+        
+        $staticPageName = stripslashes($staticPageRow['name']);
+        $staticPageContent = stripslashes($staticPageRow['content']);
     ?>
 <!-- HEAD -->
     <? include("templates/head.php");?>
@@ -23,12 +31,10 @@
     <!-- CONTENT -->
         <div id="content">
             <section class="instructions">
-                <h2 class="page_title"><? echo $PAGETITLE; ?></h2>
-                <p><strong>toshi's Living Room</strong> invites performance artists of all genres to come in and showcase their talent on the magnetic stage in the lounge of the Flatiron Hotel.  We are currently looking for musicians with a flare to engage the crowd and keep the dance floor full all night long.  This beautiful venue is open to a hip, modish crowd who knows how to party!</p>
-                <p>Do you have a flare for playing funk, pop covers, and current mainstream music? Well, we are looking just for you! Full bands, solo singers, contemporary dancers, and all original acts are welcome!</p>
-                <p>Auditions take place every (fill in day), and we invite you to take the stage to perform your most lively dance and modern musical acts.</p>
-                <p><strong>toshi's Living Room</strong>...Will you be the next star?</p>
-                </p>
+                <!-- TITLE SET IN SITEADMIN -->
+                <h2 class="page_title"><? echo $staticPageName; ?></h2>
+                <!-- CONTENTS SET IN SITEADMIN -->
+                <? echo $staticPageContent; ?>
             </section>
             <section id="sign_in_box">
                 <div class="wrapper">
