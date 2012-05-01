@@ -336,6 +336,7 @@
     display: none;
     font-size: 1.6em;
     padding: 10px 0 20px;
+    color: #D6767D;
 }
 
 #content #msg.active {
