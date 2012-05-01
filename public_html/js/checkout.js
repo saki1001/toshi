@@ -256,7 +256,7 @@ function promodisc(pmcode)
 //  document.getElementById('proc').style.visibility="visible";
   tot=0; 
   spcost1=document.getElementById("carttotal").value;
-  xmlHttp.open("GET","getpromodisc.php?pmcode="+pmcode+"&tot="+spcost1,true);
+  xmlHttp.open("GET","php/promo_disc_get.php?pmcode="+pmcode+"&tot="+spcost1,true);
   xmlHttp.onreadystatechange=function()
     {
     if(xmlHttp.readyState==4)
@@ -305,7 +305,7 @@ function promodisc(pmcode)
         }
         else
         {
-            document.getElementById("promomsg").innerHTML="You will get $"+discval.toFixed(2)+" discount.";
+            document.getElementById("promomsg").innerHTML="You will get a $"+discval.toFixed(2)+" discount.";
         }
 //        document.getElementById('proc').style.visibility="hidden";
 //        document.getElementById('btn1').style.visibility="visible"; 
