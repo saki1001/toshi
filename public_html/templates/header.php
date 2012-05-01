@@ -10,7 +10,7 @@
         </a>
         <div id="newsletter_form" class="form">
             <h3>Get Our Newsletter</h3>
-            <div id="msg"></div>
+            <div id="news_msg"></div>
             <div class="field">
                 <input type="email" name="newsletter_email" id="newsletter_email" value="Enter Your Email" />
             </div>
