@@ -107,6 +107,10 @@ a.button.tab_style:hover {
     color: #111111;
 }
 
+input[type='submit'] {
+    cursor: pointer;
+}
+
 header {
     padding-top: 30px;
     padding-bottom: 15px;
@@ -192,11 +196,6 @@ header .newsletter_signup #close_newsletter {
     z-index: 110;
 }
 
-header .newsletter_signup #msg {
-    font-size: 1.4em;
-    line-height: 1.2;
-}
-
 header .newsletter_signup .form {
     color: #111111;
     width: 240px;
@@ -213,7 +212,7 @@ header .newsletter_signup .form h3 {
     margin-bottom: 10px;
 }
 
-header .newsletter_signup .form #msg {
+header .newsletter_signup .form #news_msg {
     font-size: 1.4em;
     line-height: 1.2;
 }
