@@ -95,9 +95,7 @@
             </html>
             ";
         //echo $toemail;echo $subject1;echo $mailcontent1;echo $from1;
-        if($_SERVER['HTTP_HOST']!="plus") {
-            HtmlMailSend($toemail,$subject1,$mailcontent1,$from1);
-        }
+        HtmlMailSend($toemail,$subject1,$mailcontent1,$from1);
         
         // UNSET CAPTCHA CODE
         unset($_SESSION['security_code']);
