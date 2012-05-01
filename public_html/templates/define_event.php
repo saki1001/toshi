@@ -87,6 +87,7 @@
     $venuePhone = $venueRow['phone'];
     $venueEmail = $venueRow['email'];
     $venuePicture = "../Venues/" . $venueRow['picture'];
+    $venueSeatingChart = "../Venues/" . $venueRow['seatingchart'];
     $venueDescription = $venueRow['description'];
     
     // DATE VARIBLES
