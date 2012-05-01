@@ -105,32 +105,8 @@ include("php/get_sess.php");
                 </div>
                 <ul class="section_content">
                     <?
-                    $getVideosQuery="SELECT * FROM users_videos WHERE userid='".trim($_SESSION['UsErId'])."' order by id desc";
-                    $getVideosResult=mysql_query($getVideosQuery);
-                    $getVideosTotal=mysql_affected_rows();
-                
-                    if($getVideosTotal>0) {
-                        for($i=1;$i<=$getVideosTotal;$i++) {
-                        
-                            if ($i == $getVideosTotal) {
-                                $itemClass = 'last';
-                            }
-                        
-                            $getVideosRow = mysql_fetch_array($getVideosResult);
-                            $videosLink .=  "my_videos_detail.php?id=" . $getVideosRow['id'] . "&userid=" . $_SESSION['UsErId'];
-                            $videosCaption = ucfirst(stripslashes($getVideosRow['caption']));
-                    ?>
-                            <li class="<? echo $itemClass; ?>">
-                                <a class="item_detail" href="#" onClick="javascript:window.open('<? echo $videosLink; ?>', '', 'width=650,height=500'); return false;">
-                                    <img src="images/play_button.jpg" width="15" height="15" alt="&gt;" />
-                                    <span><? echo $videosCaption; ?></span>
-                                </a>
-                                <a class="delete_item" href='#' onClick="javascript:document.location.href='my_videos.php?Did=<? echo $getVideosRow['id']; ?>';">Delete</a>
-                            </li>
-                    <? } ?>
-                    <? } else {
-                        echo "<li class='last'>No Videos.</li>";
-                    }
+                        $pageType = 'EDIT';
+                        include("templates/my_account_videos.php");
                     ?>
                 </ul>
             </section>
