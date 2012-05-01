@@ -46,7 +46,7 @@ $(document).ready( function() {
             dataType: 'json',
             success: function(data) {
                 if(data['status'] === 'SUCCESS') {
-                    $('#register_form_wrapper').html('<h3>Registration successful!  Please check your email and confirm your account.<h3>');
+                    $('#register_form_wrapper').html('<div id="msg" class="active">Registration successful!  Please check your email and confirm your account.</div>');
                     
                 } else if(data['status'] === 'ERROR_DUPLICATE') {
                     alert('The email address you provided is already registered.');
@@ -178,7 +178,21 @@ $(document).ready( function() {
         return false;
     };
     
+    // BIND ENTER
+    // submits form when pressing 'Enter'
+    var submitKeydown = function(e) {
+        
+        var keyPressed = e.keyCode;
+        
+        if( keyPressed === 13 ){
+            
+            $('#submit').click();
+            return false;
+        }
+        
+    };
     
+    $('form input').bind('keydown', submitKeydown);
     // $('#submit').bind('click', submitForm);
     $('#submit').bind('click', validateForm);
     
