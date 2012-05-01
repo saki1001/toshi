@@ -139,21 +139,15 @@
     margin-bottom: 8px;
 }
 
-/*hide span, show input*/
-#my_account .auditions .my_items .item_submit.selected input,
-#my_account .auditions .my_items .item_submit span {
-    display: none;
-}
-/*show span, hide input*/
-#my_account .auditions .my_items .item_submit input,
-#my_account .auditions .my_items .item_submit.selected span {
-    display: block;
+#my_account .auditions .my_items .item_submit input[type='submit'] {
+/*    display: block;*/
+    color: #222222;
+    background-color: #FFF4A5;
+    font-weight: bold;
 }
 
 #my_account .auditions .my_items .event_name {
     margin-bottom: 8px;
-    width: 100%;
-    float: left;
 }
 
 #my_account .auditions .my_items .item_detail .event_date,
