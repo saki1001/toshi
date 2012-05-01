@@ -155,22 +155,22 @@
           <td height="20" class="mail_font">Static Page Management </td>
         </tr>
 		<tr>
-          <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=1';" onmouseover="className='menuover';" onmouseout="className='menuon';">About Us</td>
+          <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=1';" onmouseover="className='menuover';" onmouseout="className='menuon';">About Page Text</td>
         </tr>
-		<tr>
-          <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=2';" onmouseover="className='menuover';" onmouseout="className='menuon';">Contact Us</td>
+        <tr>
+          <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=2';" onmouseover="className='menuover';" onmouseout="className='menuon';">Restaurant Paragraph</td>
         </tr>
-		<tr>
+        <!-- <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=3';" onmouseover="className='menuover';" onmouseout="className='menuon';">Our Mission</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=4';" onmouseover="className='menuover';" onmouseout="className='menuon';">News & Press</td>
         </tr>
-		<tr>
+        <tr>
           <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=5';" onmouseover="className='menuover';" onmouseout="className='menuon';">How to help</td>
-        </tr>
+        </tr> -->
 		<tr>
-          <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=6';" onmouseover="className='menuover';" onmouseout="className='menuon';">Jobs</td>
+          <td height="20" class="menuon" onClick="javascript:document.location.href='editcontents.php?id=6';" onmouseover="className='menuover';" onmouseout="className='menuon';">Auditions Page Text</td>
         </tr>
 		<? }else if($mlevel==6){ ?>
 		<tr>
