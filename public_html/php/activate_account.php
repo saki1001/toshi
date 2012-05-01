@@ -25,10 +25,10 @@ if($_REQUEST['activationkey']!="")
                                                 <Td align=\"left\" colspan=\"2\">Hi $FinalName,</td>
                                         </tr>
                                         <tr>
-                                                <Td align=\"left\" colspan=\"2\">Your acount has been activated</td>
+                                                <Td align=\"left\" colspan=\"2\">Your account has been activated. Sign in now and browse our website to find auditions for our upcoming events.</td>
                                         </tr>
                                         <tr>
-                                                <Td align=\"left\" colspan=\"2\">Thank you for auditions at $SITE_NAME</td>
+                                                <Td align=\"left\" colspan=\"2\">Thank you for signing up at $SITE_NAME.</td>
                                         </tr>
                                         <tr>
                                                 <Td align=\"left\" colspan=\"2\">&nbsp;</td>
@@ -40,10 +40,8 @@ if($_REQUEST['activationkey']!="")
                         </body>
                 </html>";
             //echo $toemail;echo $subject1;echo $mailcontent1;echo $from1;
-            if($_SERVER['HTTP_HOST']!="plus")
-            {
-                HtmlMailSend($toemail,$subject1,$mailcontent1,$from1);
-            }
+            HtmlMailSend($toemail,$subject1,$mailcontent1,$from1);
+            
             header("location:../my_account.php");
             exit;
         }
