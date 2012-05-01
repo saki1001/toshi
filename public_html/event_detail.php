@@ -143,35 +143,7 @@
                 <? } else { ?>
                     <div class="info_section auditions">
                         <h4>Auditions</h4>
-                        <?
-                        $auditionQuery = "SELECT * FROM events_timeslots WHERE eventid='" . $eventId . "' AND status='Available'";
-                        $auditionResult = mysql_query($auditionQuery);
-                        $totalAuditions = mysql_affected_rows();
-                        ?>
-                        <? if($totalAuditions>0) { ?>
-                            <? while($auditionRow = mysql_fetch_array($auditionResult)) { ?>
-                                <form name="frmselect" class="audition_select_form" action="php/audition_select.php" method="get">
-                                    <ul class="options_list">
-                                        <li class="audition_date">
-                                            <?=date('m/d/Y', strtotime($eventRow['startdate']))?>
-                                        </li>
-                                        <li class="audition_time">
-                                            <? echo $auditionRow['slot_hour'] . ":" . $auditionRow['slot_minute'] . $auditionRow['slot_ampm']; ?>
-                                        </li>
-                                        <li class="audition_duration">
-                                            <? echo $auditionRow['slot_duration']; ?>&nbsp;minutes
-                                        </li>
-                                        <li class="submit_form">
-                                            <input type="hidden" name="eventid" value="<?=$eventId?>">
-                                            <input type="hidden" name="timeslotid" value="<?=$auditionRow['id']?>">
-                                            <input type="submit" class="" value="Sign Up" onClick="return valid();" />
-                                        </li>
-                                    </ul>
-                                </form>
-                            <? } ?>
-                        <? } else { ?>
-                            <p>No auditions available.</p>
-                        <? } ?>
+                        <? include("templates/auditions_available.php"); ?>
                     </div>
                 <? } ?>
                 <div class="info_section venue">
