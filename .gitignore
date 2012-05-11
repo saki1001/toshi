@@ -11,3 +11,6 @@ include/config.inc.php
 
 # OS generated files #
 .DS_Store*
+
+# Web host files
+.htaccess
