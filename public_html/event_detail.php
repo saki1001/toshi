@@ -90,6 +90,8 @@
                         $getPrice ="SELECT * FROM events_pricelevel WHERE eventid = '$eventId' AND activeornot='Yes'";
                         $priceResult = mysql_query($getPrice);
                         $totalPrices=mysql_affected_rows();
+                        // Hiding Prices
+                        $totalPrices = 0;
                         
                         if($totalPrices>0) {
                           $i=1;
