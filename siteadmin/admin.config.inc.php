@@ -6,7 +6,7 @@
     This is the name which is going to appear on all the pages
   ********************************************************************/
 
-  $ADMIN_MAIN_SITE_NAME = "Welcome to Toshi's Living Room";
+  $ADMIN_MAIN_SITE_NAME = "Welcome to toshi's Living Room and Penthouse";
 
   /********************************************************************
    Color Scheme for the main pages
