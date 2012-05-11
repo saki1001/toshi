@@ -43,7 +43,7 @@
               var companyMarker = new google.maps.Marker({
                   position: companyPos,
                   map: map,
-                  title:"Toshi's Living Room"
+                  title:"toshi's Living Room and Penthouse"
               });
             
         }
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <ul>
-                        <li><strong>toshi's Living Room</strong></li>
+                        <li><strong>toshi's Living Room and Penthouse</strong></li>
                         <li>9 W. 26th Street</li>
                         <li>New York, NY 10010</li>
                     </ul>
