@@ -2,7 +2,7 @@
     <section class="footer_wrapper">
         <ul class="contact_info">
             <li>
-                <h3>Toshi's Living Room</h3>
+                <h3>toshi's Living Room and Penthouse</h3>
             </li>
             <li>1141 Broadway</li>
             <li>New York, NY 10001</li>
