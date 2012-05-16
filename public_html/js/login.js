@@ -46,14 +46,12 @@ $(document).ready( function() {
                 if(data['status'] === 'ERROR_INVALID') {
                     $('#msg').addClass('active')
                         .html('Invalid email or password.');
-                        console.log('invalid');
                     // rebind submit
                     $('#submit').bind('click', submitForm);
                     
                 } else if(data['status'] === 'ERROR_CONFIRM') {
                     $('#msg').addClass('active')
                         .html('Please check your email and confirm your account.');
-                        console.log('unconfirmed');
                     // rebind submit
                     $('#submit').bind('click', submitForm);
                         
