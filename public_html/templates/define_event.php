@@ -94,17 +94,19 @@
     $eventStartDate = date('M j', strtotime($eventRow['startdate']));
     $eventStartTime = date('g:i', strtotime($eventRow['startdate_hour'] . ":" . $eventRow['startdate_minute'])) . $eventRow['startdate_ampm'];
     
+    $eventEndTime = date('g:i', strtotime($eventRow['enddate_hour'] . ":" . $eventRow['enddate_minute'])) . $eventRow['enddate_ampm'];
+    
     $eventPastDate = date('F j, Y', strtotime($eventRow['startdate']));
     
     // DATE: based on end date
     if($eventRow['startdate'] == $eventRow['enddate']) {
         // same startdate and endate
-        $eventEndDate = date('g:i', strtotime($eventRow['enddate_hour'] . $eventRow['enddate_minute'])) . $eventRow['enddate_ampm'];
+        $eventEndDate = $eventEndTime;
     } else if($eventRow['enddate'] == '0000-00-00'){
         // no enddate
         $eventEndDate = '?';
     } else {
-        $eventEndDate = date('M j, g:i', strtotime($eventRow['enddate'] . " " . $eventRow['enddate_hour'] . ":" . $eventRow['enddate_minute'])) . $eventRow['enddate_ampm'];
+        $eventEndDate = date('M j', strtotime($eventRow['enddate'])) . " " . $eventEndTime;
     }
     
     // DESCRIPTION
